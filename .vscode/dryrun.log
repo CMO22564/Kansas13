@@ -1,0 +1,20 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/chris/Desktop/imguiapps/Kansas12'
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c main.cpp -o main.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c PlayerInputSystem.cpp -o PlayerInputSystem.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c MovementSystem.cpp -o MovementSystem.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c CombatSystem.cpp -o CombatSystem.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c CleanUpSystem.cpp -o CleanUpSystem.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c RenderSystem.cpp -o RenderSystem.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c SoundSystem.cpp -o SoundSystem.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c DebugSystem.cpp -o DebugSystem.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c ScreenSystem.cpp -o ScreenSystem.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c imgui-SFML.cpp -o imgui-SFML.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c imgui/imgui.cpp -o imgui/imgui.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c imgui/imgui_demo.cpp -o imgui/imgui_demo.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c imgui/imgui_draw.cpp -o imgui/imgui_draw.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c imgui/imgui_tables.cpp -o imgui/imgui_tables.o
+g++-12 -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include -c imgui/imgui_widgets.cpp -o imgui/imgui_widgets.o
+g++-12 main.o PlayerInputSystem.o MovementSystem.o CombatSystem.o CleanUpSystem.o RenderSystem.o SoundSystem.o DebugSystem.o ScreenSystem.o imgui-SFML.o imgui/imgui.o imgui/imgui_demo.o imgui/imgui_draw.o imgui/imgui_tables.o imgui/imgui_widgets.o -o kansas12 -L/home/chris/Desktop/SFML-3.1.0/lib -lsfml-graphics-s-d -lsfml-window-s-d -lsfml-network-s-d -lsfml-audio-s-d -lsfml-system-s-d -lX11 -lXrandr -lXcursor -lGL -ludev -lpthread -lfreetype -lopenal -lFLAC -lvorbisenc -lvorbisfile -lvorbis -logg -lXi -lSM
+make: Leaving directory '/home/chris/Desktop/imguiapps/Kansas12'
+ 

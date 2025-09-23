@@ -1,0 +1,1232 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sun Sep  7 15:25:53 2025
+
+# Variables
+
+# environment
+GDK_BACKEND = x11
+# environment
+MEMORY_PRESSURE_WRITE = c29tZSAyMDAwMDAgMjAwMDAwMAA=
+# environment
+LC_ALL = C
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# environment
+VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
+# environment
+VSCODE_CWD = /home/chris
+# default
+MAKE_COMMAND := make
+# environment
+QT_ACCESSIBILITY = 1
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/chris/Desktop/imguiapps/Kansas12
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = /home/chris/.config/Code/CachedData/360a4e4fd251bfce169a4ddf857c7d25d1ad40da
+# environment
+LANG = C
+# environment
+XAUTHORITY = /run/user/1003/.mutter-Xwaylandauth.0A65B3
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
+# environment
+MEMORY_PRESSURE_WATCH = /sys/fs/cgroup/user.slice/user-1003.slice/user@1003.service/session.slice/org.gnome.Shell@wayland.service/memory.pressure
+# makefile
+MAKEFLAGS = pqrR
+# makefile
+CURDIR := /home/chris/Desktop/imguiapps/Kansas12
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# makefile (from 'Makefile', line 10)
+SRCS = main.cpp PlayerInputSystem.cpp MovementSystem.cpp CombatSystem.cpp CleanUpSystem.cpp RenderSystem.cpp SoundSystem.cpp DebugSystem.cpp ScreenSystem.cpp
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+MFLAGS = -pqrR
+# environment
+SSH_AUTH_SOCK = /run/user/1003/keyring/ssh
+# default
+.SHELLFLAGS := -c
+# environment
+WAYLAND_DISPLAY = wayland-0
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# makefile (from 'imgui/imgui_widgets.d', line 1)
+MAKEFILE_LIST := Makefile main.d PlayerInputSystem.d MovementSystem.d CombatSystem.d CleanUpSystem.d RenderSystem.d SoundSystem.d DebugSystem.d ScreenSystem.d imgui-SFML.d imgui/imgui.d imgui/imgui_demo.d imgui/imgui_draw.d imgui/imgui_tables.d imgui/imgui_widgets.d
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_PID = 149799
+# environment
+XDG_SESSION_TYPE = wayland
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from 'Makefile', line 7)
+INCLUDES = -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include
+# environment
+SESSION_MANAGER = local/hp-ubuntu:@/tmp/.ICE-unix/68235,unix/hp-ubuntu:/tmp/.ICE-unix/68235
+# automatic
+*F = $(notdir $*)
+# environment
+CHROME_DESKTOP = code.desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1003/bus
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"userLocale":"en-us","osLocale":"en-us","resolvedLanguage":"en","defaultMessagesFile":"/usr/share/code/resources/app/out/nls.messages.json","locale":"en-us","availableLanguages":{}}
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile (from 'Makefile', line 11)
+OBJS = $(SRCS:.cpp=.o)
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# makefile
+SHELL = /bin/sh
+# default
+MAKECMDGOALS := all
+# environment
+XMODIFIERS = @im=ibus
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# environment
+SHLVL = 0
+# environment
+MAKELEVEL := 0
+# environment
+IM_CONFIG_CHECK_ENV = 1
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+CLUTTER_DISABLE_MIPMAPPED_TEXT = 1
+# environment
+APPLICATION_INSIGHTS_NO_STATSBEAT = true
+# environment
+INVOCATION_ID = 6189bdc5c4cf4c65a48fdae62e8942fa
+# makefile (from 'Makefile', line 14)
+IMGUI_SRCS = imgui-SFML.cpp imgui/imgui.cpp imgui/imgui_demo.cpp imgui/imgui_draw.cpp imgui/imgui_tables.cpp imgui/imgui_widgets.cpp
+# makefile (from 'Makefile', line 15)
+IMGUI_OBJS = $(IMGUI_SRCS:.cpp=.o)
+# environment
+USERNAME = chris
+# environment
+GNOME_SETUP_DISPLAY = :1
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# automatic
+?F = $(notdir $?)
+# environment
+XDG_CURRENT_DESKTOP = Unity
+# automatic
++F = $(notdir $+)
+# environment
+DESKTOP_SESSION = ubuntu
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+LOGNAME = chris
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# makefile
+.DEFAULT_GOAL := all
+# environment
+SYSTEMD_EXEC_PID = 68318
+# environment
+DISPLAY = :0
+ 
+# environment
+USER = chris
+# environment
+GTK_MODULES = gail:atk-bridge
+# default
+MAKE_VERSION := 4.3
+# makefile (from 'Makefile', line 4)
+LDFLAGS = -L/home/chris/Desktop/SFML-3.1.0/lib -lsfml-graphics-s-d -lsfml-window-s-d -lsfml-network-s-d -lsfml-audio-s-d -lsfml-system-s-d -lX11 -lXrandr -lXcursor -lGL -ludev -lpthread -lfreetype -lopenal -lFLAC -lvorbisenc -lvorbisfile -lvorbis -logg -lXi -lSM
+# environment
+MANAGERPID = 67939
+# environment
+DEBUGINFOD_URLS = https://debuginfod.ubuntu.com 
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 149799
+# environment
+_ = /usr/share/code/code
+# environment
+XDG_RUNTIME_DIR = /run/user/1003
+# environment
+JOURNAL_STREAM = 8:578172
+# environment
+VSCODE_DOTNET_INSTALL_TOOL_ORIGINAL_HOME = /home/chris
+# environment
+XDG_SESSION_CLASS = user
+# environment
+GSM_SKIP_SSH_AGENT_WORKAROUND = true
+# environment
+HOME = /home/chris
+# environment
+QT_IM_MODULE = ibus
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+VSCODE_IPC_HOOK = /run/user/1003/vscode-3ee20757-1.10-main.sock
+# environment
+IM_CONFIG_PHASE = 1
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# default
+SUFFIXES := 
+# makefile (from 'Makefile', line 17)
+TARGET = kansas12
+# makefile (from 'Makefile', line 3)
+CXXFLAGS = -g -O3 -std=c++20 -Wno-unused-result -Wno-deprecated-declarations -MMD -MP -DSFML_STATIC
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# makefile (from 'Makefile', line 2)
+CXX = g++-12
+# environment
+XDG_MENU_PREFIX = gnome-
+# environment
+VSCODE_ESM_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+GDMSESSION = ubuntu
+# variable set hash-table stats:
+# Load=109/1024=11%, Rehash=0, Collisions=9/183=5%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 2050, inode 35523210): 58 files, no impossibilities.
+
+# 58 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+%.o: %.cpp
+#  recipe to execute (from 'Makefile', line 27):
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+# 1 implicit rules, 0 (0.0%) terminal.
+# Files
+
+imgui/imstb_textedit.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CleanUpSystem.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+imgui/imgui_demo.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:57:17.514998671
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/ConvexShape.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Export.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+PlayerInputSystem.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:56:51.709487227
+#  File has been updated.
+#  Successfully updated.
+
+MovementSystem.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-03 20:53:48.814784085
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+imgui/imgui_tables.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:57:24.85514409
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.inl:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/AudioResource.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+imgui/imgui_internal.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+CombatSystem.o: CombatSystem.cpp CombatSystem.hpp Core.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Config.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/StencilMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transformable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexArray.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Vertex.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/ConvexShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Sprite.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundChannel.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Sound.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundSource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/AudioResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+RenderSystem.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:56:56.714586449
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundBuffer.hpp:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+imgui-SFML.h:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-23 12:04:00.693307852
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/ContextSettings.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+imgui/imgui_draw.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+imgui/imgui_draw.o: imgui/imgui_draw.cpp imgui/imgui.h imgui/imconfig.h imgui/imgui_internal.h imgui/imstb_rectpack.h imgui/imstb_truetype.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+RenderSystem.o: RenderSystem.cpp RenderSystem.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderWindow.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Config.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTarget.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/StencilMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Vertex.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/View.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/ContextSettings.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/VideoMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Window.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Vulkan.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowEnums.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowHandle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Clock.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transformable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexArray.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp Core.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/ConvexShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Sprite.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundChannel.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Sound.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundSource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/AudioResource.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/VideoMode.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+SoundSystem.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-03 21:02:11.202872439
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Vertex.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/OpenGL.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Context.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundSource.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Sprite.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CleanUpSystem.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:56:55.547563315
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/FileInputStream.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Font.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+imgui/imgui_draw.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:57:22.284093157
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+imgui-SFML.o: imgui-SFML.cpp imgui-SFML.h /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Config.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.inl imgui-SFML_export.h imgui/imgui.h imgui/imconfig.h /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTarget.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/StencilMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Vertex.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/View.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTexture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/ContextSettings.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderWindow.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/VideoMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Window.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Vulkan.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowEnums.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowHandle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Clock.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Sprite.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transformable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/OpenGL.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Clipboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Cursor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Touch.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2025-09-04 19:48:19.55095233
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+CombatSystem.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+imgui/imgui_tables.o: imgui/imgui_tables.cpp imgui/imgui.h imgui/imconfig.h imgui/imgui_internal.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/MemoryInputStream.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+RenderSystem.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-03 21:00:34.317926782
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderWindow.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+imgui/imgui_widgets.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+imgui/imgui.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transformable.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Sleep.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 30):
+	rm -f $(OBJS) $(IMGUI_OBJS) $(TARGET) *.d imgui/*.d
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.inl:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+kansas12: main.o PlayerInputSystem.o MovementSystem.o CombatSystem.o CleanUpSystem.o RenderSystem.o SoundSystem.o DebugSystem.o ScreenSystem.o imgui-SFML.o imgui/imgui.o imgui/imgui_demo.o imgui/imgui_draw.o imgui/imgui_tables.o imgui/imgui_widgets.o
+#  Implicit rule search has not been done.
+#  Last modified 2025-09-06 20:57:31.169269162
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  recipe to execute (from 'Makefile', line 24):
+	$(CXX) $(OBJS) $(IMGUI_OBJS) -o $(TARGET) $(LDFLAGS)
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glyph.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/View.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+imgui/imstb_truetype.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+CombatSystem.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:56:54.121535045
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+SoundSystem.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+CleanUpSystem.o: CleanUpSystem.cpp CleanUpSystem.hpp Core.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Config.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/StencilMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transformable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexArray.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Vertex.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/ConvexShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Sprite.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundChannel.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Sound.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundSource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/AudioResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+imgui/imgui_tables.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Exception.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+PlayerInputSystem.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:42:06.910576683
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+DebugSystem.d:
+ 
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:56:58.731626432
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundChannel.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Image.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+imgui/imgui.o: imgui/imgui.cpp imgui/imgui.h imgui/imconfig.h imgui/imgui_internal.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+imgui/imgui_widgets.o: imgui/imgui_widgets.cpp imgui/imgui.h imgui/imconfig.h imgui/imgui_internal.h imgui/imstb_textedit.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexBuffer.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shader.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/StencilMode.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+imgui/imgui_widgets.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:57:30.486255634
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Text.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowHandle.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+CleanUpSystem.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:40:32.108575027
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexArray.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTarget.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+MovementSystem.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 21:56:09.025669751
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+DebugSystem.o: DebugSystem.cpp DebugSystem.hpp Core.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Config.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/StencilMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transformable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexArray.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Vertex.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/ConvexShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Sprite.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundChannel.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Sound.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundSource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/AudioResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Font.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glyph.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Image.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTarget.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/View.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTexture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/ContextSettings.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderWindow.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/VideoMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Window.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Vulkan.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowEnums.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowHandle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Clock.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shader.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Text.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Clipboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Context.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Cursor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Touch.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Err.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Exception.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/FileInputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/InputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/MemoryInputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Sleep.hpp imgui/imgui.h imgui/imconfig.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+MovementSystem.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:56:52.892510681
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+imgui-SFML.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:57:01.850688255
+#  File has been updated.
+#  Successfully updated.
+
+CombatSystem.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-04 21:06:24.026867336
+#  File has been updated.
+#  Successfully updated.
+
+imgui/imgui_demo.o: imgui/imgui_demo.cpp imgui/imgui.h imgui/imconfig.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+all: kansas12
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+ 
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.inl:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+ScreenSystem.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:57:00.224656026
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Clock.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+imgui/imconfig.h:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-23 12:03:59.849290697
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+main.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:45:22.232627641
+#  File has been updated.
+#  Successfully updated.
+
+imgui-SFML_export.h:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-23 11:52:58.42104822
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Clipboard.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+ScreenSystem.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Err.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+ScreenSystem.hpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+DebugSystem.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:22:59.470086196
+#  File has been updated.
+#  Successfully updated.
+
+main.o: main.cpp main.cpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Config.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/StencilMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transformable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexArray.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Vertex.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/ConvexShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Font.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glyph.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Image.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTarget.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/View.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTexture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/ContextSettings.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderWindow.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/VideoMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Window.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Vulkan.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowEnums.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowHandle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Clock.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shader.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Sprite.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Text.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Clipboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Context.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Cursor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Touch.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Err.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Exception.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/FileInputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/InputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/MemoryInputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Sleep.hpp imgui/imgui.h imgui/imconfig.h imgui-SFML.h imgui-SFML_export.h Core.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundChannel.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Sound.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundSource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/AudioResource.hpp PlayerInputSystem.hpp MovementSystem.hpp CombatSystem.hpp CleanUpSystem.hpp RenderSystem.hpp SoundSystem.hpp DebugSystem.hpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'main'
+#  Last modified 2025-09-06 20:56:50.289459074
+#  File has been updated.
+#  Successfully updated.
+ 
+#  recipe to execute (from 'Makefile', line 27):
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+MovementSystem.o: MovementSystem.cpp MovementSystem.cpp MovementSystem.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.inl Core.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Config.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/StencilMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transformable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexArray.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Vertex.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/ConvexShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Sprite.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundChannel.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Sound.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundSource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/AudioResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Font.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glyph.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Image.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTarget.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/View.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTexture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/ContextSettings.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderWindow.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/VideoMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Window.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Vulkan.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowEnums.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowHandle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Clock.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shader.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Text.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Clipboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Context.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Cursor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Touch.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Err.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Exception.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/FileInputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/InputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/MemoryInputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Sleep.hpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'MovementSystem'
+#  Last modified 2025-09-06 20:56:52.928511394
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := MovementSystem.o
+# automatic
+# * := MovementSystem
+# automatic
+# < := MovementSystem.cpp
+# automatic
+# + := MovementSystem.cpp MovementSystem.cpp MovementSystem.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.inl Core.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Config.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/StencilMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transformable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexArray.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Vertex.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/ConvexShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Sprite.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundChannel.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Sound.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundSource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/AudioResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Font.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glyph.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Image.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTarget.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/View.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTexture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/ContextSettings.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderWindow.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/VideoMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Window.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Vulkan.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowEnums.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowHandle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Clock.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shader.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Text.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Clipboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Context.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Cursor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Touch.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Err.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Exception.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/FileInputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/InputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/MemoryInputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Sleep.hpp
+# automatic
+# % := 
+# automatic
+# ^ := MovementSystem.cpp MovementSystem.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.inl Core.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Config.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/StencilMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transformable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexArray.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Vertex.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/ConvexShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Sprite.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundChannel.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Sound.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundSource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/AudioResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Font.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glyph.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Image.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTarget.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/View.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTexture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/ContextSettings.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderWindow.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/VideoMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Window.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Vulkan.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowEnums.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowHandle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Clock.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shader.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Text.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Clipboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Context.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Cursor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Touch.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Err.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Exception.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/FileInputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/InputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/MemoryInputStream.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Sleep.hpp
+# automatic
+# ? := MovementSystem.cpp
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/16=6%
+#  recipe to execute (from 'Makefile', line 27):
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTexture.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+imgui/imgui.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:57:13.278914737
+#  File has been updated.
+#  Successfully updated.
+
+ 
+PlayerInputSystem.o: PlayerInputSystem.cpp PlayerInputSystem.cpp PlayerInputSystem.hpp Core.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Config.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/StencilMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transformable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexArray.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Vertex.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/ConvexShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Sprite.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundChannel.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Sound.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundSource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/AudioResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'PlayerInputSystem'
+#  Last modified 2025-09-06 20:56:51.783488694
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 27):
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+# Not a target:
+SoundSystem.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:56:57.72860655
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowEnums.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+imgui/imstb_rectpack.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+ScreenSystem.o: ScreenSystem.cpp ScreenSystem.hpp Core.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Config.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/StencilMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transformable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexArray.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Vertex.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/ConvexShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Sprite.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundChannel.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Sound.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundSource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/AudioResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderWindow.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTarget.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/View.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/ContextSettings.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/VideoMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Window.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Vulkan.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowEnums.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowHandle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Clock.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Font.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glyph.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Text.hpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+imgui/imgui_demo.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+main.d:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:56:50.227457845
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+imgui-SFML.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Vulkan.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Cursor.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Sound.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+SoundSystem.o: SoundSystem.cpp SoundSystem.hpp Core.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Config.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/StencilMode.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transform.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Transformable.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/VertexArray.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Vertex.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/ConvexShape.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Sprite.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundBuffer.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Export.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundChannel.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Time.inl /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/Sound.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundSource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/AudioResource.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp /home/chris/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Touch.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/InputStream.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Config.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.inl:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+.PHONY: all clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+imgui/imgui.h:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-23 12:03:59.85629084
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Window.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+ 
+# Not a target:
+DebugSystem.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.941881035
+#  File has been updated.
+#  Successfully updated.
+
+Core.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 12:42:52.489647875
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+RenderSystem.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+PlayerInputSystem.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-09-06 20:51:05.832593297
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.hpp:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.940881025
+#  File has been updated.
+#  Successfully updated.
+
+/home/chris/Desktop/SFML-3.1.0/include/SFML/System/String.inl:
+#  Implicit rule search has been done.
+#  Last modified 2025-08-18 21:11:19.942881044
+#  File has been updated.
+#  Successfully updated.
+
+# files hash-table stats:
+# Load=154/1024=15%, Rehash=0, Collisions=69/1548=4%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 176 / storage = 6772 B / avg = 38 B
+# current buf: size = 8162 B / used = 6772 B / count = 176 / avg = 38 B
+
+# strcache performance: lookups = 2147 / hit rate = 91%
+# hash-table stats:
+# Load=176/8192=2%, Rehash=0, Collisions=30/2147=1%
+# Finished Make data base on Sun Sep  7 15:25:53 2025
+
+ 
