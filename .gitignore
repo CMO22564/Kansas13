@@ -1,0 +1,9 @@
+# Ignore build directories and files
+*.o
+*.d
+kansas13
+kansas12*
+progress/
+
+# Ignore old app binaries
+*app
