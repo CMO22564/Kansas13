@@ -1,6 +1,8 @@
 #include "GameStateManager.hpp"
 #include <iostream>
 #include <variant>
+#include "LevelData.hpp" // Include the new header file
+#include "LevelLoader.cpp" // Include the loader implementation
 
 GameStateManager* GameStateManager::s_instance = nullptr;
 
@@ -30,9 +32,30 @@ void GameStateManager::setState(GameState newState) {
     if (newState == GameState::Running && m_currentState != GameState::Running) {
         std::cout << "Transitioning to Running state. Resetting game..." << std::endl;
         m_score = 0;
+
+        // ⭐ New: Load all levels at the start of the game
+        if (m_levels.empty()) {
+            m_levels = loadLevelsFromFile("level_data.json");
+        }
+        
+        // Pass the first level's data to your systems
+        LevelData currentLevel = m_levels[m_currentLevelIndex];
+        // Now pass this `currentLevel` data to your EnemySpawnSystem
+        // enemySpawnSystem.setParameters(currentLevel.enemyCount, currentLevel.spawnInterval);
     }
     m_currentState = newState;
     std::cout << "Game state changed to: " << static_cast<int>(m_currentState) << std::endl;
+}
+
+// ⭐ New: Add a function to advance to the next level
+void GameStateManager::advanceToNextLevel() {
+    if (m_currentLevelIndex + 1 < m_levels.size()) {
+        m_currentLevelIndex++;
+        setState(GameState::Running);
+    } else {
+        std::cout << "Congratulations! You've completed the game." << std::endl;
+        setState(GameState::GameOver);
+    }
 }
 
 GameState GameStateManager::getState() const {

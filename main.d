@@ -98,9 +98,10 @@ main.o: main.cpp imconfig.h \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundRecorder.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl \
- PlayerInputSystem.hpp MovementSystem.hpp CombatSystem.hpp \
- CleanUpSystem.hpp RenderSystem.hpp SoundSystem.hpp DebugSystem.hpp \
- imgui-SFML.h ScreenSystem.hpp GameStateManager.hpp EnemySpawnSystem.hpp
+ GameStateManager.hpp LevelData.hpp json/json.hpp PlayerInputSystem.hpp \
+ MovementSystem.hpp CombatSystem.hpp CleanUpSystem.hpp RenderSystem.hpp \
+ SoundSystem.hpp DebugSystem.hpp imgui-SFML.h ScreenSystem.hpp \
+ EnemySpawnSystem.hpp
 imconfig.h:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl:
@@ -204,6 +205,9 @@ Core.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundRecorder.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl:
+GameStateManager.hpp:
+LevelData.hpp:
+json/json.hpp:
 PlayerInputSystem.hpp:
 MovementSystem.hpp:
 CombatSystem.hpp:
@@ -213,5 +217,4 @@ SoundSystem.hpp:
 DebugSystem.hpp:
 imgui-SFML.h:
 ScreenSystem.hpp:
-GameStateManager.hpp:
 EnemySpawnSystem.hpp:

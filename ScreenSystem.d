@@ -96,7 +96,7 @@ ScreenSystem.o: ScreenSystem.cpp ScreenSystem.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundRecorder.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl \
- GameStateManager.hpp
+ GameStateManager.hpp LevelData.hpp json/json.hpp
 ScreenSystem.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp:
@@ -197,3 +197,5 @@ Core.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl:
 GameStateManager.hpp:
+LevelData.hpp:
+json/json.hpp:

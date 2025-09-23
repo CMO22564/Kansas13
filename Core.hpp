@@ -5,15 +5,9 @@
 #include <memory>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include "GameStateManager.hpp"
 
 using EntityId = unsigned int;
-
-enum GameState {
-    TitleScreen,
-    Running,
-    Paused,
-    GameOver,
-};
 
 // Templated ComponentMap to hold components for entities
 template<typename T>

@@ -96,8 +96,8 @@ DebugSystem.o: DebugSystem.cpp DebugSystem.hpp Core.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundRecorder.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl \
- imgui/imgui.h imgui/imconfig.h imgui-SFML.h imgui-SFML_export.h \
- GameStateManager.hpp
+ GameStateManager.hpp LevelData.hpp json/json.hpp imgui/imgui.h \
+ imgui/imconfig.h imgui-SFML.h imgui-SFML_export.h
 DebugSystem.hpp:
 Core.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics.hpp:
@@ -197,8 +197,10 @@ Core.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundRecorder.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl:
+GameStateManager.hpp:
+LevelData.hpp:
+json/json.hpp:
 imgui/imgui.h:
 imgui/imconfig.h:
 imgui-SFML.h:
 imgui-SFML_export.h:
-GameStateManager.hpp:

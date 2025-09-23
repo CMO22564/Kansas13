@@ -1,0 +1,44 @@
+[
+  {
+    "levelNumber": 1,
+    "difficulty": "Easy",
+    "enemies": {
+      "count": 25,
+      "spawnInterval": 2.0,
+      "spawnArea": {
+        "minX": 50,
+        "maxX": 750
+      },
+      "types": [
+        {
+          "type": "Circle",
+          "color": "Blue",
+          "size": 20,
+          "baseDamage": 10,
+          "baseSpeed": 100
+        }
+      ]
+    }
+  },
+  {
+    "levelNumber": 2,
+    "difficulty": "Medium",
+    "enemies": {
+      "count": 40,
+      "spawnInterval": 1.5,
+      "spawnArea": {
+        "minX": 50,
+        "maxX": 750
+      },
+      "types": [
+        {
+          "type": "Circle",
+          "color": "Red",
+          "size": 25,
+          "baseDamage": 15,
+          "baseSpeed": 150
+        }
+      ]
+    }
+  }
+]

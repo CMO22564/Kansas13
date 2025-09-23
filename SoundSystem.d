@@ -95,7 +95,8 @@ SoundSystem.o: SoundSystem.cpp SoundSystem.hpp Core.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundBufferRecorder.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundRecorder.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.hpp \
- /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl
+ /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl \
+ GameStateManager.hpp LevelData.hpp json/json.hpp
 SoundSystem.hpp:
 Core.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics.hpp:
@@ -195,3 +196,6 @@ Core.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundRecorder.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl:
+GameStateManager.hpp:
+LevelData.hpp:
+json/json.hpp:
