@@ -32,7 +32,7 @@
       },
       "types": [
         {
-          "type": "Circle",
+          "type": "Triangle",
           "color": "Red",
           "size": 25,
           "baseDamage": 15,

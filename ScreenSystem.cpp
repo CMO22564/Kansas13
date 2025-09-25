@@ -4,7 +4,7 @@
 
 ScreenSystem::ScreenSystem(sf::RenderWindow& window, const std::string& fontPath)
     : m_window(window),
-      m_titleText(m_font, "CHAOS Kansas12B"),
+      m_titleText(m_font, "CHAOS Kansas 13"),
       m_playText(m_font, "Press 'P' to Play"),
       m_pauseText(m_font, "PAUSED"),
       m_controlsText(m_font, "Use WASD to move. Press SPACE to shoot."),

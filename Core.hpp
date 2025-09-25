@@ -13,6 +13,18 @@ using EntityId = unsigned int;
 template<typename T>
 using ComponentMap = std::unordered_map<EntityId, T>;
 
+// -- Base System Class --
+// ⭐ CRITICAL FIX: Add the base System class definition here
+// This resolves the "expected class-name before '{' token" error in EnemySpawnSystem.hpp
+class System {
+public:
+    // A virtual destructor is good practice for a base class
+    virtual ~System() = default; 
+    
+    // Systems typically have an update method, even if it's not pure virtual
+    // (Actual update methods will be defined in derived classes like EnemySpawnSystem)
+};
+
 // -- Component Structs --
 
 struct PlayerHealthComponent {

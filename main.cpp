@@ -15,9 +15,13 @@
 #include "ScreenSystem.hpp"
 #include "GameStateManager.hpp"
 #include "EnemySpawnSystem.hpp"
+#include <iostream>
+#include <algorithm> // For std::max/std::min
+
+
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "Kansas 12B");
+    sf::RenderWindow window(sf::VideoMode({800, 600}), "Kansas 13");
     window.setFramerateLimit(60);
 
     ImGui::SFML::Init(window);
@@ -44,7 +48,7 @@ int main() {
 
     // Systems
     PlayerInputSystem playerInputSystem;
-    EnemySpawnSystem enemySpawnSystem;
+    // EnemySpawnSystem enemySpawnSystem; // The system is now accessed via singleton
     MovementSystem movementSystem;
     CombatSystem combatSystem;
     CleanUpSystem cleanUpSystem;
@@ -56,7 +60,7 @@ int main() {
     EntityId playerId = getNextEntityId();
     entities.push_back(playerId);
     
-    int score = 0;
+    // int score = 0; // REMOVED: Score is now managed by GameStateManager
      
     // Add player components
     positions.emplace(playerId, PositionComponent{ sf::Vector2f(400, 500) });
@@ -71,7 +75,7 @@ int main() {
     shapes.emplace(playerId, ShapeComponent{ 
     ShapeComponent::Type::Triangle,
     sf::Color::Magenta, 
-    sf::Vector2f(30.f, 30.f),
+    sf::Vector2f(60.f, 60.f),
     nullptr // The unique_ptr is null at first
 });
 
@@ -107,21 +111,44 @@ int main() {
             
             playerInputSystem.update(entities, positions, velocities, playerInputs, entities, shapes, projectiles, activeStates, sounds, damageValues);
             
-            enemySpawnSystem.update(entities, positions, velocities, shapes, bouncingShapes, activeStates, damageValues);
+            // Accessing EnemySpawnSystem as a singleton
+            EnemySpawnSystem::getInstance().update(entities, positions, velocities, shapes, bouncingShapes, activeStates, damageValues);
             
             movementSystem.update(entities, positions, velocities, bouncingShapes, shapes, deltaTime);
                  
-            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damageValues, activeStates, playerHealths, shields, sounds, velocities, score);
+            // CombatSystem signature is updated, no score parameter
+            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damageValues, activeStates, playerHealths, shields, sounds, velocities); 
+            
             soundSystem.update(sounds);
             
+            // Normal cleanup runs every frame
             cleanUpSystem.update(entities, activeStates, projectiles, bouncingShapes, damageValues, playerHealths, shields, playerLives, playerInputs, positions, velocities, shapes, sounds);
             
+            // CRITICAL NEW LOGIC: Level completion check and advancement
+            if (EnemySpawnSystem::getInstance().isLevelComplete()) {
+                std::cout << "Main loop detected level complete. Advancing level..." << std::endl;
+                
+                // Force-clear all enemies and projectiles BEFORE advancing the state
+                cleanUpSystem.clearNonPlayerEntities(
+                    entities, 
+                    projectiles, 
+                    bouncingShapes, 
+                    damageValues, 
+                    activeStates, 
+                    positions, 
+                    velocities, 
+                    shapes, 
+                    sounds
+                );
+                
+                GameStateManager::getInstance().advanceToNextLevel();
+            }
         }
 
-        // Player clamping code - runs every frame regardless of game state
+        // Player clamping code (unchanged, but using std::max/min)
         const float windowWidth = 800.0f;
         const float windowHeight = 600.0f;
-        const float playerRadius = 30.0f; // Matches your player shape radius
+        const float playerRadius = 60.0f;
         const float leftBound = playerRadius;
         const float rightBound = windowWidth - playerRadius;
         const float topBound = playerRadius;
@@ -129,33 +156,22 @@ int main() {
 
         if (positions.count(playerId)) {
             auto& playerPos = positions.at(playerId).position;
-            if (playerPos.x < leftBound) {
-                playerPos.x = leftBound;
-            } else if (playerPos.x > rightBound) {
-                playerPos.x = rightBound;
-            }
-            if (playerPos.y < topBound) {
-                playerPos.y = topBound;
-            } else if (playerPos.y > bottomBound) {
-                playerPos.y = bottomBound;
-            }
+            playerPos.x = std::max(leftBound, std::min(playerPos.x, rightBound));
+            playerPos.y = std::max(topBound, std::min(playerPos.y, bottomBound));
         }
 
-
- // ⭐ New: Pass all component maps to the debug system
-       if (showDebugWindow) {
-        debugSystem.update(GameStateManager::getInstance().getScore(), playerHealths, shields, playerLives, entities, positions, shapes, velocities);
-    }
+        // Debug system update
+        if (showDebugWindow) {
+            debugSystem.update(GameStateManager::getInstance().getScore(), playerHealths, shields, playerLives, entities, positions, shapes, velocities);
+        }
 
         window.clear();
 
         if (GameStateManager::getInstance().getState() == GameState::Running) {
-           
-        renderSystem.update(window, entities, positions, shapes, activeStates);
-    } 	
+            renderSystem.update(window, entities, positions, shapes, activeStates);
+        } 	
 
         screenSystem.update(GameStateManager::getInstance().getState(), GameStateManager::getInstance().getScore(), playerHealths, shields, playerLives);
-        
         
         ImGui::SFML::Render(window);
         window.display();

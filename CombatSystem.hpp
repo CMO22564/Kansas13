@@ -1,6 +1,7 @@
 #pragma once
 #include "Core.hpp"
 #include <vector>
+#include "GameStateManager.hpp" // Include for singleton access
 
 class CombatSystem {
 public:
@@ -14,6 +15,5 @@ public:
                 ComponentMap<PlayerHealthComponent>& playerHealths,
                 ComponentMap<ShieldComponent>& shields,
                 ComponentMap<SoundComponent>& sounds,
-                ComponentMap<VelocityComponent>& velocities, // Add VelocityComponent
-                int& score); // Add a reference to score
+                ComponentMap<VelocityComponent>& velocities);
 };

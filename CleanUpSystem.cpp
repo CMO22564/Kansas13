@@ -1,6 +1,8 @@
 #include "CleanUpSystem.hpp"
 #include <vector>
 #include <iostream>
+#include <algorithm> // Include for std::remove_if
+
 
 void CleanUpSystem::update(std::vector<EntityId>& entities, ComponentMap<ActiveComponent>& activeStates, ComponentMap<ProjectileComponent>& projectiles, ComponentMap<BouncingComponent>& bouncingShapes, ComponentMap<DamageComponent>& damageValues, ComponentMap<PlayerHealthComponent>& playerHealths, ComponentMap<ShieldComponent>& shields, ComponentMap<PlayerLivesComponent>& playerLives, ComponentMap<PlayerInputComponent>& playerInputs, ComponentMap<PositionComponent>& positions, ComponentMap<VelocityComponent>& velocities, ComponentMap<ShapeComponent>& shapes, ComponentMap<SoundComponent>& sounds) {
     const float windowWidth = 800.0f;
@@ -78,3 +80,44 @@ void CleanUpSystem::update(std::vector<EntityId>& entities, ComponentMap<ActiveC
 
     entities.erase(newEnd, entities.end());
 }
+
+void CleanUpSystem::clearNonPlayerEntities(
+    std::vector<EntityId>& entities, 
+    ComponentMap<ProjectileComponent>& projectiles, 
+    ComponentMap<BouncingComponent>& bouncingShapes, 
+    ComponentMap<DamageComponent>& damageValues, 
+    ComponentMap<ActiveComponent>& activeStates,
+    ComponentMap<PositionComponent>& positions, 
+    ComponentMap<VelocityComponent>& velocities, 
+    ComponentMap<ShapeComponent>& shapes, 
+    ComponentMap<SoundComponent>& sounds) 
+{
+    std::cout << "CleanUpSystem: Starting Level Transition Cleanup (Force removing enemies/projectiles)..." << std::endl;
+    
+    // Use std::remove_if to efficiently remove non-player entities from the entities vector
+    auto newEnd = std::remove_if(entities.begin(), entities.end(), [&](EntityId id) {
+        // A non-player entity is one with a ProjectileComponent OR a BouncingComponent (enemy)
+        if (projectiles.count(id) || bouncingShapes.count(id)) {
+            
+            // Remove all associated components
+            if (projectiles.count(id)) projectiles.erase(id);
+            if (bouncingShapes.count(id)) bouncingShapes.erase(id);
+            if (damageValues.count(id)) damageValues.erase(id);
+            if (activeStates.count(id)) activeStates.erase(id);
+            if (positions.count(id)) positions.erase(id);
+            if (velocities.count(id)) velocities.erase(id);
+            if (shapes.count(id)) shapes.erase(id);
+            if (sounds.count(id)) sounds.erase(id);
+            
+            return true; // Mark for removal from the entities vector
+        }
+        return false;
+    });
+
+    entities.erase(newEnd, entities.end());
+    std::cout << "CleanUpSystem: Level cleanup finished. Entities remaining: " << entities.size() << std::endl;
+}
+
+
+
+

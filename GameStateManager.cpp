@@ -34,21 +34,36 @@ void GameStateManager::setState(GameState newState) {
     // ⭐ FIX 1: Change the condition to ONLY check if the new state is Running.
     // REMOVE '&& m_currentState != GameState::Running'
     if (newState == GameState::Running) { 
-        std::cout << "Transitioning to Running state. Setting up level..." << std::endl;
+        // GameStateManager.cpp - inside setState(GameState::Running)
 
-        // ... (The rest of your existing level setup logic remains here) ...
-        // 1. Initial Load: Load ALL levels only once
-        // 2. Safety check against index overflow
-        // 3. Get the data for the CURRENT level index
-        
-        // 4. Pass the level data to the EnemySpawnSystem
-        const LevelData& currentLevel = m_levels[m_currentLevelIndex];
-        EnemySpawnSystem::getInstance().setLevelParameters(
-            currentLevel.enemyCount, 
-            currentLevel.spawnInterval,
-            currentLevel.minX,
-            currentLevel.maxX
-        );
+// 1. Initial Load: Load ALL levels only once
+if (m_levels.empty()) {
+    std::cout << "DEBUG 1: Before calling loadLevelsFromFile..." << std::endl; // <-- TRACE POINT 1
+    m_levels = loadLevelsFromFile("level_data.json"); 
+    
+    if (m_levels.empty()) {
+        std::cerr << "CRITICAL ERROR: Failed to load any levels." << std::endl;
+        m_currentState = GameState::GameOver;
+        return;
+    }
+    std::cout << "DEBUG 2: Level loading complete." << std::endl; // <-- TRACE POINT 2
+    // ...
+}
+
+// 2. Access the data
+std::cout << "DEBUG 3: Accessing currentLevel data..." << std::endl; // <-- TRACE POINT 3
+const LevelData& currentLevel = m_levels[m_currentLevelIndex];
+
+// 3. Call the Singleton
+std::cout << "DEBUG 4: Calling EnemySpawnSystem::getInstance()..." << std::endl; // <-- TRACE POINT 4
+EnemySpawnSystem::getInstance().setLevelParameters( 
+    currentLevel.enemyCount, 
+    currentLevel.spawnInterval,
+    currentLevel.minX,
+    currentLevel.maxX
+);
+std::cout << "DEBUG 5: Singleton call complete. Level ready." << std::endl; // <-- TRACE POINT 5
+
     }
     
     m_currentState = newState;

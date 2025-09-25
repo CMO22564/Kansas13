@@ -4,8 +4,9 @@ LDFLAGS = -L/home/chris/Desktop/SFML-3.1.0/lib -lsfml-graphics-s-d -lsfml-window
 
 INCLUDES = -I. -I./imgui -I/home/chris/Desktop/SFML-3.1.0/include
 
-SRCS = main.cpp Core.cpp PlayerInputSystem.cpp EnemySpawnSystem.cpp MovementSystem.cpp CombatSystem.cpp CleanUpSystem.cpp RenderSystem.cpp SoundSystem.cpp DebugSystem.cpp ScreenSystem.cpp GameStateManager.cpp 
+SRCS = main.cpp Core.cpp PlayerInputSystem.cpp EnemySpawnSystem.cpp MovementSystem.cpp CombatSystem.cpp CleanUpSystem.cpp RenderSystem.cpp SoundSystem.cpp DebugSystem.cpp ScreenSystem.cpp GameStateManager.cpp LevelLoader.cpp
 OBJS = $(SRCS:.cpp=.o)
+
 
 IMGUI_SRCS = imgui-SFML.cpp imgui/imgui.cpp imgui/imgui_demo.cpp imgui/imgui_draw.cpp imgui/imgui_tables.cpp imgui/imgui_widgets.cpp
 IMGUI_OBJS = $(IMGUI_SRCS:.cpp=.o)

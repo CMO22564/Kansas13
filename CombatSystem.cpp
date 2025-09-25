@@ -3,7 +3,7 @@
 #include "GameStateManager.hpp"
 #include <iostream>
 
- void CombatSystem::update(
+void CombatSystem::update(
         std::vector<EntityId>& entities,
         ComponentMap<PositionComponent>& positions,
         ComponentMap<ShapeComponent>& shapes,
@@ -14,15 +14,14 @@
         ComponentMap<PlayerHealthComponent>& playerHealths,
         ComponentMap<ShieldComponent>& shields,
         ComponentMap<SoundComponent>& sounds,
-        ComponentMap<VelocityComponent>& velocities,
-        int& score) 
-        {
+        ComponentMap<VelocityComponent>& velocities
+        /* int& score removed */)
+{
         
+    GameStateManager& manager = GameStateManager::getInstance();
+    
         
-        GameStateManager& manager = GameStateManager::getInstance();
-        
-        
-        // Find the player entity
+        // Find the player entity - unchanged.
         EntityId playerId = 0;
         for (auto& [id, health] : playerHealths) {
             playerId = id;
@@ -66,32 +65,31 @@
         }
 
         // --- Projectile collisions with enemies ---
-        for (auto& [projectileId, proj] : projectiles) {
-            if (!actives[projectileId].active) continue;
-            if (!shapes.count(projectileId) || !shapes.at(projectileId).shape) continue;
+    for (auto& [projectileId, proj] : projectiles) {
+        if (!actives[projectileId].active) continue;
+        if (!shapes.count(projectileId) || !shapes.at(projectileId).shape) continue;
 
-            sf::FloatRect projectileBounds = shapes.at(projectileId).shape->getGlobalBounds();
+        sf::FloatRect projectileBounds = shapes.at(projectileId).shape->getGlobalBounds();
 
-            for (auto& [enemyId, bouncing] : bouncings) {
-                if (!actives[enemyId].active) continue;
-                if (!shapes.count(enemyId) || !shapes.at(enemyId).shape) continue;
+        for (auto& [enemyId, bouncing] : bouncings) {
+            if (!actives[enemyId].active) continue;
+            if (!shapes.count(enemyId) || !shapes.at(enemyId).shape) continue;
 
-                sf::FloatRect enemyBounds = shapes.at(enemyId).shape->getGlobalBounds();
-                sf::FloatRect intersection;
+            sf::FloatRect enemyBounds = shapes.at(enemyId).shape->getGlobalBounds();
 
-                if (projectileBounds.findIntersection(enemyBounds).has_value()) {
-                    float damage = damages.count(projectileId) ? damages.at(projectileId).damage : 10.0f;
-                    actives[enemyId].active = false;     // enemy destroyed
-                    actives[projectileId].active = false; // projectile consumed
-                    
-                    // Get the current score from the manager, add 100, and set the new score.
-                    manager.setScore(manager.getScore() + 100); 
-                    //score += 100;
-                    
-                    sounds[projectileId].type = SoundComponent::Type::Explosion;
+            if (projectileBounds.findIntersection(enemyBounds).has_value()) {
+                // float damage = damages.count(projectileId) ? damages.at(projectileId).damage : 10.0f; // Removed unused variable
+                actives[enemyId].active = false;      // enemy destroyed
+                actives[projectileId].active = false; // projectile consumed
+                
+                // CRITICAL FIX: Update the score via the GameStateManager
+                int points = 100;
+                manager.setScore(manager.getScore() + points);
+                
+                sounds[projectileId].type = SoundComponent::Type::Explosion;
 
-                    std::cout << "Enemy destroyed! Score: " << score << std::endl;
-                }
+                std::cout << "Enemy destroyed! Score: " << manager.getScore() << std::endl;
             }
         }
+    }
 }

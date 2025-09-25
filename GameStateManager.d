@@ -96,7 +96,7 @@ GameStateManager.o: GameStateManager.cpp GameStateManager.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundRecorder.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl \
- LevelData.hpp json/json.hpp LevelLoader.cpp
+ LevelData.hpp json/json.hpp LevelLoader.hpp EnemySpawnSystem.hpp
 GameStateManager.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp:
@@ -198,4 +198,5 @@ Core.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl:
 LevelData.hpp:
 json/json.hpp:
-LevelLoader.cpp:
+LevelLoader.hpp:
+EnemySpawnSystem.hpp:
