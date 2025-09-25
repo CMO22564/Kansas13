@@ -1,4 +1,5 @@
 #include "LevelData.hpp"
+#include "LevelLoader.hpp" // <-- Add the new header here
 #include "json/json.hpp" // Path to your json.hpp file
 #include <iostream>
 #include <fstream>
