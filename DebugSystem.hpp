@@ -14,7 +14,7 @@ public:
                 const ComponentMap<PlayerLivesComponent>& playerLives,
                 const std::vector<EntityId>& entities, // Add entities
                 const ComponentMap<PositionComponent>& positions, // Add positions
-                const ComponentMap<ShapeComponent>& shapes, // Add shapes
+                const ComponentMap<RenderComponent>& shapes, // Add shapes
                 const ComponentMap<VelocityComponent>& velocities); // Add velocities
 
     void handleEvent(const sf::Event& event, bool& showImGui, GameState& gameState);

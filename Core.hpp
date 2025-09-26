@@ -54,12 +54,19 @@ struct BouncingComponent {
     int generation = 0; // Default generation is 0
 };
 
-struct ShapeComponent {
+// Core.hpp (around lines 56-65)
+
+// NOTE: I'm replacing your existing ShapeComponent with this new RenderComponent.
+// This component holds the data required for the RenderSystem to draw the entity.
+struct RenderComponent {
+    // Enum must be defined inside or accessible globally.
     enum Type { Circle, Square, Triangle };
     Type type;
     sf::Color color;
-    sf::Vector2f size;
-    // CRITICAL FIX: Add a unique_ptr to manage the SFML shape object
+    // CRITICAL: Change size from Vector2f to a single float 
+    float size; 
+    
+    // CRITICAL FIX: The RenderSystem needs the SFML object stored here
     std::unique_ptr<sf::Shape> shape; 
 };
 

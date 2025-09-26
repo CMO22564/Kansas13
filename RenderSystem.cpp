@@ -1,40 +1,50 @@
 #include "RenderSystem.hpp"
-#include "Core.hpp"
+#include "Core.hpp" // Contains RenderComponent, PositionComponent, etc.
 #include <iostream>
+#include <SFML/Graphics.hpp> // Required for sf::RenderWindow, sf::CircleShape, etc.
+#include <memory>          // FIX: Required for std::make_unique
 
+// CRITICAL FIX: Removed invisible characters and ensured parameter name consistency
 void RenderSystem::update(sf::RenderWindow& window,
                           const std::vector<EntityId>& entities,
                           const ComponentMap<PositionComponent>& positions,
-                          ComponentMap<ShapeComponent>& shapes, // Must be non-const now
+                          ComponentMap<RenderComponent>& renderables, // FIX: Renamed 'shapes' to 'renderables' for consistency with usage below
                           const ComponentMap<ActiveComponent>& activeStates) {
     
     for (EntityId id : entities) {
-        if (positions.count(id) && shapes.count(id) && activeStates.count(id) && activeStates.at(id).active) {
+        // Check for active entities with Position and Render Components
+        // FIX: Replaced 'shapes.count(id)' with 'renderables.count(id)' if that was intended
+        if (positions.count(id) && renderables.count(id) && activeStates.count(id) && activeStates.at(id).active) {
             const auto& position = positions.at(id);
-            auto& shapeComponent = shapes.at(id);
+            auto& renderComponent = renderables.at(id); // Access RenderComponent
 
             // CRITICAL FIX: Create the shape if it doesn't exist
-            if (!shapeComponent.shape) {
-                if (shapeComponent.type == ShapeComponent::Type::Circle) {
-                    shapeComponent.shape = std::make_unique<sf::CircleShape>(shapeComponent.size.x / 2.f);
-                } else if (shapeComponent.type == ShapeComponent::Type::Square) {
-                    shapeComponent.shape = std::make_unique<sf::RectangleShape>(shapeComponent.size);
-                } else if (shapeComponent.type == ShapeComponent::Type::Triangle) {
-                    shapeComponent.shape = std::make_unique<sf::CircleShape>(shapeComponent.size.x / 2.f, 3);
+            if (!renderComponent.shape) {
+                // Use the component's Type and single float size to define the shape
+                if (renderComponent.type == RenderComponent::Type::Circle) {
+                    // Circle radius is the size
+                    renderComponent.shape = std::make_unique<sf::CircleShape>(renderComponent.size);
+                } else if (renderComponent.type == RenderComponent::Type::Square) {
+                    // Create a square using the single size float (size * 2 is the full width/height)
+                    renderComponent.shape = std::make_unique<sf::RectangleShape>(sf::Vector2f(renderComponent.size * 2.f, renderComponent.size * 2.f));
+                } else if (renderComponent.type == RenderComponent::Type::Triangle) {
+                    // Create a 3-point shape (triangle) using the size as the radius
+                    renderComponent.shape = std::make_unique<sf::CircleShape>(renderComponent.size, 3);
                 }
 
                 // Set properties that only need to be set once
-                if (shapeComponent.shape) {
-                    shapeComponent.shape->setFillColor(shapeComponent.color);
-                    // ⭐ FIX: Change to use sf::Vector2f
-                    shapeComponent.shape->setOrigin(sf::Vector2f(shapeComponent.size.x / 2.f, shapeComponent.size.y / 2.f));
+                if (renderComponent.shape) {
+                    renderComponent.shape->setFillColor(renderComponent.color);
+                    
+                    // Set origin to the center using the single float size
+                    renderComponent.shape->setOrigin(renderComponent.size, renderComponent.size);
                 }
             }
             
-            // CRITICAL FIX: Use the '->' operator to access the unique_ptr's members
-            if (shapeComponent.shape) {
-                shapeComponent.shape->setPosition(position.position);
-                window.draw(*shapeComponent.shape);
+            // Draw the shape
+            if (renderComponent.shape) {
+                renderComponent.shape->setPosition(position.position);
+                window.draw(*renderComponent.shape);
             }
         }
     }
@@ -42,7 +52,7 @@ void RenderSystem::update(sf::RenderWindow& window,
 
 // Draw a health bar
 void RenderSystem::renderHealthBar(sf::RenderWindow& window, sf::Vector2f position,
-                                     float currentHealth, float maxHealth) {
+                                   float currentHealth, float maxHealth) {
     float barWidth = 100.0f;
     float barHeight = 10.0f;
 
@@ -60,7 +70,7 @@ void RenderSystem::renderHealthBar(sf::RenderWindow& window, sf::Vector2f positi
 
 // Draw a shield bar
 void RenderSystem::renderShieldBar(sf::RenderWindow& window, sf::Vector2f position,
-                                     float currentShield, float maxShield) {
+                                   float currentShield, float maxShield) {
     float barWidth = 100.0f;
     float barHeight = 10.0f;
 

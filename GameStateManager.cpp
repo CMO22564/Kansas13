@@ -4,6 +4,8 @@
 #include "LevelData.hpp"
 #include "LevelLoader.hpp"
 #include "EnemySpawnSystem.hpp"
+#include "Core.hpp"
+
 
 GameStateManager* GameStateManager::s_instance = nullptr;
 
@@ -54,6 +56,17 @@ if (m_levels.empty()) {
 std::cout << "DEBUG 3: Accessing currentLevel data..." << std::endl; // <-- TRACE POINT 3
 const LevelData& currentLevel = m_levels[m_currentLevelIndex];
 
+// --- NEW CODE: Extract the first enemy type ---
+        // Assuming every level has at least one enemy type defined (index 0)
+        if (currentLevel.enemyTypes.empty()) {
+             std::cerr << "CRITICAL ERROR: No enemy types defined for Level " 
+                       << currentLevel.levelNumber << std::endl;
+             // Handle error or use a default type
+             m_currentState = GameState::GameOver;
+             return;
+        }
+        const EnemyTypeData& enemyTypeData = currentLevel.enemyTypes[0];
+
 // 3. Call the Singleton
 std::cout << "DEBUG 4: Calling EnemySpawnSystem::getInstance()..." << std::endl; // <-- TRACE POINT 4
 EnemySpawnSystem::getInstance().setLevelParameters( 
@@ -62,6 +75,18 @@ EnemySpawnSystem::getInstance().setLevelParameters(
     currentLevel.minX,
     currentLevel.maxX
 );
+
+// Pass the new EnemyTypeData parameters!
+        // NOTE: setLevelParameters in EnemySpawnSystem.hpp must be updated next!
+        EnemySpawnSystem::getInstance().setLevelParameters( 
+            currentLevel.enemyCount, 
+            currentLevel.spawnInterval,
+            currentLevel.minX,
+            currentLevel.maxX,
+            // --- PASS THE NEW DATA HERE ---
+            enemyTypeData 
+        );
+
 std::cout << "DEBUG 5: Singleton call complete. Level ready." << std::endl; // <-- TRACE POINT 5
 
     }
@@ -94,4 +119,30 @@ int GameStateManager::getScore() const {
 
 void GameStateManager::setScore(int newScore) {
     m_score = newScore;
+}
+
+
+// Utility function to convert JSON string to RenderComponent::Type
+RenderComponent::Type shapeTypeFromString(const std::string& typeStr) {
+    if (typeStr == "Triangle") {
+        return RenderComponent::Triangle;
+    }
+    if (typeStr == "Square") {
+        return RenderComponent::Square;
+    }
+    // Default to Circle if not recognized (matches Level 1 default)
+    return RenderComponent::Circle;
+}
+
+    // Utility function to convert JSON string color to sf::Color
+    sf::Color colorFromString(const std::string& colorStr) {
+    if (colorStr == "Red") {
+        return sf::Color::Red;
+    }
+    if (colorStr == "Blue") {
+        return sf::Color::Blue;
+    }
+    // Add other colors as needed...
+    // Default to white for safety
+    return sf::Color::White;
 }

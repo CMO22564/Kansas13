@@ -33,7 +33,7 @@ int main() {
     // Component Maps
     ComponentMap<PositionComponent> positions;
     ComponentMap<VelocityComponent> velocities;
-    ComponentMap<ShapeComponent> shapes;
+    ComponentMap<RenderComponent> shapes;
     ComponentMap<PlayerInputComponent> playerInputs;
     ComponentMap<ProjectileComponent> projectiles;
     ComponentMap<PlayerHealthComponent> playerHealths;
@@ -70,17 +70,16 @@ int main() {
     shields.emplace(playerId, ShieldComponent{100.0f, 100.0f});
     playerLives.emplace(playerId, PlayerLivesComponent{3});
 
-    ShapeComponent playerShape;
-    // Corrected initialization in main.cpp
-    shapes.emplace(playerId, ShapeComponent{ 
-    ShapeComponent::Type::Triangle,
-    sf::Color::Magenta, 
-    sf::Vector2f(60.f, 60.f),
-    nullptr // The unique_ptr is null at first
-});
+    // FIX: Change initialization to the required explicit style
+    RenderComponent playerShape;
+    playerShape.type = RenderComponent::Type::Square; 
+    playerShape.color = sf::Color::Green;
+    playerShape.size = 25.f; 
 
-    activeStates.emplace(playerId, ActiveComponent{});
-
+    // Emplace the explicitly initialized object
+    shapes.emplace(playerId, std::move(playerShape));
+    
+       
     sf::Clock gameClock;
 
     // Game loop
@@ -104,12 +103,26 @@ int main() {
         }
 
         sf::Time deltaTime = gameClock.restart();
+    // Assuming you have a variable named 'dt' which stores the frame time.
+    // If you don't have one, you need to create one (e.g., float dt = clock.restart().asSeconds();)
+        float dt = gameClock.restart().asSeconds(); // <--- CRITICAL: Ensure you have 'dt' defined!
+
 
         ImGui::SFML::Update(window, deltaTime);
 
         if (GameStateManager::getInstance().getState() == GameState::Running) {
             
-            playerInputSystem.update(entities, positions, velocities, playerInputs, entities, shapes, projectiles, activeStates, sounds, damageValues);
+            playerInputSystem.update(entities, 
+                         dt, // <--- FIX: Insert the missing 'dt' argument here
+                         positions, 
+                         velocities, 
+                         playerInputs, 
+                         entities, // Note: You're passing 'entities' twice, once as list of entities, once as the list to add new projectiles to.
+                         shapes, 
+                         projectiles, 
+                         activeStates, 
+                         sounds, 
+                         damageValues);
             
             // Accessing EnemySpawnSystem as a singleton
             EnemySpawnSystem::getInstance().update(entities, positions, velocities, shapes, bouncingShapes, activeStates, damageValues);

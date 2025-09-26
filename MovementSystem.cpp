@@ -14,7 +14,7 @@ void MovementSystem::update(const std::vector<EntityId>& entities,
                             ComponentMap<PositionComponent>& positions,
                             ComponentMap<VelocityComponent>& velocities,
                             ComponentMap<BouncingComponent>& bouncingComponents,
-                            ComponentMap<ShapeComponent>& shapes,
+                            ComponentMap<RenderComponent>& shapes,
                             sf::Time deltaTime) {
     for (EntityId entity : entities) {
         if (positions.count(entity) && velocities.count(entity)) {
@@ -29,7 +29,7 @@ void MovementSystem::update(const std::vector<EntityId>& entities,
             auto& shapeComponent = shapes.at(entity);
             
             // Check if the shape exists and is a circle
-            if (shapeComponent.shape && shapeComponent.type == ShapeComponent::Type::Circle) {
+            if (shapeComponent.shape && shapeComponent.type == RenderComponent::Type::Circle) {
                 // Downcast the sf::Shape pointer to a sf::CircleShape pointer
                 sf::CircleShape* circleShape = dynamic_cast<sf::CircleShape*>(shapeComponent.shape.get());
                 

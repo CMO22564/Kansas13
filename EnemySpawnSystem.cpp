@@ -1,8 +1,34 @@
 #include "EnemySpawnSystem.hpp"
-#include "Core.hpp"
+#include "Core.hpp" // For RenderComponent, PositionComponent, etc.
+#include "LevelData.hpp" // For EnemyTypeData
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <random>
+
+// --- Utility Functions (Must be accessible here) ---
+// Note: These should ideally be in a shared utility header.
+RenderComponent::Type shapeTypeFromString(const std::string& typeStr) {
+    if (typeStr == "Triangle") {
+        return RenderComponent::Type::Triangle;
+    }
+    if (typeStr == "Square") {
+        return RenderComponent::Type::Square;
+    }
+    return RenderComponent::Type::Circle;
+}
+
+sf::Color colorFromString(const std::string& colorStr) {
+    if (colorStr == "Red") {
+        return sf::Color::Red;
+    }
+    if (colorStr == "Blue") {
+        return sf::Color::Blue;
+    }
+    // Add other colors as needed...
+    return sf::Color::White;
+}
+// --- End Utility Functions ---
+
 
 EnemySpawnSystem* EnemySpawnSystem::s_instance = nullptr;
 
@@ -13,11 +39,17 @@ EnemySpawnSystem& EnemySpawnSystem::getInstance() {
     return *s_instance;
 }
 
-void EnemySpawnSystem::setLevelParameters(int count, float interval, float min_x, float max_x) {
+// 1. CRITICAL FIX: Implement the new setLevelParameters signature
+void EnemySpawnSystem::setLevelParameters(int count, float interval, float min_x, float max_x,
+                                          const EnemyTypeData& enemyTypeData) {
     m_maxEnemiesPerWave = count;
     m_spawnInterval = interval;
     m_minX = min_x;
     m_maxX = max_x;
+    
+    // Store the enemy type data for use in spawning
+    m_currentEnemyType = enemyTypeData; 
+    
     resetSpawner(); // Reset all spawning variables
 }
 
@@ -25,7 +57,10 @@ void EnemySpawnSystem::resetSpawner() {
     m_enemiesSpawned = 0;
     m_activeEnemyCount = 0;
     spawnClock.restart();
-    std::cout << "Enemy Spawner reset for new level. Max Enemies: " << m_maxEnemiesPerWave << std::endl;
+    std::cout << "Enemy Spawner reset for new level. Max Enemies: " 
+              << m_maxEnemiesPerWave << ", Type: " 
+              << m_currentEnemyType.type << ", Color: " 
+              << m_currentEnemyType.color << std::endl;
 }
 
 bool EnemySpawnSystem::isLevelComplete() const {
@@ -35,12 +70,12 @@ bool EnemySpawnSystem::isLevelComplete() const {
 
 
 void EnemySpawnSystem::update(std::vector<EntityId>& entities,
-                              ComponentMap<PositionComponent>& positions,
-                              ComponentMap<VelocityComponent>& velocities,
-                              ComponentMap<ShapeComponent>& shapes,
-                              ComponentMap<BouncingComponent>& bouncingShapes,
-                              ComponentMap<ActiveComponent>& activeStates,
-                              ComponentMap<DamageComponent>& damageValues) {
+                             ComponentMap<PositionComponent>& positions,
+                             ComponentMap<VelocityComponent>& velocities,
+                             ComponentMap<RenderComponent>& shapes, // Use RenderComponent
+                             ComponentMap<BouncingComponent>& bouncingShapes,
+                             ComponentMap<ActiveComponent>& activeStates,
+                             ComponentMap<DamageComponent>& damageValues) {
 
     // First, handle the spawning of enemies
     if (m_enemiesSpawned < m_maxEnemiesPerWave) {
@@ -53,22 +88,31 @@ void EnemySpawnSystem::update(std::vector<EntityId>& entities,
             EntityId enemyId = getNextEntityId();
             entities.push_back(enemyId);
             
-            // ... (Spawning component setup using m_enemiesSpawned for variation) ...
+            // Set Position Component
             positions.emplace(enemyId, PositionComponent{ sf::Vector2f(spawnX, 50.f) });
-            velocities.emplace(enemyId, VelocityComponent{ sf::Vector2f(100.f + (m_enemiesSpawned * 10.f), 20.f) });
             
-            ShapeComponent enemyShape;
-            enemyShape.type = ShapeComponent::Type::Circle; 
-            enemyShape.color = sf::Color::Blue;
-            enemyShape.size = sf::Vector2f(20.f, 20.f);
+            // 2. FIX: Use baseSpeed from EnemyTypeData
+            velocities.emplace(enemyId, VelocityComponent{ sf::Vector2f(0.0f, m_currentEnemyType.baseSpeed) });
             
-            shapes.emplace(enemyId, std::move(enemyShape));
+            // 3. CRITICAL FIX: Use the new EnemyTypeData for the RenderComponent
+            RenderComponent renderData;
             
+            // Convert string fields to enum and sf::Color
+            renderData.type = shapeTypeFromString(m_currentEnemyType.type);
+            renderData.color = colorFromString(m_currentEnemyType.color);
+            // Use the single float size
+            renderData.size = m_currentEnemyType.size;
+            
+            shapes.emplace(enemyId, std::move(renderData));
+            
+            // Set other components
             activeStates.emplace(enemyId, ActiveComponent{ true });
             bouncingShapes.emplace(enemyId, BouncingComponent{});
-            damageValues.emplace(enemyId, DamageComponent{ 10.f + (m_enemiesSpawned * 2.f) }); 
             
-            m_enemiesSpawned++; 
+            // 4. FIX: Use baseDamage from EnemyTypeData
+            damageValues.emplace(enemyId, DamageComponent{ m_currentEnemyType.baseDamage });
+            
+            m_enemiesSpawned++;
             spawnClock.restart();
             std::cout << "Enemy spawned at (" << spawnX << ", 50) - Total: " << m_enemiesSpawned << "/" << m_maxEnemiesPerWave << std::endl;
         }
@@ -83,8 +127,6 @@ void EnemySpawnSystem::update(std::vector<EntityId>& entities,
     }
     
     if (isLevelComplete()) {
-        // Log that the signal is being sent, but GameStateManager handles the advance
-        // This log helps debug where the transition is initiated
         std::cout << "All enemies destroyed - Level completion signaled!" << std::endl;
     }
 }

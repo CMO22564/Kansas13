@@ -4,7 +4,20 @@
 #include <algorithm> // Include for std::remove_if
 
 
-void CleanUpSystem::update(std::vector<EntityId>& entities, ComponentMap<ActiveComponent>& activeStates, ComponentMap<ProjectileComponent>& projectiles, ComponentMap<BouncingComponent>& bouncingShapes, ComponentMap<DamageComponent>& damageValues, ComponentMap<PlayerHealthComponent>& playerHealths, ComponentMap<ShieldComponent>& shields, ComponentMap<PlayerLivesComponent>& playerLives, ComponentMap<PlayerInputComponent>& playerInputs, ComponentMap<PositionComponent>& positions, ComponentMap<VelocityComponent>& velocities, ComponentMap<ShapeComponent>& shapes, ComponentMap<SoundComponent>& sounds) {
+void CleanUpSystem::update(std::vector<EntityId>& entities, 
+                          ComponentMap<ActiveComponent>& activeStates, 
+                          ComponentMap<ProjectileComponent>& projectiles, 
+                          ComponentMap<BouncingComponent>& bouncingShapes, 
+                          ComponentMap<DamageComponent>& damageValues, 
+                          ComponentMap<PlayerHealthComponent>& playerHealths, 
+                          ComponentMap<ShieldComponent>& shields, 
+                          ComponentMap<PlayerLivesComponent>& playerLives, 
+                          ComponentMap<PlayerInputComponent>& playerInputs, 
+                          ComponentMap<PositionComponent>& positions, 
+                          ComponentMap<VelocityComponent>& velocities, 
+                          ComponentMap<RenderComponent>& shapes, 
+                          ComponentMap<SoundComponent>& sounds) {
+                          
     const float windowWidth = 800.0f;
     const float windowHeight = 600.0f;
     const float projectileRadius = 5.0f; // Matches your projectile radius in PlayerInputSystem
@@ -89,7 +102,7 @@ void CleanUpSystem::clearNonPlayerEntities(
     ComponentMap<ActiveComponent>& activeStates,
     ComponentMap<PositionComponent>& positions, 
     ComponentMap<VelocityComponent>& velocities, 
-    ComponentMap<ShapeComponent>& shapes, 
+    ComponentMap<RenderComponent>& shapes, 
     ComponentMap<SoundComponent>& sounds) 
 {
     std::cout << "CleanUpSystem: Starting Level Transition Cleanup (Force removing enemies/projectiles)..." << std::endl;

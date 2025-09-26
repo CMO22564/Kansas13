@@ -6,7 +6,7 @@
 void CombatSystem::update(
         std::vector<EntityId>& entities,
         ComponentMap<PositionComponent>& positions,
-        ComponentMap<ShapeComponent>& shapes,
+        ComponentMap<RenderComponent>& shapes,
         ComponentMap<ProjectileComponent>& projectiles,
         ComponentMap<BouncingComponent>& bouncings,
         ComponentMap<DamageComponent>& damages,

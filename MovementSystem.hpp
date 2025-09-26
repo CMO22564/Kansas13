@@ -10,7 +10,7 @@ public:
                 ComponentMap<PositionComponent>& positions, 
                 ComponentMap<VelocityComponent>& velocities, 
                 ComponentMap<BouncingComponent>& bouncingShapes,
-                ComponentMap<ShapeComponent>& shapes, 
+                ComponentMap<RenderComponent>& shapes, 
                 sf::Time deltaTime);
 
     // ⭐ FIX: Add the declaration for updateBouncingShapes.
