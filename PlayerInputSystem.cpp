@@ -16,7 +16,7 @@ void PlayerInputSystem::update(const std::vector<EntityId>& entities, // FIX: en
                                ComponentMap<ProjectileComponent>& projectiles, 
                                ComponentMap<ActiveComponent>& activeStates, 
                                ComponentMap<SoundComponent>& sounds, 
-                               ComponentMap<DamageComponent> damageValues) {
+                               ComponentMap<DamageComponent> damages) {
     
     for (EntityId entity : entities) {
         if (positions.count(entity) && velocities.count(entity) && playerInputs.count(entity)) {
@@ -47,7 +47,7 @@ void PlayerInputSystem::update(const std::vector<EntityId>& entities, // FIX: en
                     input.isShooting = true;
                     // Spawn projectile at player's position
                     // NOTE: The header likely uses shoot/spawnProjectile, so I'll keep the call as is
-                    spawnProjectile(positions[entity].position, positions, velocities, shapes, projectiles, activeStates, sounds, entitiesList, damageValues);
+                    spawnProjectile(positions[entity].position, positions, velocities, shapes, projectiles, activeStates, sounds, entitiesList, damages);
                 }
             } else {
                 input.isShooting = false;
@@ -66,7 +66,7 @@ void PlayerInputSystem::spawnProjectile(
     ComponentMap<ActiveComponent>& activeStates,
     ComponentMap<SoundComponent>& sounds,
     std::vector<EntityId>& entities,
-    ComponentMap<DamageComponent>& damageValues) {
+    ComponentMap<DamageComponent>& damages) {
     
     EntityId projectileId = getNextEntityId();
     entities.push_back(projectileId);
@@ -88,6 +88,6 @@ void PlayerInputSystem::spawnProjectile(
     
     projectiles.emplace(projectileId, ProjectileComponent{});
     activeStates.emplace(projectileId, ActiveComponent{ true }); // Initialize active state to true
-    damageValues.emplace(projectileId, DamageComponent{ 20.f }); // Use 20.f damage
+    damages.emplace(projectileId, DamageComponent{ 20.f }); // Use 20.f damage
     sounds.emplace(projectileId, SoundComponent{ SoundComponent::Type::Laser });
 }

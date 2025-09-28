@@ -54,10 +54,7 @@ struct BouncingComponent {
     int generation = 0; // Default generation is 0
 };
 
-// Core.hpp (around lines 56-65)
 
-// NOTE: I'm replacing your existing ShapeComponent with this new RenderComponent.
-// This component holds the data required for the RenderSystem to draw the entity.
 struct RenderComponent {
     // Enum must be defined inside or accessible globally.
     enum Type { Circle, Square, Triangle };

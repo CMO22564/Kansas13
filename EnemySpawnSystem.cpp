@@ -84,6 +84,7 @@ void EnemySpawnSystem::update(std::vector<EntityId>& entities,
             // Set other components
             activeStates.emplace(enemyId, ActiveComponent{ true });
             bouncingShapes.emplace(enemyId, BouncingComponent{});
+            healths.emplace(enemyId, HealthComponent{50.0f, 50.0f}); // Add this line after other components
             
             // 4. FIX: Use baseDamage from EnemyTypeData
             damageValues.emplace(enemyId, DamageComponent{ static_cast<float>(m_currentEnemyType.baseDamage) });

@@ -30,20 +30,21 @@ int main() {
     // Debug window flag
     bool showDebugWindow = false;
 
-    // Component Maps
-    ComponentMap<PositionComponent> positions;
-    ComponentMap<VelocityComponent> velocities;
-    ComponentMap<RenderComponent> shapes;
-    ComponentMap<PlayerInputComponent> playerInputs;
-    ComponentMap<ProjectileComponent> projectiles;
-    ComponentMap<PlayerHealthComponent> playerHealths;
-    ComponentMap<HealthComponent> healths;
-    ComponentMap<ShieldComponent> shields;
-    ComponentMap<PlayerLivesComponent> playerLives;
-    ComponentMap<ActiveComponent> activeStates;
-    ComponentMap<BouncingComponent> bouncingShapes;
-    ComponentMap<DamageComponent> damageValues;
-    ComponentMap<SoundComponent> sounds;
+  // --- Component Maps ---
+	ComponentMap<PositionComponent> positions;
+	ComponentMap<RenderComponent> shapes;
+	ComponentMap<ProjectileComponent> projectiles;
+	ComponentMap<BouncingComponent> bouncingShapes;
+	ComponentMap<DamageComponent> damageValues;
+	ComponentMap<ActiveComponent> activeStates;
+	ComponentMap<PlayerHealthComponent> playerHealths;
+	ComponentMap<HealthComponent> healths;
+	ComponentMap<ShieldComponent> shields;
+	ComponentMap<SoundComponent> sounds;
+	ComponentMap<VelocityComponent> velocities;
+	ComponentMap<PlayerInputComponent> playerInputs; // <-- Add this
+	ComponentMap<PlayerLivesComponent> playerLives; // <-- Add this
+	//ComponentMap<HealthComponent> healths;
 
     std::vector<EntityId> entities;
 
@@ -132,7 +133,7 @@ int main() {
             movementSystem.update(entities, positions, velocities, bouncingShapes, shapes, deltaTime);
                  
             // CombatSystem signature is updated, no score parameter
-            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damageValues, activeStates, playerHealths, healths, shields, sounds, velocities);
+            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damageValues, activeStates, playerHealths, shields, sounds, velocities);
             
             soundSystem.update(sounds);
             
