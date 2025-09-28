@@ -36,8 +36,8 @@ void RenderSystem::update(sf::RenderWindow& window,
                 if (renderComponent.shape) {
                     renderComponent.shape->setFillColor(renderComponent.color);
                     
-                    // Set origin to the center using the single float size
-                    renderComponent.shape->setOrigin(renderComponent.size, renderComponent.size);
+                    // RenderSystem.cpp (New Line 40)
+                    renderComponent.shape->setOrigin(sf::Vector2f(renderComponent.size, renderComponent.size));
                 }
             }
             

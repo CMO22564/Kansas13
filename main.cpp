@@ -37,6 +37,7 @@ int main() {
     ComponentMap<PlayerInputComponent> playerInputs;
     ComponentMap<ProjectileComponent> projectiles;
     ComponentMap<PlayerHealthComponent> playerHealths;
+    ComponentMap<HealthComponent> healths;
     ComponentMap<ShieldComponent> shields;
     ComponentMap<PlayerLivesComponent> playerLives;
     ComponentMap<ActiveComponent> activeStates;
@@ -77,6 +78,7 @@ int main() {
     playerShape.size = 25.f; 
 
     // Emplace the explicitly initialized object
+    activeStates.emplace(playerId, ActiveComponent{true});
     shapes.emplace(playerId, std::move(playerShape));
     
        
@@ -130,7 +132,7 @@ int main() {
             movementSystem.update(entities, positions, velocities, bouncingShapes, shapes, deltaTime);
                  
             // CombatSystem signature is updated, no score parameter
-            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damageValues, activeStates, playerHealths, shields, sounds, velocities); 
+            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damageValues, activeStates, playerHealths, healths, shields, sounds, velocities);
             
             soundSystem.update(sounds);
             

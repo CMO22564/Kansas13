@@ -4,31 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <random>
-
-// --- Utility Functions (Must be accessible here) ---
-// Note: These should ideally be in a shared utility header.
-RenderComponent::Type shapeTypeFromString(const std::string& typeStr) {
-    if (typeStr == "Triangle") {
-        return RenderComponent::Type::Triangle;
-    }
-    if (typeStr == "Square") {
-        return RenderComponent::Type::Square;
-    }
-    return RenderComponent::Type::Circle;
-}
-
-sf::Color colorFromString(const std::string& colorStr) {
-    if (colorStr == "Red") {
-        return sf::Color::Red;
-    }
-    if (colorStr == "Blue") {
-        return sf::Color::Blue;
-    }
-    // Add other colors as needed...
-    return sf::Color::White;
-}
-// --- End Utility Functions ---
-
+#include "Utils.hpp"
 
 EnemySpawnSystem* EnemySpawnSystem::s_instance = nullptr;
 
@@ -110,7 +86,7 @@ void EnemySpawnSystem::update(std::vector<EntityId>& entities,
             bouncingShapes.emplace(enemyId, BouncingComponent{});
             
             // 4. FIX: Use baseDamage from EnemyTypeData
-            damageValues.emplace(enemyId, DamageComponent{ m_currentEnemyType.baseDamage });
+            damageValues.emplace(enemyId, DamageComponent{ static_cast<float>(m_currentEnemyType.baseDamage) });
             
             m_enemiesSpawned++;
             spawnClock.restart();

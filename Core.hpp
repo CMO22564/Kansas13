@@ -70,6 +70,13 @@ struct RenderComponent {
     std::unique_ptr<sf::Shape> shape; 
 };
 
+
+struct HealthComponent {
+    float currentHealth = 100.0f;
+    float maxHealth = 100.0f;
+};
+
+
 struct PositionComponent {
     sf::Vector2f position;
 };

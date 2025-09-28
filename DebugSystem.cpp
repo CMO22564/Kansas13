@@ -9,7 +9,7 @@ void DebugSystem::update(int score,
                          const ComponentMap<PlayerLivesComponent>& playerLives,
                          const std::vector<EntityId>& entities,
                          const ComponentMap<PositionComponent>& positions,
-                         const ComponentMap<ShapeComponent>& shapes,
+                         const ComponentMap<RenderComponent>& shapes,
                          const ComponentMap<VelocityComponent>& velocities) {
     ImGui::Begin("Debug Window");
 

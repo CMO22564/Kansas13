@@ -5,6 +5,7 @@
 #include "LevelLoader.hpp"
 #include "EnemySpawnSystem.hpp"
 #include "Core.hpp"
+#include "Utils.hpp"
 
 
 GameStateManager* GameStateManager::s_instance = nullptr;
@@ -73,7 +74,8 @@ EnemySpawnSystem::getInstance().setLevelParameters(
     currentLevel.enemyCount, 
     currentLevel.spawnInterval,
     currentLevel.minX,
-    currentLevel.maxX
+    currentLevel.maxX,
+    currentLevel.enemyTypes[0] // Get the first enemy type from the vector
 );
 
 // Pass the new EnemyTypeData parameters!
@@ -83,8 +85,7 @@ EnemySpawnSystem::getInstance().setLevelParameters(
             currentLevel.spawnInterval,
             currentLevel.minX,
             currentLevel.maxX,
-            // --- PASS THE NEW DATA HERE ---
-            enemyTypeData 
+            currentLevel.enemyTypes[0] // Get the first enemy type from the vector
         );
 
 std::cout << "DEBUG 5: Singleton call complete. Level ready." << std::endl; // <-- TRACE POINT 5
@@ -121,28 +122,3 @@ void GameStateManager::setScore(int newScore) {
     m_score = newScore;
 }
 
-
-// Utility function to convert JSON string to RenderComponent::Type
-RenderComponent::Type shapeTypeFromString(const std::string& typeStr) {
-    if (typeStr == "Triangle") {
-        return RenderComponent::Triangle;
-    }
-    if (typeStr == "Square") {
-        return RenderComponent::Square;
-    }
-    // Default to Circle if not recognized (matches Level 1 default)
-    return RenderComponent::Circle;
-}
-
-    // Utility function to convert JSON string color to sf::Color
-    sf::Color colorFromString(const std::string& colorStr) {
-    if (colorStr == "Red") {
-        return sf::Color::Red;
-    }
-    if (colorStr == "Blue") {
-        return sf::Color::Blue;
-    }
-    // Add other colors as needed...
-    // Default to white for safety
-    return sf::Color::White;
-}

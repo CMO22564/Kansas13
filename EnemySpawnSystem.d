@@ -96,7 +96,7 @@ EnemySpawnSystem.o: EnemySpawnSystem.cpp EnemySpawnSystem.hpp Core.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundRecorder.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.hpp \
  /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl \
- GameStateManager.hpp LevelData.hpp
+ GameStateManager.hpp LevelData.hpp Utils.hpp
 EnemySpawnSystem.hpp:
 Core.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Graphics.hpp:
@@ -198,3 +198,4 @@ Core.hpp:
 /home/chris/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl:
 GameStateManager.hpp:
 LevelData.hpp:
+Utils.hpp:

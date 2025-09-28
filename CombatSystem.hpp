@@ -1,7 +1,8 @@
 #pragma once
-#include "Core.hpp"
+
+#include "Core.hpp" // This is the fix.
 #include <vector>
-#include "GameStateManager.hpp" // Include for singleton access
+#include "GameStateManager.hpp"
 
 class CombatSystem {
 public:
@@ -13,6 +14,7 @@ public:
                 ComponentMap<DamageComponent>& damageValues,
                 ComponentMap<ActiveComponent>& activeStates,
                 ComponentMap<PlayerHealthComponent>& playerHealths,
+                ComponentMap<HealthComponent>& healths, // This is the line you need to add back
                 ComponentMap<ShieldComponent>& shields,
                 ComponentMap<SoundComponent>& sounds,
                 ComponentMap<VelocityComponent>& velocities);
