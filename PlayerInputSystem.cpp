@@ -1,93 +1,122 @@
 #include "PlayerInputSystem.hpp"
-#include "Core.hpp" // Make sure this is included for Component definitions
+#include "Core.hpp"
+#include "GameStateManager.hpp"
 #include <iostream>
-#include <SFML/Window/Keyboard.hpp>
-#include <SFML/Graphics.hpp>
-#include <memory>
+#include <cmath>
+#include <limits> // For std::numeric_limits
 
-// Corrected update function definition
-void PlayerInputSystem::update(const std::vector<EntityId>& entities, // FIX: entities is first
-                               float dt, // FIX: dt is second
-                               ComponentMap<PositionComponent>& positions, 
-                               ComponentMap<VelocityComponent>& velocities, 
-                               ComponentMap<PlayerInputComponent>& playerInputs, 
-                               std::vector<EntityId>& entitiesList, 
-                               ComponentMap<RenderComponent>& shapes, 
-                               ComponentMap<ProjectileComponent>& projectiles, 
-                               ComponentMap<ActiveComponent>& activeStates, 
-                               ComponentMap<SoundComponent>& sounds, 
-                               ComponentMap<DamageComponent> damages) {
+void PlayerInputSystem::update(
+    const std::vector<EntityId>& entities,
+    float dt,
+    ComponentMap<PositionComponent>& positions,
+    ComponentMap<VelocityComponent>& velocities,
+    ComponentMap<PlayerInputComponent>& playerInputs,
+    std::vector<EntityId>& entitiesList,
+    ComponentMap<RenderComponent>& shapes,
+    ComponentMap<ProjectileComponent>& projectiles,
+    ComponentMap<ActiveComponent>& activeStates,
+    ComponentMap<SoundComponent>& sounds,
+    ComponentMap<DamageComponent>& damages) {
     
-    for (EntityId entity : entities) {
-        if (positions.count(entity) && velocities.count(entity) && playerInputs.count(entity)) {
-            auto& velocity = velocities[entity].velocity;
-            auto& input = playerInputs[entity];
+    if (GameStateManager::getInstance().getState() != GameState::Running) {
+        return;
+    }
 
-            // Reset velocity
-            velocity = sf::Vector2f(0.f, 0.f);
-
-            // Handle movement (e.g., left/right with A/D or arrow keys)
-            float speed = 500.f; // Player speed in pixels/second
+    for (EntityId entityId : entities) {
+        if (positions.count(entityId) && velocities.count(entityId) && playerInputs.count(entityId)) {
+            auto& velocity = velocities.at(entityId).velocity;
+            auto& input = playerInputs.at(entityId);
+            
+            // Player movement logic
+            sf::Vector2f moveDirection(0.f, 0.f);
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
-                velocity.x = -speed;
-                input.isMovingLeft = true;
-            } else {
-                input.isMovingLeft = false;
+                moveDirection.x -= 1.0f;
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) {
-                velocity.x = speed;
-                input.isMovingRight = true;
-            } else {
-                input.isMovingRight = false;
+                moveDirection.x += 1.0f;
             }
 
-            // Handle shooting (e.g., spacebar)
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space)) {
-                if (!input.isShooting) { // Prevent continuous spawning
-                    input.isShooting = true;
-                    // Spawn projectile at player's position
-                    // NOTE: The header likely uses shoot/spawnProjectile, so I'll keep the call as is
-                    spawnProjectile(positions[entity].position, positions, velocities, shapes, projectiles, activeStates, sounds, entitiesList, damages);
+            float speed = 500.0f;
+            velocity = moveDirection * speed;
+            
+            // Projectile shooting logic
+            const float SHOOT_COOLDOWN = 0.5f;
+            input.shootCooldown += dt;
+
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) && input.shootCooldown >= SHOOT_COOLDOWN) {
+                // Find the closest enemy to target
+                EntityId closestEnemy = 0;
+                float minDistance = std::numeric_limits<float>::max();
+                
+                sf::Vector2f playerPos = positions.at(entityId).position;
+
+                for (EntityId currentEntity : entitiesList) {
+                    if (currentEntity != entityId && activeStates.count(currentEntity) && activeStates.at(currentEntity).active) {
+                        if (positions.count(currentEntity) && shapes.count(currentEntity)) {
+                            sf::Vector2f enemyPos = positions.at(currentEntity).position;
+                            float dist = std::sqrt(std::pow(playerPos.x - enemyPos.x, 2) + std::pow(playerPos.y - enemyPos.y, 2));
+                            
+                            if (dist < minDistance) {
+                                minDistance = dist;
+                                closestEnemy = currentEntity;
+                            }
+                        }
+                    }
                 }
-            } else {
-                input.isShooting = false;
+
+                // If a closest enemy was found, shoot a projectile at it
+                if (closestEnemy != 0) {
+                    EntityId projectileId = getNextEntityId();
+                    entitiesList.push_back(projectileId);
+                    
+                    positions.emplace(projectileId, PositionComponent{playerPos});
+                    
+                    sf::Vector2f enemyPos = positions.at(closestEnemy).position;
+                    sf::Vector2f direction = enemyPos - playerPos;
+                    float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+                    
+                    if (length > 0) {
+                        sf::Vector2f normalizedDirection = direction / length;
+                        float projectileSpeed = 800.0f;
+                        velocities.emplace(projectileId, VelocityComponent{normalizedDirection * projectileSpeed});
+                    } else {
+                        velocities.emplace(projectileId, VelocityComponent{sf::Vector2f(0.f, -800.0f)});
+                    }
+
+                    RenderComponent projectileRender;
+                    projectileRender.type = RenderComponent::Type::Circle;
+                    projectileRender.color = sf::Color::Yellow;
+                    projectileRender.size = 5.0f;
+                    
+                    shapes.emplace(projectileId, std::move(projectileRender));
+                    projectiles.emplace(projectileId, ProjectileComponent{});
+                    activeStates.emplace(projectileId, ActiveComponent{true});
+                    sounds.emplace(projectileId, SoundComponent{SoundComponent::Type::Laser});
+                    damages.emplace(projectileId, DamageComponent{10.0f});
+
+                    input.shootCooldown = 0.0f;
+                } else {
+                    // Fallback to the original behavior if no enemy is found
+                    EntityId projectileId = getNextEntityId();
+                    entitiesList.push_back(projectileId);
+
+                    positions.emplace(projectileId, PositionComponent{playerPos});
+                    velocities.emplace(projectileId, VelocityComponent{sf::Vector2f(0.f, -800.0f)});
+                    
+                    RenderComponent projectileRender;
+                    projectileRender.type = RenderComponent::Type::Circle;
+                    projectileRender.color = sf::Color::Yellow;
+                    projectileRender.size = 5.0f;
+                    
+                    shapes.emplace(projectileId, std::move(projectileRender));
+                    projectiles.emplace(projectileId, ProjectileComponent{});
+                    activeStates.emplace(projectileId, ActiveComponent{true});
+                    sounds.emplace(projectileId, SoundComponent{SoundComponent::Type::Laser});
+                    damages.emplace(projectileId, DamageComponent{10.0f});
+
+                    input.shootCooldown = 0.0f;
+                }
             }
         }
     }
-}
-
-// Corrected spawnProjectile function definition
-void PlayerInputSystem::spawnProjectile(
-    const sf::Vector2f& startPosition, 
-    ComponentMap<PositionComponent>& positions, 
-    ComponentMap<VelocityComponent>& velocities, 
-    ComponentMap<RenderComponent>& shapes, // FIX: Use RenderComponent
-    ComponentMap<ProjectileComponent>& projectiles, 
-    ComponentMap<ActiveComponent>& activeStates,
-    ComponentMap<SoundComponent>& sounds,
-    std::vector<EntityId>& entities,
-    ComponentMap<DamageComponent>& damages) {
-    
-    EntityId projectileId = getNextEntityId();
-    entities.push_back(projectileId);
-    
-    positions.emplace(projectileId, PositionComponent{ startPosition });
-    velocities.emplace(projectileId, VelocityComponent{ sf::Vector2f(0.f, -500.f) });
-    
-    // Create the new RenderComponent object
-    RenderComponent projectileRender;
-    
-    // FIX: Explicitly set the new members for RenderComponent
-    projectileRender.type = RenderComponent::Type::Circle; // Set the type
-    projectileRender.color = sf::Color::Yellow;           // Projectiles are typically yellow/white
-    projectileRender.size = 5.0f;                         // Use single float size (radius)
-    // projectileRender.shape is a unique_ptr and defaults to nullptr, which is correct here.
-    
-    // Store the component using the correct type and move the initialized data
-    shapes.emplace(projectileId, std::move(projectileRender));
-    
-    projectiles.emplace(projectileId, ProjectileComponent{});
-    activeStates.emplace(projectileId, ActiveComponent{ true }); // Initialize active state to true
-    damages.emplace(projectileId, DamageComponent{ 20.f }); // Use 20.f damage
-    sounds.emplace(projectileId, SoundComponent{ SoundComponent::Type::Laser });
 }

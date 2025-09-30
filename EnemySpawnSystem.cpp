@@ -51,7 +51,8 @@ void EnemySpawnSystem::update(std::vector<EntityId>& entities,
                              ComponentMap<RenderComponent>& shapes, // Use RenderComponent
                              ComponentMap<BouncingComponent>& bouncingShapes,
                              ComponentMap<ActiveComponent>& activeStates,
-                             ComponentMap<DamageComponent>& damageValues) {
+                             ComponentMap<DamageComponent>& damageValues,
+                             ComponentMap<HealthComponent>& healths) {
 
     // First, handle the spawning of enemies
     if (m_enemiesSpawned < m_maxEnemiesPerWave) {

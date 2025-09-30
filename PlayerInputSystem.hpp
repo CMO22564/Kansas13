@@ -17,7 +17,7 @@ void update(const std::vector<EntityId>& entities,
             ComponentMap<ProjectileComponent>& projectiles, 
             ComponentMap<ActiveComponent>& activeStates, 
             ComponentMap<SoundComponent>& sounds, 
-            ComponentMap<DamageComponent> damages);
+            ComponentMap<DamageComponent>& damages);
     
     void spawnProjectile(const sf::Vector2f& startPosition, ComponentMap<PositionComponent>& positions, ComponentMap<VelocityComponent>& velocities, ComponentMap<RenderComponent>& shapes, ComponentMap<ProjectileComponent>& projectiles, ComponentMap<ActiveComponent>& activeStates, ComponentMap<SoundComponent>& sounds, std::vector<EntityId>& entities, ComponentMap<DamageComponent>& damages);
     };

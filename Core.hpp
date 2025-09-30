@@ -86,6 +86,7 @@ struct PlayerInputComponent {
     bool isMovingLeft = false;
     bool isMovingRight = false;
     bool isShooting = false;
+    float shootCooldown = 0.0f; // Add this line
 };
 
 struct ProjectileComponent {};

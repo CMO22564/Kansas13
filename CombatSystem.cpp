@@ -10,15 +10,16 @@ void CombatSystem::update(
     ComponentMap<RenderComponent>& shapes,
     ComponentMap<ProjectileComponent>& projectiles,
     ComponentMap<BouncingComponent>& bouncingShapes,
-    ComponentMap<DamageComponent>& damageValues,
+    ComponentMap<DamageComponent>& damages,
     ComponentMap<ActiveComponent>& actives,
     ComponentMap<PlayerHealthComponent>& playerHealths,
+    ComponentMap<HealthComponent>& healths, // <-- Add this line
     ComponentMap<ShieldComponent>& shields,
     ComponentMap<SoundComponent>& sounds,
-    ComponentMap<VelocityComponent>& velocities) {
-
+    ComponentMap<VelocityComponent>& velocities
+) {
     GameStateManager& manager = GameStateManager::getInstance();
-
+    
     // Find the player entity
     EntityId playerId = 0;
     for (auto& [id, health] : playerHealths) {
@@ -28,84 +29,82 @@ void CombatSystem::update(
 
     if (!playerId || !shapes.count(playerId) || !shapes.at(playerId).shape)
         return;
-
-    sf::FloatRect playerBounds = shapes.at(playerId).shape->getGlobalBounds();
-    auto& playerHealth = playerHealths.at(playerId);
-    auto& playerShield = shields[playerId]; // Default constructed if missing
-
-    // --- Enemy collisions with player ---
+    
+    // Using distance-based collision check for player-enemy
     for (auto& [enemyId, bouncingShape] : bouncingShapes) {
         if (!actives[enemyId].active) continue;
         if (!shapes.count(enemyId) || !shapes.at(enemyId).shape) continue;
 
-        sf::FloatRect enemyBounds = shapes.at(enemyId).shape->getGlobalBounds();
+        const auto& playerPos = positions.at(playerId).position;
+        float playerRadius = shapes.at(playerId).size;
+        const auto& enemyPos = positions.at(enemyId).position;
+        float enemyRadius = shapes.at(enemyId).size;
 
-        // Use intersects() with output parameter (SFML 3.x style)
-        sf::FloatRect intersection;
-        if (playerBounds.intersects(enemyBounds, intersection)) {
+        float dx = playerPos.x - enemyPos.x;
+        float dy = playerPos.y - enemyPos.y;
+        float distance = std::sqrt(dx * dx + dy * dy);
+
+        if (distance <= (playerRadius + enemyRadius)) {
+            // Apply damage to the player
             float damage = damages.count(enemyId) ? damages.at(enemyId).damage : 10.0f;
-
-            if (playerShield.currentShield > 0) {
-                playerShield.currentShield -= damage;
-                if (playerShield.currentShield < 0) {
-                    playerHealth.currentHealth += playerShield.currentShield;
-                    playerShield.currentShield = 0;
+            
+            if (shields[playerId].currentShield > 0) {
+                shields[playerId].currentShield -= damage;
+                if (shields[playerId].currentShield < 0) {
+                    playerHealths.at(playerId).currentHealth += shields[playerId].currentShield;
+                    shields[playerId].currentShield = 0;
                 }
                 sounds[enemyId].type = SoundComponent::Type::ShieldHit;
             } else {
-                playerHealth.currentHealth -= damage;
+                playerHealths.at(playerId).currentHealth -= damage;
                 sounds[enemyId].type = SoundComponent::Type::PlayerHit;
             }
 
             actives[enemyId].active = false;
-            std::cout << "Player hit! Health: " << playerHealth.currentHealth
-                      << " Shield: " << playerShield.currentShield << std::endl;
+            std::cout << "Player hit! Health: " << playerHealths.at(playerId).currentHealth
+                      << " Shield: " << shields[playerId].currentShield << std::endl;
         }
     }
 
-    // --- Projectile collisions with enemies ---
+    // Using distance-based collision check for projectiles-enemies
     for (auto& [projectileId, proj] : projectiles) {
         if (!actives[projectileId].active) continue;
         if (!shapes.count(projectileId) || !shapes.at(projectileId).shape) continue;
-        if (!damageValues.count(projectileId)) continue;
+        if (!damages.count(projectileId)) continue; 
 
-        sf::FloatRect projectileBounds = shapes.at(projectileId).shape->getGlobalBounds();
+        const auto& projPos = positions.at(projectileId).position;
+        float projRadius = shapes.at(projectileId).size;
 
         for (auto& [enemyId, bouncingShape] : bouncingShapes) {
             if (!actives[enemyId].active) continue;
             if (!shapes.count(enemyId) || !shapes.at(enemyId).shape) continue;
+            if (!healths.count(enemyId)) continue; 
 
-            sf::FloatRect enemyBounds = shapes.at(enemyId).shape->getGlobalBounds();
-            sf::FloatRect intersection;
+            const auto& enemyPos = positions.at(enemyId).position;
+            float enemyRadius = shapes.at(enemyId).size;
+            
+            float dx = projPos.x - enemyPos.x;
+            float dy = projPos.y - enemyPos.y;
+            float distance = std::sqrt(dx * dx + dy * dy);
 
-            if (projectileBounds.intersects(enemyBounds, intersection)) {
-                // Deactivate projectile
+            if (distance <= (projRadius + enemyRadius)) {
+                // Apply damage to the enemy
+                float projectileDamage = damages.at(projectileId).damage;
+                healths.at(enemyId).currentHealth -= projectileDamage;
+
+                // Mark the projectile for destruction
                 actives[projectileId].active = false;
 
-                // Apply damage to enemy (assuming HealthComponent exists)
-                if (healths.count(enemyId)) {
-                    float projectileDamage = damageValues.at(projectileId).damage;
-                    auto& enemyHealth = healths.at(enemyId);
-                    enemyHealth.currentHealth -= projectileDamage;
+                std::cout << "Enemy " << enemyId << " hit. Health: " << healths.at(enemyId).currentHealth << std::endl;
 
-                    std::cout << "Enemy " << enemyId << " hit. Health: " << enemyHealth.currentHealth << std::endl;
-
-                    // Deactivate enemy if health <= 0
-                    if (enemyHealth.currentHealth <= 0) {
-                        actives[enemyId].active = false;
-                        GameStateManager::getInstance().setScore(GameStateManager::getInstance().getScore() + 100);
-                        sounds[enemyId].type = SoundComponent::Type::Explosion;
-                        std::cout << "Enemy destroyed! Score: " << GameStateManager::getInstance().getScore() << std::endl;
-                    }
-                } else {
-                    // Fallback: Deactivate enemy directly if no health component
+                // Check if the enemy is destroyed
+                if (healths.at(enemyId).currentHealth <= 0) {
                     actives[enemyId].active = false;
                     GameStateManager::getInstance().setScore(GameStateManager::getInstance().getScore() + 100);
-                    sounds[enemyId].type = SoundComponent::Type::Explosion;
+                    sounds[projectileId].type = SoundComponent::Type::Explosion;
                     std::cout << "Enemy destroyed! Score: " << GameStateManager::getInstance().getScore() << std::endl;
                 }
-
-                break; // Exit inner loop after hit
+                break;
             }
         }
     }

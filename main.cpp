@@ -35,6 +35,7 @@ int main() {
 	ComponentMap<RenderComponent> shapes;
 	ComponentMap<ProjectileComponent> projectiles;
 	ComponentMap<BouncingComponent> bouncingShapes;
+	ComponentMap<DamageComponent> damages;
 	ComponentMap<DamageComponent> damageValues;
 	ComponentMap<ActiveComponent> activeStates;
 	ComponentMap<PlayerHealthComponent> playerHealths;
@@ -128,12 +129,12 @@ int main() {
                          damageValues);
             
             // Accessing EnemySpawnSystem as a singleton
-            EnemySpawnSystem::getInstance().update(entities, positions, velocities, shapes, bouncingShapes, activeStates, damageValues);
+            EnemySpawnSystem::getInstance().update(entities, positions, velocities, shapes, bouncingShapes, activeStates, damageValues, healths);
             
             movementSystem.update(entities, positions, velocities, bouncingShapes, shapes, deltaTime);
                  
             // CombatSystem signature is updated, no score parameter
-            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damageValues, activeStates, playerHealths, shields, sounds, velocities);
+            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damages, activeStates, playerHealths, healths, shields, sounds, velocities);
             
             soundSystem.update(sounds);
             

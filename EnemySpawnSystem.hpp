@@ -41,7 +41,8 @@ public:
                 ComponentMap<RenderComponent>& shapes, // Must use RenderComponent
                 ComponentMap<BouncingComponent>& bouncingShapes,
                 ComponentMap<ActiveComponent>& activeStates,
-                ComponentMap<DamageComponent>& damageValues);
+                ComponentMap<DamageComponent>& damageValues,
+                ComponentMap<HealthComponent>& healths);
 
     // 3. FIX: Add the missing function declaration (Resolves main.cpp:127 error)
     bool isLevelComplete() const; 
