@@ -14,15 +14,9 @@ template<typename T>
 using ComponentMap = std::unordered_map<EntityId, T>;
 
 // -- Base System Class --
-// ⭐ CRITICAL FIX: Add the base System class definition here
-// This resolves the "expected class-name before '{' token" error in EnemySpawnSystem.hpp
 class System {
 public:
-    // A virtual destructor is good practice for a base class
     virtual ~System() = default; 
-    
-    // Systems typically have an update method, even if it's not pure virtual
-    // (Actual update methods will be defined in derived classes like EnemySpawnSystem)
 };
 
 // -- Component Structs --
@@ -49,30 +43,22 @@ struct DamageComponent {
     float damage = 10.0f;
 };
 
-
 struct BouncingComponent {
-    int generation = 0; // Default generation is 0
+    int generation = 0;
 };
 
-
 struct RenderComponent {
-    // Enum must be defined inside or accessible globally.
     enum Type { Circle, Square, Triangle };
     Type type;
     sf::Color color;
-    // CRITICAL: Change size from Vector2f to a single float 
     float size; 
-    
-    // CRITICAL FIX: The RenderSystem needs the SFML object stored here
     std::unique_ptr<sf::Shape> shape; 
 };
-
 
 struct HealthComponent {
     float currentHealth = 100.0f;
     float maxHealth = 100.0f;
 };
-
 
 struct PositionComponent {
     sf::Vector2f position;
@@ -83,10 +69,7 @@ struct VelocityComponent {
 };
 
 struct PlayerInputComponent {
-    bool isMovingLeft = false;
-    bool isMovingRight = false;
-    bool isShooting = false;
-    float shootCooldown = 0.0f; // Add this line
+    float shootCooldown = 0.0f;
 };
 
 struct ProjectileComponent {};
@@ -95,17 +78,19 @@ struct CombatComponent {
     float damage = 10.0f;
 };
 
-// ⭐ FIX: Add the Type enum inside the SoundComponent struct
 struct SoundComponent {
     enum class Type {
         Laser,
         Explosion,
         ShieldHit,
-        PlayerHit
+        PlayerHit,
+        Spawn
         };
-     Type type;
-    // Add other members as needed, e.g., to control playback
+      Type type;
 };
+
+// NEW FEATURE: Enemy Tag Component
+struct EnemyComponent {};
 
 // Global counter for entities
 inline unsigned int getNextEntityId() {

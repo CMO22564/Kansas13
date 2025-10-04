@@ -9,9 +9,13 @@
 
 // 1. New struct to hold the visual and combat details for a specific enemy type
 struct EnemyTypeData {
-    std::string type;       // e.g., "Circle", "Triangle" (for the RenderSystem)
-    std::string color;      // e.g., "Blue", "Red" 
-    float size;             // e.g., 20, 25 (for the RenderSystem)
+    std::string type;
+    std::string color;
+    float size;
+    
+    // ⭐ REQUIRED FIX: Add baseHealth member
+    float baseHealth; 
+    
     int baseDamage;
     float baseSpeed;
 };

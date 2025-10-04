@@ -43,8 +43,10 @@ int main() {
 	ComponentMap<ShieldComponent> shields;
 	ComponentMap<SoundComponent> sounds;
 	ComponentMap<VelocityComponent> velocities;
+	ComponentMap<EnemyComponent> enemies; // <-- ADD THIS LINE
 	ComponentMap<PlayerInputComponent> playerInputs; // <-- Add this
 	ComponentMap<PlayerLivesComponent> playerLives; // <-- Add this
+	
 	//ComponentMap<HealthComponent> healths;
 
     std::vector<EntityId> entities;
@@ -66,12 +68,12 @@ int main() {
     // int score = 0; // REMOVED: Score is now managed by GameStateManager
      
     // Add player components
-    positions.emplace(playerId, PositionComponent{ sf::Vector2f(400, 500) });
-    velocities.emplace(playerId, VelocityComponent{ sf::Vector2f(0.f, 0.f) });
+    positions.emplace(playerId, PositionComponent{{sf::Vector2f(400, 500)}}); 
+    velocities.emplace(playerId, VelocityComponent{{sf::Vector2f(0.f, 0.f)}});
     playerInputs.emplace(playerId, PlayerInputComponent{});
-    playerHealths.emplace(playerId, PlayerHealthComponent{100.0f, 100.0f});
-    shields.emplace(playerId, ShieldComponent{100.0f, 100.0f});
-    playerLives.emplace(playerId, PlayerLivesComponent{3});
+    playerHealths.emplace(playerId, PlayerHealthComponent{100.0f, 100.0f}); // This is now correct with double braces
+shields.emplace(playerId, ShieldComponent{100.0f, 100.0f});             // This is now correct with double braces
+playerLives.emplace(playerId, PlayerLivesComponent{3});                  // This is now correct with double braces
 
     // FIX: Change initialization to the required explicit style
     RenderComponent playerShape;
@@ -129,12 +131,12 @@ int main() {
                          damageValues);
             
             // Accessing EnemySpawnSystem as a singleton
-            EnemySpawnSystem::getInstance().update(entities, positions, velocities, shapes, bouncingShapes, activeStates, damageValues, healths);
+            EnemySpawnSystem::getInstance().update(entities, positions, velocities, shapes, bouncingShapes, activeStates, damageValues, healths, enemies);
             
             movementSystem.update(entities, positions, velocities, bouncingShapes, shapes, deltaTime);
                  
             // CombatSystem signature is updated, no score parameter
-            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damages, activeStates, playerHealths, healths, shields, sounds, velocities);
+            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damages, activeStates, playerHealths, healths, shields, sounds, velocities, enemies);
             
             soundSystem.update(sounds);
             

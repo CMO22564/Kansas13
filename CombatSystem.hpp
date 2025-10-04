@@ -14,9 +14,10 @@ public:
         ComponentMap<DamageComponent>& damages,
         ComponentMap<ActiveComponent>& actives,
         ComponentMap<PlayerHealthComponent>& playerHealths,
-        ComponentMap<HealthComponent>& healths, // <-- Add this line
+        ComponentMap<HealthComponent>& healths,
         ComponentMap<ShieldComponent>& shields,
         ComponentMap<SoundComponent>& sounds,
-        ComponentMap<VelocityComponent>& velocities
+        ComponentMap<VelocityComponent>& velocities,
+        ComponentMap<EnemyComponent>& enemies // <-- CRITICAL FIX: Add the new EnemyComponent map
     );
 };

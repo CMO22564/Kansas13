@@ -15,7 +15,8 @@
           "color": "Blue",
           "size": 20,
           "baseDamage": 10,
-          "baseSpeed": 100
+          "baseSpeed": 100,
+          "baseHealth": 50.0
         }
       ]
     }
@@ -36,7 +37,8 @@
           "color": "Red",
           "size": 25,
           "baseDamage": 15,
-          "baseSpeed": 150
+          "baseSpeed": 150,
+          "baseHealth": 75.0
         }
       ]
     }

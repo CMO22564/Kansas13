@@ -17,7 +17,7 @@ EnemySpawnSystem& EnemySpawnSystem::getInstance() {
 
 // 1. CRITICAL FIX: Implement the new setLevelParameters signature
 void EnemySpawnSystem::setLevelParameters(int count, float interval, float min_x, float max_x,
-                                          const EnemyTypeData& enemyTypeData) {
+                                         const EnemyTypeData& enemyTypeData) {
     m_maxEnemiesPerWave = count;
     m_spawnInterval = interval;
     m_minX = min_x;
@@ -46,13 +46,14 @@ bool EnemySpawnSystem::isLevelComplete() const {
 
 
 void EnemySpawnSystem::update(std::vector<EntityId>& entities,
-                             ComponentMap<PositionComponent>& positions,
-                             ComponentMap<VelocityComponent>& velocities,
-                             ComponentMap<RenderComponent>& shapes, // Use RenderComponent
-                             ComponentMap<BouncingComponent>& bouncingShapes,
-                             ComponentMap<ActiveComponent>& activeStates,
-                             ComponentMap<DamageComponent>& damageValues,
-                             ComponentMap<HealthComponent>& healths) {
+                              ComponentMap<PositionComponent>& positions,
+                              ComponentMap<VelocityComponent>& velocities,
+                              ComponentMap<RenderComponent>& shapes, // Use RenderComponent
+                              ComponentMap<BouncingComponent>& bouncingShapes,
+                              ComponentMap<ActiveComponent>& activeStates,
+                              ComponentMap<DamageComponent>& damageValues,
+                              ComponentMap<HealthComponent>& healths,
+                              ComponentMap<EnemyComponent>& enemies) { // <-- NOTE: EnemyComponent map is now passed in
 
     // First, handle the spawning of enemies
     if (m_enemiesSpawned < m_maxEnemiesPerWave) {
@@ -68,10 +69,10 @@ void EnemySpawnSystem::update(std::vector<EntityId>& entities,
             // Set Position Component
             positions.emplace(enemyId, PositionComponent{ sf::Vector2f(spawnX, 50.f) });
             
-            // 2. FIX: Use baseSpeed from EnemyTypeData
+            // Use baseSpeed from EnemyTypeData
             velocities.emplace(enemyId, VelocityComponent{ sf::Vector2f(0.0f, m_currentEnemyType.baseSpeed) });
             
-            // 3. CRITICAL FIX: Use the new EnemyTypeData for the RenderComponent
+            // Use the new EnemyTypeData for the RenderComponent
             RenderComponent renderData;
             
             // Convert string fields to enum and sf::Color
@@ -85,9 +86,14 @@ void EnemySpawnSystem::update(std::vector<EntityId>& entities,
             // Set other components
             activeStates.emplace(enemyId, ActiveComponent{ true });
             bouncingShapes.emplace(enemyId, BouncingComponent{});
-            healths.emplace(enemyId, HealthComponent{50.0f, 50.0f}); // Add this line after other components
             
-            // 4. FIX: Use baseDamage from EnemyTypeData
+            // CRITICAL ADDITION: Add the EnemyComponent tag
+            enemies.emplace(enemyId, EnemyComponent{});
+            
+            // ✅ REQUIRED FIX: Use the confirmed 'baseHealth' member
+            healths.emplace(enemyId, HealthComponent{m_currentEnemyType.baseHealth, m_currentEnemyType.baseHealth}); 
+            
+            // ✅ REQUIRED FIX: Use the confirmed 'baseDamage' member and static_cast
             damageValues.emplace(enemyId, DamageComponent{ static_cast<float>(m_currentEnemyType.baseDamage) });
             
             m_enemiesSpawned++;
@@ -98,8 +104,10 @@ void EnemySpawnSystem::update(std::vector<EntityId>& entities,
     
     // Update the count of active enemies
     m_activeEnemyCount = 0;
-    for (EntityId e : entities) {
-        if (bouncingShapes.count(e) && activeStates.count(e) && activeStates[e].active) {
+    // FIX: Iterate over the EnemyComponent map to accurately count active enemies
+    for (auto& [e, enemyTag] : enemies) {
+        // Check if the entity is active and has the required components
+        if (activeStates.count(e) && activeStates.at(e).active) {
             m_activeEnemyCount++;
         }
     }

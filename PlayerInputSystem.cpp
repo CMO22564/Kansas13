@@ -40,7 +40,7 @@ void PlayerInputSystem::update(
             velocity = moveDirection * speed;
             
             // Projectile shooting logic
-            const float SHOOT_COOLDOWN = 0.5f;
+            const float SHOOT_COOLDOWN = 0.00f;
             input.shootCooldown += dt;
 
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) && input.shootCooldown >= SHOOT_COOLDOWN) {
@@ -94,7 +94,7 @@ void PlayerInputSystem::update(
                     sounds.emplace(projectileId, SoundComponent{SoundComponent::Type::Laser});
                     damages.emplace(projectileId, DamageComponent{10.0f});
 
-                    input.shootCooldown = 0.0f;
+                    input.shootCooldown = 0.00f;
                 } else {
                     // Fallback to the original behavior if no enemy is found
                     EntityId projectileId = getNextEntityId();
@@ -114,7 +114,7 @@ void PlayerInputSystem::update(
                     sounds.emplace(projectileId, SoundComponent{SoundComponent::Type::Laser});
                     damages.emplace(projectileId, DamageComponent{10.0f});
 
-                    input.shootCooldown = 0.0f;
+                    input.shootCooldown = 0.05f;
                 }
             }
         }

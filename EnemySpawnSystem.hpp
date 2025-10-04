@@ -42,7 +42,9 @@ public:
                 ComponentMap<BouncingComponent>& bouncingShapes,
                 ComponentMap<ActiveComponent>& activeStates,
                 ComponentMap<DamageComponent>& damageValues,
-                ComponentMap<HealthComponent>& healths);
+                ComponentMap<HealthComponent>& healths,
+                ComponentMap<EnemyComponent>& enemies);
+                
 
     // 3. FIX: Add the missing function declaration (Resolves main.cpp:127 error)
     bool isLevelComplete() const; 
