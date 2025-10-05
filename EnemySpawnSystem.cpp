@@ -51,7 +51,7 @@ void EnemySpawnSystem::update(std::vector<EntityId>& entities,
                               ComponentMap<RenderComponent>& shapes, // Use RenderComponent
                               ComponentMap<BouncingComponent>& bouncingShapes,
                               ComponentMap<ActiveComponent>& activeStates,
-                              ComponentMap<DamageComponent>& damageValues,
+                              ComponentMap<DamageComponent>& damages, // Changed from damageValues
                               ComponentMap<HealthComponent>& healths,
                               ComponentMap<EnemyComponent>& enemies) { // <-- NOTE: EnemyComponent map is now passed in
 
@@ -94,7 +94,7 @@ void EnemySpawnSystem::update(std::vector<EntityId>& entities,
             healths.emplace(enemyId, HealthComponent{m_currentEnemyType.baseHealth, m_currentEnemyType.baseHealth}); 
             
             // ✅ REQUIRED FIX: Use the confirmed 'baseDamage' member and static_cast
-            damageValues.emplace(enemyId, DamageComponent{ static_cast<float>(m_currentEnemyType.baseDamage) });
+            damages.emplace(enemyId, DamageComponent{ static_cast<float>(m_currentEnemyType.baseDamage) }); // Changed from damageValues
             
             m_enemiesSpawned++;
             spawnClock.restart();

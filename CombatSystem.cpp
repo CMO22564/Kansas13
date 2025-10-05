@@ -12,7 +12,7 @@ void CombatSystem::update(
     ComponentMap<RenderComponent>& shapes,
     ComponentMap<ProjectileComponent>& projectiles,
     ComponentMap<BouncingComponent>& bouncingShapes, // NOTE: Still passed, but now optional for collision loops
-    ComponentMap<DamageComponent>& damages,
+    ComponentMap<DamageComponent>& damages, // Keep only this one. Removed ComponentMap<DamageComponent>& damageValues,
     ComponentMap<ActiveComponent>& actives,
     ComponentMap<PlayerHealthComponent>& playerHealths,
     ComponentMap<HealthComponent>& healths,
