@@ -36,7 +36,7 @@ int main() {
 	ComponentMap<ProjectileComponent> projectiles;
 	ComponentMap<BouncingComponent> bouncingShapes;
 	ComponentMap<DamageComponent> damages;
-	ComponentMap<DamageComponent> damageValues;
+	//ComponentMap<DamageComponent> damageValues;
 	ComponentMap<ActiveComponent> activeStates;
 	ComponentMap<PlayerHealthComponent> playerHealths;
 	ComponentMap<HealthComponent> healths;
@@ -128,20 +128,20 @@ playerLives.emplace(playerId, PlayerLivesComponent{3});                  // This
                          projectiles, 
                          activeStates, 
                          sounds, 
-                         damageValues);
+                         damages); // Changed from damageValues
             
             // Accessing EnemySpawnSystem as a singleton
-            EnemySpawnSystem::getInstance().update(entities, positions, velocities, shapes, bouncingShapes, activeStates, damageValues, healths, enemies);
+            EnemySpawnSystem::getInstance().update(entities, positions, velocities, shapes, bouncingShapes, activeStates, damages, healths, enemies); // Changed from damageValues
             
             movementSystem.update(entities, positions, velocities, bouncingShapes, shapes, deltaTime);
                  
             // CombatSystem signature is updated, no score parameter
-            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damages, activeStates, playerHealths, healths, shields, sounds, velocities, enemies);
+            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damages, activeStates, playerHealths, healths, shields, sounds, velocities, enemies); // Changed from damageValues
             
             soundSystem.update(sounds);
             
             // Normal cleanup runs every frame
-            cleanUpSystem.update(entities, activeStates, projectiles, bouncingShapes, damageValues, playerHealths, shields, playerLives, playerInputs, positions, velocities, shapes, sounds);
+            cleanUpSystem.update(entities, activeStates, projectiles, bouncingShapes, damages, playerHealths, shields, playerLives, playerInputs, positions, velocities, shapes, sounds); // Changed from damageValues
             
             // CRITICAL NEW LOGIC: Level completion check and advancement
             if (EnemySpawnSystem::getInstance().isLevelComplete()) {
@@ -152,7 +152,7 @@ playerLives.emplace(playerId, PlayerLivesComponent{3});                  // This
                     entities, 
                     projectiles, 
                     bouncingShapes, 
-                    damageValues, 
+                    damages,  // Changed from damageValues
                     activeStates, 
                     positions, 
                     velocities, 
