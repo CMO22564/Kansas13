@@ -1,9 +1,15 @@
-# Ignore build directories and files
+# Object files and dependencies
 *.o
 *.d
-kansas13
-kansas12*
-progress/
 
-# Ignore old app binaries
-*app
+# Executables
+*.exe
+kansas*
+progress/*
+
+# VS Code Build Artifacts (optional, but good)
+.vscode/*.o
+.vscode/*.d
+
+# User-specific files
+.vscode/settings.json
