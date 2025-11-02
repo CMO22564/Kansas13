@@ -1,4 +1,5 @@
 # Compiled Object and Dependency Files
+# Object files and dependencies
 *.o
 *.d
 
@@ -11,3 +12,9 @@ progress/*
 .vscode/settings.json
 .vscode/*.o
 .vscode/*.d
+# VS Code Build Artifacts (optional, but good)
+.vscode/*.o
+.vscode/*.d
+
+# User-specific files
+.vscode/settings.json
