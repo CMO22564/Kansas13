@@ -136,7 +136,7 @@ playerLives.emplace(playerId, PlayerLivesComponent{3});                  // This
             movementSystem.update(entities, positions, velocities, bouncingShapes, shapes, deltaTime);
                  
             // CombatSystem signature is updated, no score parameter
-            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damages, activeStates, playerHealths, healths, shields, sounds, velocities, enemies); // Changed from damageValues
+            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damages, activeStates, playerHealths, healths, shields, sounds, velocities, enemies, playerLives); // Changed from damageValues
             
             soundSystem.update(sounds);
             

@@ -23,6 +23,7 @@ public:
     int getScore() const;
     void setScore(int newScore);
     void advanceToNextLevel(); // ⭐ Declaration for the new function
+    int getCurrentLevel() const;
 
 private:
     static GameStateManager* s_instance;

@@ -34,52 +34,35 @@ void GameStateManager::handleInput(const sf::Event& event) {
 
 void GameStateManager::setState(GameState newState) {
     
-    // ⭐ FIX 1: Change the condition to ONLY check if the new state is Running.
-    // REMOVE '&& m_currentState != GameState::Running'
+    // Only setup level when entering Running state
     if (newState == GameState::Running) { 
-        // GameStateManager.cpp - inside setState(GameState::Running)
-
-// 1. Initial Load: Load ALL levels only once
-if (m_levels.empty()) {
-    std::cout << "DEBUG 1: Before calling loadLevelsFromFile..." << std::endl; // <-- TRACE POINT 1
-    m_levels = loadLevelsFromFile("level_data.json"); 
-    
-    if (m_levels.empty()) {
-        std::cerr << "CRITICAL ERROR: Failed to load any levels." << std::endl;
-        m_currentState = GameState::GameOver;
-        return;
-    }
-    std::cout << "DEBUG 2: Level loading complete." << std::endl; // <-- TRACE POINT 2
-    // ...
-}
-
-// 2. Access the data
-std::cout << "DEBUG 3: Accessing currentLevel data..." << std::endl; // <-- TRACE POINT 3
-const LevelData& currentLevel = m_levels[m_currentLevelIndex];
-
-// --- NEW CODE: Extract the first enemy type ---
-        // Assuming every level has at least one enemy type defined (index 0)
-        if (currentLevel.enemyTypes.empty()) {
-             std::cerr << "CRITICAL ERROR: No enemy types defined for Level " 
-                       << currentLevel.levelNumber << std::endl;
-             // Handle error or use a default type
-             m_currentState = GameState::GameOver;
-             return;
+        // 1. Initial Load: Load ALL levels only once
+        if (m_levels.empty()) {
+            std::cout << "DEBUG 1: Before calling loadLevelsFromFile..." << std::endl;
+            m_levels = loadLevelsFromFile("level_data.json"); 
+            
+            if (m_levels.empty()) {
+                std::cerr << "CRITICAL ERROR: Failed to load any levels." << std::endl;
+                m_currentState = GameState::GameOver;
+                return;
+            }
+            std::cout << "DEBUG 2: Level loading complete." << std::endl;
         }
-        const EnemyTypeData& enemyTypeData = currentLevel.enemyTypes[0];
 
-// 3. Call the Singleton
-std::cout << "DEBUG 4: Calling EnemySpawnSystem::getInstance()..." << std::endl; // <-- TRACE POINT 4
-EnemySpawnSystem::getInstance().setLevelParameters( 
-    currentLevel.enemyCount, 
-    currentLevel.spawnInterval,
-    currentLevel.minX,
-    currentLevel.maxX,
-    currentLevel.enemyTypes[0] // Get the first enemy type from the vector
-);
+        // 2. Access the current level data
+        std::cout << "DEBUG 3: Accessing currentLevel data..." << std::endl;
+        const LevelData& currentLevel = m_levels[m_currentLevelIndex];
 
-// Pass the new EnemyTypeData parameters!
-        // NOTE: setLevelParameters in EnemySpawnSystem.hpp must be updated next!
+        // 3. Validate enemy types exist
+        if (currentLevel.enemyTypes.empty()) {
+            std::cerr << "CRITICAL ERROR: No enemy types defined for Level " 
+                      << currentLevel.levelNumber << std::endl;
+            m_currentState = GameState::GameOver;
+            return;
+        }
+
+        // 4. Call the Singleton to setup enemy spawning
+        std::cout << "DEBUG 4: Calling EnemySpawnSystem::getInstance()..." << std::endl;
         EnemySpawnSystem::getInstance().setLevelParameters( 
             currentLevel.enemyCount, 
             currentLevel.spawnInterval,
@@ -88,8 +71,8 @@ EnemySpawnSystem::getInstance().setLevelParameters(
             currentLevel.enemyTypes[0] // Get the first enemy type from the vector
         );
 
-std::cout << "DEBUG 5: Singleton call complete. Level ready." << std::endl; // <-- TRACE POINT 5
-
+        std::cout << "DEBUG 5: Singleton call complete. Level " 
+                  << currentLevel.levelNumber << " ready." << std::endl;
     }
     
     m_currentState = newState;
@@ -98,13 +81,10 @@ std::cout << "DEBUG 5: Singleton call complete. Level ready." << std::endl; // <
 
 void GameStateManager::advanceToNextLevel() {
     if (m_currentLevelIndex + 1 < m_levels.size()) {
-        m_currentLevelIndex++; // Increment to the next index
+        m_currentLevelIndex++;
         std::cout << "Advancing to Level " << m_levels[m_currentLevelIndex].levelNumber << std::endl;
-        
-        // ⭐ FIX 2: Simply call setState(Running). It will now correctly trigger setup.
         setState(GameState::Running); 
     } else {
-        // No more levels defined
         std::cout << "Congratulations! You've completed the game." << std::endl;
         setState(GameState::GameOver);
     }
@@ -122,3 +102,11 @@ void GameStateManager::setScore(int newScore) {
     m_score = newScore;
 }
 
+int GameStateManager::getCurrentLevel() const {
+    // Return the level number from the current level data
+    // m_currentLevelIndex is 0-based, but level numbers typically start at 1
+    if (m_currentLevelIndex < m_levels.size()) {
+        return m_levels[m_currentLevelIndex].levelNumber;
+    }
+    return 1; // Default to level 1 if levels haven't been loaded yet
+}

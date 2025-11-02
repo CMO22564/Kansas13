@@ -18,16 +18,34 @@ inline RenderComponent::Type shapeTypeFromString(const std::string& typeString) 
     return RenderComponent::Type::Circle; // Default to Circle
 }
 
+// **NOTE: This requires a utility to handle case conversion for full robustness.**
+
 // Helper function to convert a string to an SFML color
 inline sf::Color colorFromString(const std::string& colorString) {
-    if (colorString == "Red") {
+    // If you don't have a toLower helper, you MUST match the case used in the JSON (e.g., "Cyan")
+    
+    if (colorString == "Red" || colorString == "red") {
         return sf::Color::Red;
     }
-    if (colorString == "Blue") {
+    if (colorString == "Blue" || colorString == "blue") {
         return sf::Color::Blue;
     }
-    if (colorString == "Green") {
+    if (colorString == "Green" || colorString == "green") {
         return sf::Color::Green;
     }
-    return sf::Color::White; // Default to White
+    if (colorString == "Cyan" || colorString == "cyan") {
+        return sf::Color::Cyan;
+    }
+    if (colorString == "Yellow" || colorString == "yellow") {
+        return sf::Color::Yellow;
+    }
+    if (colorString == "Black" || colorString == "black") {
+        return sf::Color::Black;
+    }
+    if (colorString == "Magenta" || colorString == "magenta") {
+        return sf::Color::Magenta;
+    }
+    
+    // If the color string is not found, return White
+    return sf::Color::White; 
 }

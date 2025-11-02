@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp> // Required for sf::RenderWindow, sf::CircleShape, etc.
 #include <memory>          // FIX: Required for std::make_unique
 
-// CRITICAL FIX: Removed invisible characters and ensured parameter name consistency
+
 void RenderSystem::update(sf::RenderWindow& window,
                           const std::vector<EntityId>& entities,
                           const ComponentMap<PositionComponent>& positions,
@@ -13,14 +13,14 @@ void RenderSystem::update(sf::RenderWindow& window,
     
     for (EntityId id : entities) {
         // Check for active entities with Position and Render Components
-        // FIX: Replaced 'shapes.count(id)' with 'renderables.count(id)' if that was intended
+      
         if (positions.count(id) && renderables.count(id) && activeStates.count(id) && activeStates.at(id).active) {
             const auto& position = positions.at(id);
             auto& renderComponent = renderables.at(id); // Access RenderComponent
 
-            // CRITICAL FIX: Create the shape if it doesn't exist
+           
             if (!renderComponent.shape) {
-                // Use the component's Type and single float size to define the shape
+                
                 if (renderComponent.type == RenderComponent::Type::Circle) {
                     // Circle radius is the size
                     renderComponent.shape = std::make_unique<sf::CircleShape>(renderComponent.size);

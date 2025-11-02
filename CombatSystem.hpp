@@ -18,6 +18,7 @@ public:
         ComponentMap<ShieldComponent>& shields,
         ComponentMap<SoundComponent>& sounds,
         ComponentMap<VelocityComponent>& velocities,
-        ComponentMap<EnemyComponent>& enemies // <-- CRITICAL FIX: Add the new EnemyComponent map
+        ComponentMap<EnemyComponent>& enemies, // <-- CRITICAL FIX: Add the new EnemyComponent map
+        ComponentMap<PlayerLivesComponent>& playerLives
     );
 };

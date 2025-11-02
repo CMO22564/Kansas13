@@ -24,7 +24,7 @@
     operator sf::Color() const \
     { \
         return sf::Color(static_cast<std::uint8_t>(x * 255.f), \
-                         static_cast<std::uint8_t>(y * 255.f), \
-                         static_cast<std::uint8_t>(z * 255.f), \
-                         static_cast<std::uint8_t>(w * 255.f)); \
-    }
+                                 static_cast<std::uint8_t>(y * 255.f), \
+                                 static_cast<std::uint8_t>(z * 255.f), \
+                                 static_cast<std::uint8_t>(w * 255.f)); \
+}

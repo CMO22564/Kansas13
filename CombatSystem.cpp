@@ -19,7 +19,8 @@ void CombatSystem::update(
     ComponentMap<ShieldComponent>& shields,
     ComponentMap<SoundComponent>& sounds,
     ComponentMap<VelocityComponent>& velocities,
-    ComponentMap<EnemyComponent>& enemies // <-- CRITICAL: ADDED ComponentMap for the Enemy Tag
+    ComponentMap<EnemyComponent>& enemies, // <-- CRITICAL: ADDED ComponentMap for the Enemy Tag
+    ComponentMap<PlayerLivesComponent>& playerLives
 ) {
     GameStateManager& manager = GameStateManager::getInstance();
     
@@ -132,4 +133,41 @@ void CombatSystem::update(
             }
         }
     }
+    // --- 3. Player Death and Respawn Check ---
+if (playerId) {
+    auto healthIt = playerHealths.find(playerId);
+    auto livesIt = playerLives.find(playerId);
+    auto posIt = positions.find(playerId);
+
+    if (healthIt != playerHealths.end() && livesIt != playerLives.end() && posIt != positions.end()) {
+        
+        // Check for player death
+        if (healthIt->second.currentHealth <= 0.0f) {
+            
+            // 🛑 CRITICAL FIX: DECREMENT LIVES
+            livesIt->second.lives--;
+            std::cout << "Player died! Lives remaining: " << livesIt->second.lives << std::endl;
+
+            // Check for Game Over
+            if (livesIt->second.lives <= 0) {
+                manager.setState(GameState::GameOver);
+                std::cout << "GAME OVER" << std::endl;
+            } else {
+                // Respawn Player: Reset Health and Position (assuming 400, 300 is spawn point)
+                healthIt->second.currentHealth = healthIt->second.maxHealth;
+                posIt->second.position = sf::Vector2f(400.0f, 300.0f); // Adjust to your actual spawn point
+                
+                // Optional: Reset Shield
+                auto shieldIt = shields.find(playerId);
+                if (shieldIt != shields.end()) {
+                    shieldIt->second.currentShield = shieldIt->second.maxShield;
+                }
+                
+                // Optional: Play respawn sound
+                //if (!sounds.count(playerId)) sounds.emplace(playerId, SoundComponent{});
+                //sounds.at(playerId).type = SoundComponent::Type::Respawn;
+            }
+        }
+    }
+}
 }

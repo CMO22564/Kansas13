@@ -93,6 +93,9 @@ void ScreenSystem::update(const GameState& gameState, const int& score,
         m_livesText.setString("Lives: " + std::to_string(playerLives.begin()->second.lives));
     }
     m_scoreText.setString("Score: " + std::to_string(score));
+    
+    // UPDATE LEVEL TEXT from GameStateManager
+    m_levelText.setString("Level: " + std::to_string(GameStateManager::getInstance().getCurrentLevel()));
 
     if (gameState == GameState::TitleScreen) {
         m_window.draw(m_titleText);
