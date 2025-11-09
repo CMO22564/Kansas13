@@ -9,7 +9,10 @@ private:
     sf::SoundBuffer laserBuffer;
     sf::SoundBuffer explosionBuffer;
     sf::SoundBuffer shieldBuffer;
+    sf::SoundBuffer shieldAlarmBuffer;
     sf::SoundBuffer playerHitBuffer;
+    sf::SoundBuffer playerRespawnBuffer;
+    sf::SoundBuffer gameOverBuffer;
     std::list<sf::Sound> activeSounds;
 public:
     SoundSystem();

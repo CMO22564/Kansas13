@@ -34,6 +34,37 @@ void CombatSystem::update(
     if (!playerId || !shapes.count(playerId) || !shapes.at(playerId).shape)
         return;
     
+// Inside CombatSystem::update(...) near the beginning
+
+// Check for Shield Warning
+if (shields.count(playerId)) {
+    auto& shield = shields.at(playerId);
+    float shieldRatio = shields.at(playerId).currentShield / shields.at(playerId).maxShield;
+    
+    // --- CONDITION 1: Trigger Warning ---
+    if (shieldRatio <= 0.25f && shieldRatio > 0.0f) { 
+       if (!shield.isWarningActive) {
+            // Trigger the sound ONLY ONCE when crossing the threshold
+            if (!sounds.count(playerId)) sounds.emplace(playerId, SoundComponent{});
+            sounds.at(playerId).type = SoundComponent::Type::ShieldWarning;
+            
+            // 🛑 CRITICAL: Activate the flag to stop spamming
+            shield.isWarningActive = true; 
+        } 
+        
+    // --- CONDITION 2: Reset Flag ---
+    else if (shieldRatio > 0.25f) {
+        // Shield has recovered above the warning threshold, reset the flag.
+        shield.isWarningActive = false;
+    }
+        
+        // TEMPORARY: If you don't have a flag, the sound will trigger every frame.
+        // if (!sounds.count(playerId)) sounds.emplace(playerId, SoundComponent{});
+        // sounds.at(playerId).type = SoundComponent::Type::ShieldWarning; 
+        // Note: You must update your SoundSystem to play this sound correctly.
+    }
+}
+
     // --- 1. Player-Enemy Collision Check ---
     // Change: Iterate over the new EnemyComponent map instead of BouncingComponent
     for (auto& [enemyId, enemyTag] : enemies) { 
@@ -151,6 +182,10 @@ if (playerId) {
             // Check for Game Over
             if (livesIt->second.lives <= 0) {
                 manager.setState(GameState::GameOver);
+                
+                if (!sounds.count(playerId)) sounds.emplace(playerId, SoundComponent{});
+                sounds.at(playerId).type = SoundComponent::Type::GameOver;
+                
                 std::cout << "GAME OVER" << std::endl;
             } else {
                 // Respawn Player: Reset Health and Position (assuming 400, 300 is spawn point)
@@ -164,8 +199,8 @@ if (playerId) {
                 }
                 
                 // Optional: Play respawn sound
-                //if (!sounds.count(playerId)) sounds.emplace(playerId, SoundComponent{});
-                //sounds.at(playerId).type = SoundComponent::Type::Respawn;
+                if (!sounds.count(playerId)) sounds.emplace(playerId, SoundComponent{});
+                sounds.at(playerId).type = SoundComponent::Type::Respawn; // <--- Ensure this is present
             }
         }
     }

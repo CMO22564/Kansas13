@@ -11,8 +11,17 @@ SoundSystem::SoundSystem() {
     if (!shieldBuffer.loadFromFile("assets/shields.wav")) {
         std::cerr << "Error loading shields.wav" << std::endl;
     }
+     if (!shieldAlarmBuffer.loadFromFile("assets/alarm.wav")) {
+        std::cerr << "Error loading alarm.wav" << std::endl;
+    }
     if (!playerHitBuffer.loadFromFile("assets/shields.wav")) {
         std::cerr << "Error loading playerhit.wav" << std::endl;
+    }
+     if (!playerRespawnBuffer.loadFromFile("assets/respawn.wav")) {
+        std::cerr << "Error loading respawn.wav" << std::endl;
+    }
+    if (!gameOverBuffer.loadFromFile("assets/gameover.wav")) {
+        std::cerr << "Error loading gameover.wav" << std::endl;
     }
 }
 
@@ -29,11 +38,22 @@ void SoundSystem::update(ComponentMap<SoundComponent>& sounds) {
             activeSounds.emplace_back(shieldBuffer);
             activeSounds.back().setVolume(130.f); // Set volume to 130% (for emphasis)
             activeSounds.back().play();
+        } else if (pair.second.type == SoundComponent::Type::ShieldWarning) {
+            activeSounds.emplace_back(shieldAlarmBuffer);
+            activeSounds.back().setVolume(100.f); // Set volume to 100% (for emphasis)
+            activeSounds.back().play();
         } else if (pair.second.type == SoundComponent::Type::PlayerHit) {
             activeSounds.emplace_back(playerHitBuffer);
             activeSounds.back().play();
+        } else if (pair.second.type == SoundComponent::Type::Respawn) {
+            activeSounds.emplace_back(playerRespawnBuffer);
+            activeSounds.back().play();
+        } else if (pair.second.type == SoundComponent::Type::GameOver) {
+            activeSounds.emplace_back(gameOverBuffer);
+            activeSounds.back().play();
         }
     }
+
     sounds.clear();
 
     for (auto it = activeSounds.begin(); it != activeSounds.end();) {

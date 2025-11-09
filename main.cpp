@@ -77,8 +77,8 @@ playerLives.emplace(playerId, PlayerLivesComponent{3});                  // This
 
     // FIX: Change initialization to the required explicit style
     RenderComponent playerShape;
-    playerShape.type = RenderComponent::Type::Square; 
-    playerShape.color = sf::Color::Green;
+    playerShape.type = RenderComponent::Type::Triangle; 
+    playerShape.color = sf::Color::Magenta;
     playerShape.size = 25.f; 
 
     // Emplace the explicitly initialized object

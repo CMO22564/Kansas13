@@ -22,6 +22,7 @@ private:
     sf::Text m_scoreText;
     sf::Text m_levelText;
     sf::Text m_livesText;
+    sf::Text m_gameOverText; // <-- ADD THIS
     sf::RectangleShape m_healthBarBackground;
     sf::RectangleShape m_healthBar;
     sf::RectangleShape m_shieldBarBackground;

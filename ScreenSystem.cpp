@@ -11,6 +11,7 @@ ScreenSystem::ScreenSystem(sf::RenderWindow& window, const std::string& fontPath
       m_scoreText(m_font),
       m_levelText(m_font),
       m_livesText(m_font),
+      m_gameOverText(m_font),
       m_healthBarBackground(),
       m_healthBar(),
       m_shieldBarBackground(),
@@ -83,6 +84,15 @@ ScreenSystem::ScreenSystem(sf::RenderWindow& window, const std::string& fontPath
     m_shieldBar.setSize(sf::Vector2f(200, 20));
     m_shieldBar.setFillColor(sf::Color::Cyan);
     m_shieldBar.setPosition(m_shieldBarBackground.getPosition());
+
+    m_gameOverText.setFont(m_font); // Set font
+    m_gameOverText.setCharacterSize(60);
+    m_gameOverText.setFillColor(sf::Color::Red);
+    m_gameOverText.setString("GAME OVER"); // Set string
+    sf::FloatRect gameOverBounds = m_gameOverText.getLocalBounds();
+    m_gameOverText.setOrigin(sf::Vector2f(gameOverBounds.position.x + gameOverBounds.size.x / 2.f, gameOverBounds.position.y + gameOverBounds.size.y / 2.f));
+    m_gameOverText.setPosition(sf::Vector2f(m_window.getSize().x / 2.f, 
+        m_window.getSize().y / 2.f - 50)); // Slightly above center
 }
 
 void ScreenSystem::update(const GameState& gameState, const int& score,
@@ -126,4 +136,10 @@ void ScreenSystem::update(const GameState& gameState, const int& score,
     } else if (gameState == GameState::Paused) {
         m_window.draw(m_pauseText);
     }
+    else if (gameState == GameState::GameOver) { // <-- ADD THIS BLOCK
+    // You might also want to display final score here
+    m_window.draw(m_gameOverText); 
+    // Add logic to draw score entry prompt/high score list here later
+    }
+
 }

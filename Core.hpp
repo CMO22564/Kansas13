@@ -29,6 +29,8 @@ struct PlayerHealthComponent {
 struct ShieldComponent {
     float currentShield = 100.0f;
     float maxShield = 100.0f;
+    // 🛑 CRITICAL FIX: Add this flag
+    bool isWarningActive = false;
 };
 
 struct PlayerLivesComponent {
@@ -83,10 +85,12 @@ struct SoundComponent {
         Laser,
         Explosion,
         ShieldHit,
+        ShieldWarning, // <-- NEW: for <25% Shield
         PlayerHit,
-        Spawn
+        Respawn, // <-- Existing/Required for Respawn
+        GameOver // <-- Play when Player Lives are all gone
         };
-      Type type;
+      Type type = Type::Explosion;
 };
 
 // NEW FEATURE: Enemy Tag Component
