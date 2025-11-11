@@ -9,7 +9,7 @@ LDFLAGS = -LC:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/lib \
 # CORRECTED: Removed leading slash before C:
 INCLUDES = -I. -I./imgui -IC:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include
 
-SRCS = main.cpp Core.cpp PlayerInputSystem.cpp EnemySpawnSystem.cpp MovementSystem.cpp CombatSystem.cpp CleanUpSystem.cpp RenderSystem.cpp SoundSystem.cpp DebugSystem.cpp ScreenSystem.cpp GameStateManager.cpp LevelLoader.cpp
+SRCS = main.cpp Core.cpp PlayerInputSystem.cpp EnemySpawnSystem.cpp MovementSystem.cpp CombatSystem.cpp CleanUpSystem.cpp RenderSystem.cpp SoundSystem.cpp DebugSystem.cpp ScreenSystem.cpp GameStateManager.cpp LevelLoader.cpp HighScore.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 

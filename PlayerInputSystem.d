@@ -1,8 +1,27 @@
-PlayerInputSystem.o: PlayerInputSystem.cpp PlayerInputSystem.hpp Core.hpp \
+PlayerInputSystem.o: PlayerInputSystem.cpp PlayerInputSystem.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Config.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/String.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/String.inl \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl \
+ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl \
+ Core.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Config.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp \
@@ -10,11 +29,6 @@ PlayerInputSystem.o: PlayerInputSystem.cpp PlayerInputSystem.hpp Core.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp \
@@ -29,7 +43,6 @@ PlayerInputSystem.o: PlayerInputSystem.cpp PlayerInputSystem.hpp Core.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Glyph.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Image.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTarget.hpp \
@@ -46,18 +59,6 @@ PlayerInputSystem.o: PlayerInputSystem.cpp PlayerInputSystem.hpp Core.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Time.inl \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.inl \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/String.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/String.inl \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl \
- C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Clock.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Shader.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.hpp \
@@ -96,13 +97,31 @@ PlayerInputSystem.o: PlayerInputSystem.cpp PlayerInputSystem.hpp Core.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Audio/SoundRecorder.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl \
- GameStateManager.hpp LevelData.hpp
+ GameStateManager.hpp LevelData.hpp HighScore.hpp json/json.hpp
 PlayerInputSystem.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Config.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/String.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/String.inl:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl:
+C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl:
 Core.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/BlendMode.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Export.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Config.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/CircleShape.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Shape.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.hpp:
@@ -110,11 +129,6 @@ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Color.inl:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Drawable.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/PrimitiveType.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector2.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Export.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Angle.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Angle.inl:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector2.inl:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Rect.inl:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderStates.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/CoordinateType.hpp:
@@ -129,7 +143,6 @@ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Font.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Glyph.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Texture.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/GlResource.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Export.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Image.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/RectangleShape.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/RenderTarget.hpp:
@@ -146,18 +159,6 @@ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/WindowHandle.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Time.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Time.inl:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/WindowBase.inl:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Event.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Joystick.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/String.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Utf.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Utf.inl:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/String.inl:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Keyboard.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Mouse.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Sensor.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector3.hpp:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Vector3.inl:
-C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Window/Event.inl:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/System/Clock.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Shader.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics/Glsl.hpp:
@@ -198,3 +199,5 @@ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.h
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl:
 GameStateManager.hpp:
 LevelData.hpp:
+HighScore.hpp:
+json/json.hpp:

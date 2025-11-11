@@ -18,11 +18,15 @@
 #include <iostream>
 #include <algorithm> // For std::max/std::min
 
-
-
 int main() {
     sf::RenderWindow window(sf::VideoMode({800, 600}), "Kansas 13");
     window.setFramerateLimit(60);
+
+// Define the font path (adjust to your actual font file location)
+    std::string fontPath = "arial.ttf"; // Replace with actual path, e.g., "assets/fonts/arial.ttf"
+
+    // Instantiate ScreenSystem with window and font path
+    // ScreenSystem screenSystem(window, fontPath);
 
     ImGui::SFML::Init(window);
     sf::Clock imguiClock;
@@ -30,50 +34,44 @@ int main() {
     // Debug window flag
     bool showDebugWindow = false;
 
-  // --- Component Maps ---
-	ComponentMap<PositionComponent> positions;
-	ComponentMap<RenderComponent> shapes;
-	ComponentMap<ProjectileComponent> projectiles;
-	ComponentMap<BouncingComponent> bouncingShapes;
-	ComponentMap<DamageComponent> damages;
-	//ComponentMap<DamageComponent> damageValues;
-	ComponentMap<ActiveComponent> activeStates;
-	ComponentMap<PlayerHealthComponent> playerHealths;
-	ComponentMap<HealthComponent> healths;
-	ComponentMap<ShieldComponent> shields;
-	ComponentMap<SoundComponent> sounds;
-	ComponentMap<VelocityComponent> velocities;
-	ComponentMap<EnemyComponent> enemies; // <-- ADD THIS LINE
-	ComponentMap<PlayerInputComponent> playerInputs; // <-- Add this
-	ComponentMap<PlayerLivesComponent> playerLives; // <-- Add this
-	
-	//ComponentMap<HealthComponent> healths;
+    // --- Component Maps ---
+    ComponentMap<PositionComponent> positions;
+    ComponentMap<RenderComponent> shapes;
+    ComponentMap<ProjectileComponent> projectiles;
+    ComponentMap<BouncingComponent> bouncingShapes;
+    ComponentMap<DamageComponent> damages;
+    ComponentMap<ActiveComponent> activeStates;
+    ComponentMap<PlayerHealthComponent> playerHealths;
+    ComponentMap<HealthComponent> healths;
+    ComponentMap<ShieldComponent> shields;
+    ComponentMap<SoundComponent> sounds;
+    ComponentMap<VelocityComponent> velocities;
+    ComponentMap<EnemyComponent> enemies;
+    ComponentMap<PlayerInputComponent> playerInputs;
+    ComponentMap<PlayerLivesComponent> playerLives;
 
     std::vector<EntityId> entities;
 
     // Systems
     PlayerInputSystem playerInputSystem;
-    // EnemySpawnSystem enemySpawnSystem; // The system is now accessed via singleton
     MovementSystem movementSystem;
     CombatSystem combatSystem;
     CleanUpSystem cleanUpSystem;
     RenderSystem renderSystem;
     SoundSystem soundSystem;
     DebugSystem debugSystem;
-    ScreenSystem screenSystem(window, "arial.ttf");
+    ScreenSystem screenSystem(window, "arial.ttf"); 
 
     EntityId playerId = getNextEntityId();
     entities.push_back(playerId);
     
-    // int score = 0; // REMOVED: Score is now managed by GameStateManager
-     
     // Add player components
     positions.emplace(playerId, PositionComponent{{sf::Vector2f(400, 500)}}); 
     velocities.emplace(playerId, VelocityComponent{{sf::Vector2f(0.f, 0.f)}});
     playerInputs.emplace(playerId, PlayerInputComponent{});
-    playerHealths.emplace(playerId, PlayerHealthComponent{100.0f, 100.0f}); // This is now correct with double braces
-shields.emplace(playerId, ShieldComponent{100.0f, 100.0f});             // This is now correct with double braces
-playerLives.emplace(playerId, PlayerLivesComponent{3});                  // This is now correct with double braces
+    playerHealths.emplace(playerId, PlayerHealthComponent{100.0f, 100.0f});
+    shields.emplace(playerId, ShieldComponent{100.0f, 100.0f});
+    playerLives.emplace(playerId, PlayerLivesComponent{3});
 
     // FIX: Change initialization to the required explicit style
     RenderComponent playerShape;
@@ -85,7 +83,6 @@ playerLives.emplace(playerId, PlayerLivesComponent{3});                  // This
     activeStates.emplace(playerId, ActiveComponent{true});
     shapes.emplace(playerId, std::move(playerShape));
     
-       
     sf::Clock gameClock;
 
     // Game loop
@@ -105,43 +102,45 @@ playerLives.emplace(playerId, PlayerLivesComponent{3});                  // This
                 }
             }
             
-            GameStateManager::getInstance().handleInput(*event);
+            // FIXED: Handle ScoreEntry state separately
+            if (GameStateManager::getInstance().getState() == GameState::ScoreEntry) {
+                playerInputSystem.handleScoreEntry(*event, GameStateManager::getInstance());
+            } else {
+                GameStateManager::getInstance().handleInput(*event);
+            }
         }
 
         sf::Time deltaTime = gameClock.restart();
-    // Assuming you have a variable named 'dt' which stores the frame time.
-    // If you don't have one, you need to create one (e.g., float dt = clock.restart().asSeconds();)
-        float dt = gameClock.restart().asSeconds(); // <--- CRITICAL: Ensure you have 'dt' defined!
-
+        float dt = deltaTime.asSeconds();
 
         ImGui::SFML::Update(window, deltaTime);
 
         if (GameStateManager::getInstance().getState() == GameState::Running) {
             
             playerInputSystem.update(entities, 
-                         dt, // <--- FIX: Insert the missing 'dt' argument here
+                         dt,
                          positions, 
                          velocities, 
                          playerInputs, 
-                         entities, // Note: You're passing 'entities' twice, once as list of entities, once as the list to add new projectiles to.
+                         entities,
                          shapes, 
                          projectiles, 
                          activeStates, 
                          sounds, 
-                         damages); // Changed from damageValues
+                         damages);
             
             // Accessing EnemySpawnSystem as a singleton
-            EnemySpawnSystem::getInstance().update(entities, positions, velocities, shapes, bouncingShapes, activeStates, damages, healths, enemies); // Changed from damageValues
+            EnemySpawnSystem::getInstance().update(entities, positions, velocities, shapes, bouncingShapes, activeStates, damages, healths, enemies);
             
             movementSystem.update(entities, positions, velocities, bouncingShapes, shapes, deltaTime);
                  
             // CombatSystem signature is updated, no score parameter
-            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damages, activeStates, playerHealths, healths, shields, sounds, velocities, enemies, playerLives); // Changed from damageValues
+            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damages, activeStates, playerHealths, healths, shields, sounds, velocities, enemies, playerLives);
             
             soundSystem.update(sounds);
             
             // Normal cleanup runs every frame
-            cleanUpSystem.update(entities, activeStates, projectiles, bouncingShapes, damages, playerHealths, shields, playerLives, playerInputs, positions, velocities, shapes, sounds); // Changed from damageValues
+            cleanUpSystem.update(entities, activeStates, projectiles, bouncingShapes, damages, playerHealths, shields, playerLives, playerInputs, positions, velocities, shapes, sounds);
             
             // CRITICAL NEW LOGIC: Level completion check and advancement
             if (EnemySpawnSystem::getInstance().isLevelComplete()) {
@@ -152,7 +151,7 @@ playerLives.emplace(playerId, PlayerLivesComponent{3});                  // This
                     entities, 
                     projectiles, 
                     bouncingShapes, 
-                    damages,  // Changed from damageValues
+                    damages,
                     activeStates, 
                     positions, 
                     velocities, 
@@ -162,9 +161,20 @@ playerLives.emplace(playerId, PlayerLivesComponent{3});                  // This
                 
                 GameStateManager::getInstance().advanceToNextLevel();
             }
+
+                // 🛑 CRITICAL FIX: Call the ScreenSystem update function here
+                screenSystem.update(
+                GameStateManager::getInstance().getState(),
+                GameStateManager::getInstance().getScore(),
+                playerHealths,
+                shields,
+                playerLives
+            );
+
+
         }
 
-        // Player clamping code (unchanged, but using std::max/min)
+        // Player clamping code
         const float windowWidth = 800.0f;
         const float windowHeight = 600.0f;
         const float playerRadius = 60.0f;
@@ -184,13 +194,15 @@ playerLives.emplace(playerId, PlayerLivesComponent{3});                  // This
             debugSystem.update(GameStateManager::getInstance().getScore(), playerHealths, shields, playerLives, entities, positions, shapes, velocities);
         }
 
-        window.clear();
+       window.clear();
 
-        if (GameStateManager::getInstance().getState() == GameState::Running) {
+        // FIXED: Always render the game entities if not on title screen
+        if (GameStateManager::getInstance().getState() != GameState::TitleScreen) { // <-- FIXED: getCurrentState -> getState
             renderSystem.update(window, entities, positions, shapes, activeStates);
-        } 	
+        }
 
-        screenSystem.update(GameStateManager::getInstance().getState(), GameStateManager::getInstance().getScore(), playerHealths, shields, playerLives);
+        // FIXED: Call render() instead of update()
+        screenSystem.render(window, GameStateManager::getInstance());
         
         ImGui::SFML::Render(window);
         window.display();

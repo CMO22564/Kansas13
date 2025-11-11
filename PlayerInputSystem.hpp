@@ -1,23 +1,33 @@
 #pragma once
 #include <vector>
+#include <string>
+#include <SFML/Window/Event.hpp>
 #include "Core.hpp"
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
+#include "GameStateManager.hpp"
 
-class PlayerInputSystem {
+class PlayerInputSystem : public System {
 public:
-    // PlayerInputSystem.hpp (New Line 9)
-void update(const std::vector<EntityId>& entities,
-            float dt, // <--- FIX: Added float dt here
-            ComponentMap<PositionComponent>& positions, 
-            ComponentMap<VelocityComponent>& velocities, 
-            ComponentMap<PlayerInputComponent>& playerInputs, 
-            std::vector<EntityId>& entitiesList, 
-            ComponentMap<RenderComponent>& shapes, 
-            ComponentMap<ProjectileComponent>& projectiles, 
-            ComponentMap<ActiveComponent>& activeStates, 
-            ComponentMap<SoundComponent>& sounds, 
-            ComponentMap<DamageComponent>& damages);
-    
-    void spawnProjectile(const sf::Vector2f& startPosition, ComponentMap<PositionComponent>& positions, ComponentMap<VelocityComponent>& velocities, ComponentMap<RenderComponent>& shapes, ComponentMap<ProjectileComponent>& projectiles, ComponentMap<ActiveComponent>& activeStates, ComponentMap<SoundComponent>& sounds, std::vector<EntityId>& entities, ComponentMap<DamageComponent>& damages);
-    };
+    PlayerInputSystem() = default;
+    void update(
+        const std::vector<EntityId>& entities,
+        float dt,
+        ComponentMap<PositionComponent>& positions,
+        ComponentMap<VelocityComponent>& velocities,
+        ComponentMap<PlayerInputComponent>& playerInputs,
+        std::vector<EntityId>& entitiesList,
+        ComponentMap<RenderComponent>& shapes,
+        ComponentMap<ProjectileComponent>& projectiles,
+        ComponentMap<ActiveComponent>& activeStates,
+        ComponentMap<SoundComponent>& sounds,
+        ComponentMap<DamageComponent>& damages
+    );
+    void handleScoreEntry(sf::Event& event, GameStateManager& manager);
+    void resetInitials();
+    std::string getCurrentInitials() const { return m_currentInitials; }
+    bool isEnteringScore() const { return m_enteringScore; }
+
+private:
+    std::string m_currentInitials = "---"; // Current initials being entered
+    size_t m_currentInitialIndex = 0; // Current character being edited
+    bool m_enteringScore = false; // Flag to indicate score entry mode
+};

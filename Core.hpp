@@ -4,6 +4,7 @@
 #include <unordered_map>
 #include <memory>
 #include <SFML/Graphics.hpp>
+#include <SFML/Window/Event.hpp>
 #include <SFML/Audio.hpp>
 #include "GameStateManager.hpp"
 

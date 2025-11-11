@@ -96,7 +96,7 @@ EnemySpawnSystem.o: EnemySpawnSystem.cpp EnemySpawnSystem.hpp Core.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Audio/SoundRecorder.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.hpp \
  C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl \
- GameStateManager.hpp LevelData.hpp Utils.hpp
+ GameStateManager.hpp LevelData.hpp HighScore.hpp json/json.hpp Utils.hpp
 EnemySpawnSystem.hpp:
 Core.hpp:
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Graphics.hpp:
@@ -198,4 +198,6 @@ C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.h
 C:/Users/ONeil/OneDrive/Desktop/SFML-3.1.0/include/SFML/Audio/SoundFileFactory.inl:
 GameStateManager.hpp:
 LevelData.hpp:
+HighScore.hpp:
+json/json.hpp:
 Utils.hpp:
