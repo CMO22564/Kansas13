@@ -25,22 +25,23 @@ SoundSystem::SoundSystem() {
     }
 }
 
-void SoundSystem::update(ComponentMap<SoundComponent>& sounds) {
+void SoundSystem::update(ComponentMap<SoundComponent>& sounds, float dt) { // <--- FIX: Add float dt
     for (auto& pair : sounds) {
         if (pair.second.type == SoundComponent::Type::Laser) {
             activeSounds.emplace_back(laserBuffer);
             activeSounds.back().play();
         } else if (pair.second.type == SoundComponent::Type::Explosion) {
             activeSounds.emplace_back(explosionBuffer);
-            activeSounds.back().setVolume(90.f); // Set volume to 90% 
+            activeSounds.back().setVolume(90.f); 
             activeSounds.back().play();
         } else if (pair.second.type == SoundComponent::Type::ShieldHit) {
             activeSounds.emplace_back(shieldBuffer);
-            activeSounds.back().setVolume(130.f); // Set volume to 130% (for emphasis)
+            activeSounds.back().setVolume(130.f);
             activeSounds.back().play();
         } else if (pair.second.type == SoundComponent::Type::ShieldWarning) {
+            // ShieldWarning sound is placed into activeSounds for duration check
             activeSounds.emplace_back(shieldAlarmBuffer);
-            activeSounds.back().setVolume(100.f); // Set volume to 100% (for emphasis)
+            activeSounds.back().setVolume(100.f); 
             activeSounds.back().play();
         } else if (pair.second.type == SoundComponent::Type::PlayerHit) {
             activeSounds.emplace_back(playerHitBuffer);
@@ -57,6 +58,21 @@ void SoundSystem::update(ComponentMap<SoundComponent>& sounds) {
     sounds.clear();
 
     for (auto it = activeSounds.begin(); it != activeSounds.end();) {
+        
+        if (it->getStatus() == sf::SoundSource::Status::Playing) {
+            
+            // 🛑 CRITICAL FIX: Use & to get the address of the buffer returned by getBuffer()
+            // This ensures both sides of the == are pointers (const sf::SoundBuffer*).
+            if (&it->getBuffer() == &shieldAlarmBuffer) { // <--- FIX APPLIED HERE
+                
+                // Stop the sound if it has been playing for 5.0 seconds or more
+                if (it->getPlayingOffset().asSeconds() >= 5.0f) {
+                    it->stop();
+                }
+            }
+        }
+        
+        // Original cleanup logic
         if (it->getStatus() == sf::SoundSource::Status::Stopped) {
             it = activeSounds.erase(it);
         } else {
@@ -64,4 +80,3 @@ void SoundSystem::update(ComponentMap<SoundComponent>& sounds) {
         }
     }
 }
-

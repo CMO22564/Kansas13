@@ -15,6 +15,7 @@ private:
     sf::SoundBuffer gameOverBuffer;
     std::list<sf::Sound> activeSounds;
 public:
+    // 🛑 CRITICAL FIX: Add this line to declare the constructor
     SoundSystem();
-    void update(ComponentMap<SoundComponent>& sounds);
+void update(ComponentMap<SoundComponent>& sounds, float dt);
 };

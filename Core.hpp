@@ -63,6 +63,11 @@ struct HealthComponent {
     float maxHealth = 100.0f;
 };
 
+struct RespawnComponent {
+    float respawnTimer = 2.0f; // Default 2 seconds of invulnerability
+    bool isInvulnerable = true;
+};
+
 struct PositionComponent {
     sf::Vector2f position;
 };

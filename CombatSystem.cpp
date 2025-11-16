@@ -35,32 +35,28 @@ void CombatSystem::update(
         return;
     
         
+// CombatSystem.cpp (Around line 30)
+
 // Check for Shield Warning
 if (shields.count(playerId)) {
     auto& shield = shields.at(playerId);
-    float shieldRatio = shields.at(playerId).currentShield / shields.at(playerId).maxShield;
+    float shieldRatio = (shield.maxShield > 0) ? shield.currentShield / shield.maxShield : 0.0f;
     
-    // --- CONDITION 1: Trigger Warning ---
+    // --- 1. Trigger Warning (Plays sound each time shield drops below 25%) ---
     if (shieldRatio <= 0.25f && shieldRatio > 0.0f) { 
        if (!shield.isWarningActive) {
             // Trigger the sound ONLY ONCE when crossing the threshold
             if (!sounds.count(playerId)) sounds.emplace(playerId, SoundComponent{});
             sounds.at(playerId).type = SoundComponent::Type::ShieldWarning;
             
-            // 🛑 CRITICAL: Activate the flag to stop spamming
+            // Activate the flag to stop spamming until the shield recovers
             shield.isWarningActive = true; 
         } 
-        
-    // --- CONDITION 2: Reset Flag ---
+    } 
+    // --- 2. Reset Flag if Shield Recovers (Allows sound to re-trigger later) ---
     else if (shieldRatio > 0.25f) {
         // Shield has recovered above the warning threshold, reset the flag.
         shield.isWarningActive = false;
-    }
-        
-        // TEMPORARY: If you don't have a flag, the sound will trigger every frame.
-        // if (!sounds.count(playerId)) sounds.emplace(playerId, SoundComponent{});
-        // sounds.at(playerId).type = SoundComponent::Type::ShieldWarning; 
-        // Note: You must update your SoundSystem to play this sound correctly.
     }
 }
 
@@ -190,6 +186,11 @@ if (shields.count(playerId)) {
                     sounds.at(playerId).type = SoundComponent::Type::GameOver;
                     
                     std::cout << "GAME OVER" << std::endl;
+               
+                    // CombatSystem.cpp (Find this block near the end of the update function)
+
+                // CombatSystem.cpp (Inside the player respawn 'else' block)
+
                 } else {
                     // Respawn Player: Reset Health and Position
                     healthIt->second.currentHealth = healthIt->second.maxHealth;
@@ -199,6 +200,8 @@ if (shields.count(playerId)) {
                     auto shieldIt = shields.find(playerId);
                     if (shieldIt != shields.end()) {
                         shieldIt->second.currentShield = shieldIt->second.maxShield;
+                        // 🛑 FIX: Reset the warning flag when shields are restored to max (New Life)
+                        shieldIt->second.isWarningActive = false; 
                     }
                     
                     // Play respawn sound

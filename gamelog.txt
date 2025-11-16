@@ -8,206 +8,200 @@ DEBUG 4: Calling EnemySpawnSystem::getInstance()...
 Enemy Spawner reset for new level. Max Enemies: 10, Type: Circle, Color: Magenta
 DEBUG 5: Singleton call complete. Level 1 ready.
 Game state changed to: 1
-CleanUpSystem: Removed off-screen projectile 2 at (256.018, -6.25686)
-CleanUpSystem: Removed off-screen projectile 3 at (256.018, -5.33761)
-CleanUpSystem: Removed off-screen projectile 4 at (256.018, -12.164)
-Enemy spawned at (268.122, 50) - Total: 1/10
-CleanUpSystem: Removed off-screen projectile 5 at (256.018, -73.5288)
-CleanUpSystem: Removed off-screen projectile 6 at (256.018, -5.74959)
-Enemy 8 hit. Health: 40
+Enemy spawned at (409.243, 50) - Total: 1/10
+Enemy 2 hit. Health: 40
+CleanUpSystem: Removed inactive entity 3
+CleanUpSystem: Removed off-screen projectile 4 at (709.539, -6.2841)
+CleanUpSystem: Removed off-screen projectile 6 at (316.334, -11.1449)
+CleanUpSystem: Removed off-screen projectile 5 at (691.136, -16.5579)
+Enemy 2 hit. Health: 30
 CleanUpSystem: Removed inactive entity 7
-Enemy 8 hit. Health: 30
-CleanUpSystem: Removed inactive entity 9
-Enemy 8 hit. Health: 20
-CleanUpSystem: Removed inactive entity 10
-CleanUpSystem: Removed off-screen projectile 11 at (300, -16.661)
-Enemy 8 hit. Health: 10
-CleanUpSystem: Removed inactive entity 12
-Enemy 8 hit. Health: 0
-Enemy destroyed! Score: 100
+Enemy 2 hit. Health: 20
 CleanUpSystem: Removed inactive entity 8
-CleanUpSystem: Removed inactive entity 13
-Enemy spawned at (72.6198, 50) - Total: 2/10
-CleanUpSystem: Removed off-screen projectile 14 at (296.76, -7.73303)
-CleanUpSystem: Removed off-screen projectile 15 at (297.014, -9.52712)
-CleanUpSystem: Removed off-screen projectile 17 at (297.015, -9.53421)
-CleanUpSystem: Removed off-screen projectile 18 at (297.03, -9.64362)
-CleanUpSystem: Removed off-screen projectile 19 at (480.878, -7.09359)
-Enemy 16 hit. Health: 40
+Enemy spawned at (242.597, 50) - Total: 2/10
+Enemy 2 hit. Health: 10
+CleanUpSystem: Removed inactive entity 9
+Enemy 2 hit. Health: 0
+Enemy destroyed! Score: 100
+CleanUpSystem: Removed inactive entity 2
+CleanUpSystem: Removed inactive entity 11
+CleanUpSystem: Removed off-screen projectile 12 at (474.023, -11.3507)
+CleanUpSystem: Removed off-screen projectile 13 at (536.808, -7.17178)
+CleanUpSystem: Removed off-screen projectile 14 at (451.09, -13.1944)
+CleanUpSystem: Removed off-screen projectile 15 at (315.181, -10.9159)
+CleanUpSystem: Removed off-screen projectile 16 at (472.541, -25.3527)
+CleanUpSystem: Removed off-screen projectile 17 at (468.986, -15.5689)
+Enemy 10 hit. Health: 40
+CleanUpSystem: Removed inactive entity 19
+Enemy spawned at (377.016, 50) - Total: 3/10
+CleanUpSystem: Removed off-screen projectile 18 at (468.851, -15.1975)
+Enemy 10 hit. Health: 30
+CleanUpSystem: Removed inactive entity 20
+Enemy 10 hit. Health: 20
 CleanUpSystem: Removed inactive entity 22
-CleanUpSystem: Removed off-screen projectile 20 at (752.204, -5.5724)
-CleanUpSystem: Removed off-screen projectile 21 at (751.831, -5.30062)
-Enemy spawned at (561.214, 50) - Total: 3/10
-Enemy 16 hit. Health: 30
+Enemy 10 hit. Health: 10
 CleanUpSystem: Removed inactive entity 23
-Enemy 16 hit. Health: 20
-CleanUpSystem: Removed inactive entity 24
-Enemy 16 hit. Health: 10
-CleanUpSystem: Removed inactive entity 26
-Enemy 16 hit. Health: 0
+Enemy 10 hit. Health: 0
 Enemy destroyed! Score: 200
-CleanUpSystem: Removed inactive entity 16
+CleanUpSystem: Removed inactive entity 10
+CleanUpSystem: Removed inactive entity 24
+CleanUpSystem: Removed off-screen projectile 25 at (272.915, -10.1633)
+CleanUpSystem: Removed off-screen projectile 26 at (272.686, -8.43048)
+Enemy 21 hit. Health: 40
 CleanUpSystem: Removed inactive entity 27
-CleanUpSystem: Removed off-screen projectile 28 at (81.0972, -12.2121)
-CleanUpSystem: Removed off-screen projectile 29 at (81.1183, -12.7229)
-CleanUpSystem: Removed off-screen projectile 30 at (81.1002, -12.2841)
-CleanUpSystem: Removed off-screen projectile 31 at (-5.62352, 0.719225)
-Enemy spawned at (681.425, 50) - Total: 4/10
-Enemy 25 hit. Health: 40
-CleanUpSystem: Removed inactive entity 32
-CleanUpSystem: Removed off-screen projectile 34 at (317.268, -7.55247)
-CleanUpSystem: Removed off-screen projectile 35 at (261.414, -13.8644)
-CleanUpSystem: Removed off-screen projectile 36 at (260.885, -14.6544)
-CleanUpSystem: Removed off-screen projectile 37 at (260.477, -15.2656)
-Enemy 25 hit. Health: 30
-CleanUpSystem: Removed inactive entity 40
-CleanUpSystem: Removed off-screen projectile 38 at (265.152, -8.27081)
-Enemy 25 hit. Health: 20
-CleanUpSystem: Removed inactive entity 41
-CleanUpSystem: Removed off-screen projectile 39 at (265.308, -8.03867)
-Enemy 25 hit. Health: 10
-CleanUpSystem: Removed inactive entity 42
-Enemy 25 hit. Health: 0
+Enemy 21 hit. Health: 30
+CleanUpSystem: Removed inactive entity 28
+Enemy spawned at (298.255, 50) - Total: 4/10
+Enemy 21 hit. Health: 20
+CleanUpSystem: Removed inactive entity 29
+Enemy 21 hit. Health: 10
+CleanUpSystem: Removed inactive entity 30
+Enemy 21 hit. Health: 0
 Enemy destroyed! Score: 300
-CleanUpSystem: Removed inactive entity 25
+CleanUpSystem: Removed inactive entity 21
+CleanUpSystem: Removed inactive entity 31
+CleanUpSystem: Removed off-screen projectile 33 at (323.25, -11.868)
+CleanUpSystem: Removed off-screen projectile 34 at (323.295, -11.4737)
+CleanUpSystem: Removed off-screen projectile 35 at (309.341, -15.983)
+CleanUpSystem: Removed off-screen projectile 36 at (400.279, -14.0692)
+CleanUpSystem: Removed off-screen projectile 37 at (536.796, -15.4213)
+CleanUpSystem: Removed off-screen projectile 38 at (537.891, -18.7145)
+Enemy 32 hit. Health: 40
+CleanUpSystem: Removed inactive entity 39
+Enemy spawned at (272.824, 50) - Total: 5/10
+Enemy 32 hit. Health: 30
+CleanUpSystem: Removed inactive entity 40
+Enemy 32 hit. Health: 20
+CleanUpSystem: Removed inactive entity 42
+Enemy 32 hit. Health: 10
 CleanUpSystem: Removed inactive entity 43
-Enemy 33 hit. Health: 40
-CleanUpSystem: Removed inactive entity 44
-Enemy spawned at (236.09, 50) - Total: 5/10
-Enemy 33 hit. Health: 30
-CleanUpSystem: Removed inactive entity 45
-Enemy 33 hit. Health: 20
-CleanUpSystem: Removed inactive entity 46
-Enemy 33 hit. Health: 10
-CleanUpSystem: Removed inactive entity 48
-Enemy 33 hit. Health: 0
+Enemy 32 hit. Health: 0
 Enemy destroyed! Score: 400
-CleanUpSystem: Removed inactive entity 33
+CleanUpSystem: Removed inactive entity 32
+CleanUpSystem: Removed inactive entity 44
+CleanUpSystem: Removed off-screen projectile 45 at (326.505, -8.23793)
+Enemy spawned at (460.63, 50) - Total: 6/10
+Enemy 41 hit. Health: 40
+CleanUpSystem: Removed inactive entity 46
+Enemy 41 hit. Health: 30
+CleanUpSystem: Removed inactive entity 48
+Enemy 41 hit. Health: 20
 CleanUpSystem: Removed inactive entity 49
-CleanUpSystem: Removed off-screen projectile 50 at (700.921, -12.2871)
-CleanUpSystem: Removed off-screen projectile 51 at (701.171, -15.3023)
-CleanUpSystem: Removed off-screen projectile 52 at (700.974, -12.9201)
-CleanUpSystem: Removed off-screen projectile 53 at (700.787, -10.6685)
-Enemy spawned at (307.742, 50) - Total: 6/10
-Enemy 47 hit. Health: 40
-CleanUpSystem: Removed inactive entity 55
-Enemy 47 hit. Health: 30
-CleanUpSystem: Removed inactive entity 56
-Enemy 47 hit. Health: 20
-CleanUpSystem: Removed inactive entity 57
-Enemy 47 hit. Health: 10
-CleanUpSystem: Removed inactive entity 58
-Enemy 47 hit. Health: 0
+Enemy 41 hit. Health: 10
+CleanUpSystem: Removed inactive entity 50
+Enemy 41 hit. Health: 0
 Enemy destroyed! Score: 500
-CleanUpSystem: Removed inactive entity 47
-CleanUpSystem: Removed inactive entity 59
-CleanUpSystem: Removed off-screen projectile 60 at (224.836, -16.814)
-CleanUpSystem: Removed off-screen projectile 61 at (224.908, -15.069)
-CleanUpSystem: Removed off-screen projectile 62 at (224.945, -14.1754)
-CleanUpSystem: Removed off-screen projectile 63 at (224.983, -13.2362)
-CleanUpSystem: Removed off-screen projectile 64 at (224.217, -31.8253)
-CleanUpSystem: Removed off-screen projectile 65 at (225.29, -5.80657)
-Enemy spawned at (51.868, 50) - Total: 7/10
-Enemy 54 hit. Health: 40
-CleanUpSystem: Removed inactive entity 66
-Enemy 54 hit. Health: 30
-CleanUpSystem: Removed inactive entity 67
-Enemy 54 hit. Health: 20
-CleanUpSystem: Removed inactive entity 69
-Enemy 54 hit. Health: 10
-CleanUpSystem: Removed inactive entity 70
-Enemy 54 hit. Health: 0
+CleanUpSystem: Removed inactive entity 41
+CleanUpSystem: Removed inactive entity 51
+CleanUpSystem: Removed off-screen projectile 52 at (272.621, -14.4023)
+CleanUpSystem: Removed off-screen projectile 53 at (272.622, -13.4679)
+CleanUpSystem: Removed off-screen projectile 54 at (161.484, -16.9723)
+Enemy spawned at (369.833, 50) - Total: 7/10
+CleanUpSystem: Removed off-screen projectile 55 at (-8.27776, 53.0198)
+CleanUpSystem: Removed off-screen projectile 56 at (-5.63094, 130.535)
+CleanUpSystem: Removed off-screen projectile 57 at (-50.9012, 94.4681)
+CleanUpSystem: Removed off-screen projectile 58 at (-9.05225, 127.809)
+CleanUpSystem: Removed off-screen projectile 59 at (-61.1566, 123.244)
+Enemy 47 hit. Health: 40
+CleanUpSystem: Removed inactive entity 61
+Enemy 47 hit. Health: 30
+CleanUpSystem: Removed inactive entity 62
+Enemy 47 hit. Health: 20
+CleanUpSystem: Removed inactive entity 63
+Enemy 47 hit. Health: 10
+CleanUpSystem: Removed inactive entity 64
+Enemy 47 hit. Health: 0
 Enemy destroyed! Score: 600
-CleanUpSystem: Removed inactive entity 54
-CleanUpSystem: Removed inactive entity 71
-CleanUpSystem: Removed off-screen projectile 72 at (279.507, -10.0888)
-CleanUpSystem: Removed off-screen projectile 73 at (279.367, -11.2951)
-CleanUpSystem: Removed off-screen projectile 74 at (279.514, -10.0299)
-CleanUpSystem: Removed off-screen projectile 75 at (279.783, -7.71438)
-CleanUpSystem: Removed off-screen projectile 76 at (279.794, -7.61746)
-CleanUpSystem: Removed off-screen projectile 77 at (414.631, -13.8275)
-Enemy 68 hit. Health: 40
+CleanUpSystem: Removed inactive entity 47
+CleanUpSystem: Removed inactive entity 65
+CleanUpSystem: Removed off-screen projectile 66 at (318.656, -15.5144)
+CleanUpSystem: Removed off-screen projectile 67 at (319.311, -13.8823)
+Enemy spawned at (654.245, 50) - Total: 8/10
+CleanUpSystem: Removed off-screen projectile 68 at (318.948, -14.7867)
+CleanUpSystem: Removed off-screen projectile 69 at (316.901, -19.8873)
+CleanUpSystem: Removed off-screen projectile 70 at (321.324, -8.86375)
+CleanUpSystem: Removed off-screen projectile 71 at (321.579, -8.22973)
+CleanUpSystem: Removed off-screen projectile 73 at (614.739, -14.1188)
+Enemy spawned at (493.16, 50) - Total: 9/10
+Enemy spawned at (100.822, 50) - Total: 10/10
+CleanUpSystem: Removed off-screen projectile 75 at (135.833, 606.941)
+CleanUpSystem: Removed off-screen projectile 76 at (136.617, 606.681)
+Enemy 60 hit. Health: 40
 CleanUpSystem: Removed inactive entity 78
-Enemy spawned at (508.597, 50) - Total: 8/10
-Enemy 68 hit. Health: 30
+Enemy 60 hit. Health: 30
 CleanUpSystem: Removed inactive entity 79
-Enemy 68 hit. Health: 20
+Enemy 60 hit. Health: 20
 CleanUpSystem: Removed inactive entity 80
-Enemy 68 hit. Health: 10
+Enemy 60 hit. Health: 10
 CleanUpSystem: Removed inactive entity 81
-Enemy 68 hit. Health: 0
+Enemy 60 hit. Health: 0
 Enemy destroyed! Score: 700
-CleanUpSystem: Removed inactive entity 68
-CleanUpSystem: Removed inactive entity 83
-CleanUpSystem: Removed off-screen projectile 84 at (-3.17431, -10.6118)
-CleanUpSystem: Removed off-screen projectile 85 at (-2.97277, -9.77903)
-CleanUpSystem: Removed off-screen projectile 86 at (-3.18206, -10.6437)
-CleanUpSystem: Removed off-screen projectile 87 at (-3.23998, -10.8832)
-CleanUpSystem: Removed off-screen projectile 88 at (-3.20421, -10.7355)
-Enemy 82 hit. Health: 40
-CleanUpSystem: Removed inactive entity 89
-Enemy spawned at (635.932, 50) - Total: 9/10
-CleanUpSystem: Removed off-screen projectile 90 at (555.238, -17.4364)
-CleanUpSystem: Removed off-screen projectile 91 at (550.687, -5.07576)
-CleanUpSystem: Removed off-screen projectile 92 at (550.768, -5.29715)
-CleanUpSystem: Removed off-screen projectile 93 at (550.885, -5.6139)
-CleanUpSystem: Removed off-screen projectile 94 at (550.849, -5.51712)
-CleanUpSystem: Removed off-screen projectile 95 at (575.052, -71.2459)
-CleanUpSystem: Removed off-screen projectile 97 at (551.809, -8.1229)
-Enemy 82 hit. Health: 30
-CleanUpSystem: Removed inactive entity 99
-CleanUpSystem: Removed off-screen projectile 98 at (552.225, -9.25274)
-Enemy 82 hit. Health: 20
-CleanUpSystem: Removed inactive entity 100
-Enemy 82 hit. Health: 10
-CleanUpSystem: Removed inactive entity 101
-Enemy 82 hit. Health: 0
-Enemy destroyed! Score: 800
+CleanUpSystem: Removed inactive entity 60
 CleanUpSystem: Removed inactive entity 82
-CleanUpSystem: Removed inactive entity 102
-CleanUpSystem: Removed off-screen projectile 103 at (383.107, -15.627)
-CleanUpSystem: Removed off-screen projectile 104 at (383.341, -15.0208)
-CleanUpSystem: Removed off-screen projectile 105 at (383.344, -15.0143)
-CleanUpSystem: Removed off-screen projectile 106 at (384.193, -12.814)
-Enemy spawned at (722.827, 50) - Total: 10/10
-CleanUpSystem: Removed off-screen projectile 107 at (383.848, -13.7066)
-CleanUpSystem: Removed off-screen projectile 108 at (384.082, -13.0996)
-Enemy 96 hit. Health: 40
-CleanUpSystem: Removed inactive entity 110
-Enemy 96 hit. Health: 30
-CleanUpSystem: Removed inactive entity 111
-Enemy 96 hit. Health: 20
-CleanUpSystem: Removed inactive entity 112
-Enemy 96 hit. Health: 10
-CleanUpSystem: Removed inactive entity 113
-Enemy 96 hit. Health: 0
-Enemy destroyed! Score: 900
-CleanUpSystem: Removed inactive entity 96
-CleanUpSystem: Removed inactive entity 114
-CleanUpSystem: Removed off-screen projectile 115 at (577.598, -17.5574)
-CleanUpSystem: Removed off-screen projectile 116 at (577.726, -16.9262)
-CleanUpSystem: Removed off-screen projectile 117 at (577.796, -16.5789)
-CleanUpSystem: Removed off-screen projectile 118 at (577.511, -17.9846)
-CleanUpSystem: Removed off-screen projectile 119 at (577.549, -17.8012)
-CleanUpSystem: Removed off-screen projectile 120 at (577.458, -18.2465)
-CleanUpSystem: Removed off-screen projectile 121 at (487.652, -11.9452)
-CleanUpSystem: Removed off-screen projectile 122 at (256.055, -8.92267)
-CleanUpSystem: Removed off-screen projectile 123 at (252.301, -12.8699)
-Enemy 109 hit. Health: 40
-CleanUpSystem: Removed off-screen projectile 124 at (252.271, -12.901)
-CleanUpSystem: Removed inactive entity 127
-Enemy 109 hit. Health: 30
-CleanUpSystem: Removed off-screen projectile 125 at (251.635, -13.5691)
-CleanUpSystem: Removed inactive entity 128
-Enemy 109 hit. Health: 20
-CleanUpSystem: Removed inactive entity 129
-CleanUpSystem: Removed off-screen projectile 126 at (251.238, -13.9866)
-Enemy 109 hit. Health: 10
-CleanUpSystem: Removed inactive entity 130
-Enemy 109 hit. Health: 0
-Enemy destroyed! Score: 1000
+Enemy 74 hit. Health: 40
+CleanUpSystem: Removed inactive entity 83
+Enemy 74 hit. Health: 30
+CleanUpSystem: Removed inactive entity 84
+Enemy 74 hit. Health: 20
+CleanUpSystem: Removed inactive entity 85
+Enemy 74 hit. Health: 10
+CleanUpSystem: Removed inactive entity 87
+Enemy 74 hit. Health: 0
+Enemy destroyed! Score: 800
+CleanUpSystem: Removed inactive entity 74
+CleanUpSystem: Removed inactive entity 88
+CleanUpSystem: Removed off-screen projectile 86 at (813.968, 119.966)
+CleanUpSystem: Removed off-screen projectile 89 at (-6.24943, 247.286)
+CleanUpSystem: Removed off-screen projectile 90 at (-6.66193, 246.986)
+CleanUpSystem: Removed off-screen projectile 91 at (-5.09139, 248.13)
+CleanUpSystem: Removed off-screen projectile 92 at (-12.3154, 203.958)
+CleanUpSystem: Removed off-screen projectile 93 at (-25.0393, 192.475)
+CleanUpSystem: Removed off-screen projectile 94 at (-6.07516, 209.589)
+CleanUpSystem: Removed off-screen projectile 95 at (-6.96131, 208.789)
+CleanUpSystem: Removed off-screen projectile 96 at (2.19459, 609.196)
+CleanUpSystem: Removed off-screen projectile 97 at (7.45739, 607.363)
+CleanUpSystem: Removed off-screen projectile 98 at (7.21557, 607.447)
+CleanUpSystem: Removed off-screen projectile 99 at (8.37979, 607.041)
+CleanUpSystem: Removed off-screen projectile 100 at (9.5991, 606.617)
+CleanUpSystem: Removed off-screen projectile 101 at (6.45708, 607.711)
+CleanUpSystem: Removed off-screen projectile 102 at (-10.8033, 390.655)
+CleanUpSystem: Removed off-screen projectile 103 at (-8.39021, 387.746)
+CleanUpSystem: Removed off-screen projectile 104 at (-10.1998, 387.134)
+CleanUpSystem: Removed off-screen projectile 105 at (-9.80196, 387.269)
+CleanUpSystem: Removed off-screen projectile 106 at (-64.1611, 368.874)
+CleanUpSystem: Removed off-screen projectile 107 at (-13.4091, 386.048)
+Enemy 72 hit. Health: 40
+CleanUpSystem: Removed inactive entity 108
+Enemy 72 hit. Health: 30
 CleanUpSystem: Removed inactive entity 109
-CleanUpSystem: Removed inactive entity 131
+Enemy 72 hit. Health: 20
+CleanUpSystem: Removed inactive entity 110
+Enemy 72 hit. Health: 10
+CleanUpSystem: Removed inactive entity 111
+Enemy 72 hit. Health: 0
+Enemy destroyed! Score: 900
+CleanUpSystem: Removed inactive entity 72
+CleanUpSystem: Removed inactive entity 112
+CleanUpSystem: Removed off-screen projectile 113 at (690.17, -10.8921)
+CleanUpSystem: Removed off-screen projectile 114 at (690.057, -10.155)
+CleanUpSystem: Removed off-screen projectile 115 at (690.344, -12.0333)
+CleanUpSystem: Removed off-screen projectile 116 at (690.205, -11.1182)
+Enemy 77 hit. Health: 40
+CleanUpSystem: Removed inactive entity 117
+Enemy 77 hit. Health: 30
+CleanUpSystem: Removed inactive entity 118
+CleanUpSystem: Removed off-screen projectile 119 at (19.5693, -5.57163)
+CleanUpSystem: Removed off-screen projectile 120 at (18.8139, -6.9035)
+CleanUpSystem: Removed off-screen projectile 121 at (18.2503, -7.89729)
+CleanUpSystem: Removed off-screen projectile 122 at (18.1389, -8.09349)
+Enemy 77 hit. Health: 20
+CleanUpSystem: Removed inactive entity 123
+Enemy 77 hit. Health: 10
+CleanUpSystem: Removed inactive entity 124
+Enemy 77 hit. Health: 0
+Enemy destroyed! Score: 1000
+CleanUpSystem: Removed inactive entity 77
+CleanUpSystem: Removed inactive entity 125
 All enemies destroyed - Level completion signaled!
 Main loop detected level complete. Advancing level...
 CleanUpSystem: Starting Level Transition Cleanup (Force removing enemies/projectiles)...
@@ -218,410 +212,419 @@ DEBUG 4: Calling EnemySpawnSystem::getInstance()...
 Enemy Spawner reset for new level. Max Enemies: 15, Type: Triangle, Color: Cyan
 DEBUG 5: Singleton call complete. Level 2 ready.
 Game state changed to: 1
-CleanUpSystem: Removed off-screen projectile 133 at (740, -12.2753)
-CleanUpSystem: Removed off-screen projectile 134 at (740, -12.2417)
-CleanUpSystem: Removed off-screen projectile 135 at (740, -11.4689)
-CleanUpSystem: Removed off-screen projectile 136 at (740, -11.7744)
-Enemy spawned at (358.162, 50) - Total: 1/15
-Enemy 137 hit. Health: 65
-CleanUpSystem: Removed inactive entity 138
-Enemy spawned at (601.491, 50) - Total: 2/15
-CleanUpSystem: Removed off-screen projectile 139 at (606.381, -10.6286)
-Enemy 143 hit. Health: 65
-CleanUpSystem: Removed inactive entity 140
-Enemy 143 hit. Health: 55
-CleanUpSystem: Removed inactive entity 141
-Enemy 143 hit. Health: 45
-CleanUpSystem: Removed inactive entity 142
-Enemy 137 hit. Health: 55
-CleanUpSystem: Removed inactive entity 144
-Enemy 137 hit. Health: 45
-CleanUpSystem: Removed inactive entity 145
-Enemy 137 hit. Health: 35
-CleanUpSystem: Removed inactive entity 146
-Enemy 137 hit. Health: 25
-CleanUpSystem: Removed inactive entity 147
-Enemy 137 hit. Health: 15
-CleanUpSystem: Removed inactive entity 148
-Player hit! Health: 100 Shield: 85
+Enemy spawned at (731.681, 50) - Total: 1/15
+Enemy 127 hit. Health: 65
+CleanUpSystem: Removed inactive entity 128
+Enemy 127 hit. Health: 55
+CleanUpSystem: Removed inactive entity 129
+Enemy spawned at (627.282, 50) - Total: 2/15
+CleanUpSystem: Removed off-screen projectile 130 at (811.917, 47.5072)
+CleanUpSystem: Removed off-screen projectile 131 at (806.012, 60.8039)
+CleanUpSystem: Removed off-screen projectile 133 at (808.679, 54.7996)
+CleanUpSystem: Removed off-screen projectile 134 at (809.065, 53.9302)
+Enemy 127 hit. Health: 45
+CleanUpSystem: Removed off-screen projectile 135 at (829.511, 7.88566)
+CleanUpSystem: Removed inactive entity 136
+Enemy 127 hit. Health: 35
 CleanUpSystem: Removed inactive entity 137
-Enemy spawned at (304.643, 50) - Total: 3/15
-Enemy 143 hit. Health: 35
+Enemy 127 hit. Health: 25
+CleanUpSystem: Removed inactive entity 138
+Player hit! Health: 100 Shield: 85
+CleanUpSystem: Removed inactive entity 127
+Enemy 132 hit. Health: 65
+CleanUpSystem: Removed inactive entity 139
+Enemy spawned at (402.34, 50) - Total: 3/15
+Enemy 132 hit. Health: 55
+CleanUpSystem: Removed inactive entity 140
+Enemy 132 hit. Health: 45
+CleanUpSystem: Removed inactive entity 141
+CleanUpSystem: Removed off-screen projectile 142 at (532.313, -7.73916)
+Enemy 132 hit. Health: 35
+CleanUpSystem: Removed off-screen projectile 144 at (519.35, -39.4304)
+CleanUpSystem: Removed inactive entity 146
+CleanUpSystem: Removed off-screen projectile 145 at (528.956, -15.9456)
+Enemy 132 hit. Health: 25
+CleanUpSystem: Removed inactive entity 148
+Enemy 132 hit. Health: 15
 CleanUpSystem: Removed inactive entity 149
-Enemy 143 hit. Health: 25
+Enemy 132 hit. Health: 5
 CleanUpSystem: Removed inactive entity 150
-Enemy 143 hit. Health: 15
-CleanUpSystem: Removed inactive entity 151
-CleanUpSystem: Removed off-screen projectile 153 at (806.319, 170.716)
-CleanUpSystem: Removed off-screen projectile 154 at (808.021, 169.579)
-CleanUpSystem: Removed off-screen projectile 155 at (805.427, 171.312)
-CleanUpSystem: Removed off-screen projectile 156 at (816.598, 163.854)
-CleanUpSystem: Removed off-screen projectile 157 at (807.437, 169.97)
-CleanUpSystem: Removed off-screen projectile 158 at (810.048, 168.227)
-Enemy 143 hit. Health: 5
-CleanUpSystem: Removed inactive entity 160
-CleanUpSystem: Removed off-screen projectile 159 at (811.029, 167.572)
-Enemy spawned at (229.343, 50) - Total: 4/15
-CleanUpSystem: Removed off-screen projectile 161 at (816.761, 394.774)
-CleanUpSystem: Removed off-screen projectile 162 at (817.179, 394.642)
-CleanUpSystem: Removed off-screen projectile 164 at (816.041, 395)
-CleanUpSystem: Removed off-screen projectile 165 at (814.966, 395.338)
-CleanUpSystem: Removed off-screen projectile 166 at (813.91, 395.669)
-Enemy 152 hit. Health: 65
-CleanUpSystem: Removed off-screen projectile 167 at (831.899, 390.017)
-CleanUpSystem: Removed inactive entity 168
-Enemy 152 hit. Health: 55
-CleanUpSystem: Removed inactive entity 169
-Enemy 152 hit. Health: 45
-CleanUpSystem: Removed inactive entity 170
-Enemy 152 hit. Health: 35
-CleanUpSystem: Removed inactive entity 171
-Enemy 152 hit. Health: 25
-CleanUpSystem: Removed inactive entity 172
 Player hit! Health: 100 Shield: 70
-CleanUpSystem: Removed inactive entity 152
-Enemy spawned at (119.869, 50) - Total: 5/15
-CleanUpSystem: Removed off-screen projectile 173 at (-13.3754, 115.897)
-Enemy 163 hit. Health: 65
-CleanUpSystem: Removed inactive entity 178
-CleanUpSystem: Removed off-screen projectile 174 at (-5.07222, 124.92)
-Enemy 163 hit. Health: 55
-CleanUpSystem: Removed inactive entity 179
-Enemy 163 hit. Health: 45
-CleanUpSystem: Removed inactive entity 180
-CleanUpSystem: Removed off-screen projectile 175 at (-14.383, 114.802)
-Enemy 163 hit. Health: 35
-CleanUpSystem: Removed inactive entity 181
-CleanUpSystem: Removed off-screen projectile 177 at (-6.33825, 123.545)
-Enemy 163 hit. Health: 25
-CleanUpSystem: Removed inactive entity 182
-Enemy 163 hit. Health: 15
-CleanUpSystem: Removed inactive entity 183
-Enemy 163 hit. Health: 5
-CleanUpSystem: Removed inactive entity 184
-Enemy 176 hit. Health: 65
-CleanUpSystem: Removed inactive entity 185
-Enemy 176 hit. Health: 55
-CleanUpSystem: Removed inactive entity 186
-Enemy 176 hit. Health: 45
-CleanUpSystem: Removed inactive entity 187
-Enemy spawned at (150.896, 50) - Total: 6/15
-Enemy 176 hit. Health: 35
-CleanUpSystem: Removed inactive entity 188
-Enemy 176 hit. Health: 25
-CleanUpSystem: Removed inactive entity 189
-CleanUpSystem: Removed off-screen projectile 190 at (-8.22612, 121.493)
-CleanUpSystem: Removed off-screen projectile 192 at (-7.67977, 122.087)
-CleanUpSystem: Removed off-screen projectile 193 at (-8.58127, 121.108)
-CleanUpSystem: Removed off-screen projectile 194 at (-10.2541, 119.29)
-CleanUpSystem: Removed off-screen projectile 195 at (-6.96172, 122.868)
-CleanUpSystem: Removed off-screen projectile 196 at (-6.72445, 123.126)
-Enemy 163 hit. Health: -5
-Enemy destroyed! Score: 1100
+CleanUpSystem: Removed off-screen projectile 147 at (806.959, 137.128)
+CleanUpSystem: Removed inactive entity 132
+Enemy spawned at (601.285, 50) - Total: 4/15
+CleanUpSystem: Removed off-screen projectile 151 at (195.423, -13.7357)
+CleanUpSystem: Removed off-screen projectile 152 at (194.951, -14.2806)
+CleanUpSystem: Removed off-screen projectile 153 at (196.051, -13.008)
+CleanUpSystem: Removed off-screen projectile 154 at (196.011, -13.0545)
+CleanUpSystem: Removed off-screen projectile 156 at (196.725, -12.2286)
+Enemy 143 hit. Health: 65
+CleanUpSystem: Removed inactive entity 162
+CleanUpSystem: Removed off-screen projectile 157 at (197.278, -11.5888)
+Enemy 143 hit. Health: 55
 CleanUpSystem: Removed inactive entity 163
-CleanUpSystem: Removed inactive entity 201
-CleanUpSystem: Removed off-screen projectile 197 at (-6.23946, 123.653)
-CleanUpSystem: Removed off-screen projectile 198 at (-5.49232, 124.464)
-Enemy 176 hit. Health: 15
-CleanUpSystem: Removed inactive entity 202
-CleanUpSystem: Removed off-screen projectile 199 at (-5.8866, 124.036)
-Enemy 176 hit. Health: 5
-CleanUpSystem: Removed inactive entity 203
-CleanUpSystem: Removed off-screen projectile 200 at (-13.4989, 115.763)
-Enemy spawned at (607.629, 50) - Total: 7/15
-Enemy 176 hit. Health: -5
-Enemy destroyed! Score: 1200
-CleanUpSystem: Removed inactive entity 176
-CleanUpSystem: Removed inactive entity 204
-CleanUpSystem: Removed off-screen projectile 205 at (-10.1498, 505.725)
-CleanUpSystem: Removed off-screen projectile 206 at (-10.5186, 505.731)
-CleanUpSystem: Removed off-screen projectile 208 at (-12.204, 505.759)
-CleanUpSystem: Removed off-screen projectile 209 at (-12.8998, 505.77)
-CleanUpSystem: Removed off-screen projectile 210 at (-11.9111, 505.754)
-CleanUpSystem: Removed off-screen projectile 211 at (-9.81861, 505.719)
-CleanUpSystem: Removed off-screen projectile 212 at (-9.84903, 505.72)
-CleanUpSystem: Removed off-screen projectile 213 at (-9.94906, 505.722)
-CleanUpSystem: Removed off-screen projectile 214 at (-8.70914, 505.701)
-CleanUpSystem: Removed off-screen projectile 215 at (-10.8145, 505.736)
-Enemy 191 hit. Health: 65
-CleanUpSystem: Removed off-screen projectile 216 at (-13.4125, 505.778)
-CleanUpSystem: Removed inactive entity 218
-Enemy 191 hit. Health: 55
-CleanUpSystem: Removed inactive entity 219
-CleanUpSystem: Removed off-screen projectile 217 at (-11.5144, 505.747)
-Enemy spawned at (226.196, 50) - Total: 8/15
-Enemy 191 hit. Health: 45
-CleanUpSystem: Removed inactive entity 220
-Enemy 191 hit. Health: 35
-CleanUpSystem: Removed inactive entity 221
-CleanUpSystem: Removed off-screen projectile 223 at (-14.3876, 505.794)
-CleanUpSystem: Removed off-screen projectile 224 at (-11.0072, 505.739)
-CleanUpSystem: Removed off-screen projectile 225 at (-11.7359, 505.751)
-Enemy 191 hit. Health: 25
-CleanUpSystem: Removed off-screen projectile 226 at (-12.5614, 505.764)
-CleanUpSystem: Removed inactive entity 228
-Enemy 191 hit. Health: 15
-CleanUpSystem: Removed inactive entity 229
-CleanUpSystem: Removed off-screen projectile 227 at (-8.73716, 505.702)
-Enemy 191 hit. Health: 5
-CleanUpSystem: Removed inactive entity 230
-Enemy spawned at (103.716, 50) - Total: 9/15
-Enemy 207 hit. Health: 65
-CleanUpSystem: Removed inactive entity 231
-Enemy 207 hit. Health: 55
-CleanUpSystem: Removed inactive entity 233
-Enemy 207 hit. Health: 45
-CleanUpSystem: Removed inactive entity 234
-Enemy 207 hit. Health: 35
-CleanUpSystem: Removed inactive entity 235
-Enemy 143 hit. Health: -5
-Enemy destroyed! Score: 1300
+CleanUpSystem: Removed off-screen projectile 158 at (195.86, -13.2286)
+CleanUpSystem: Removed off-screen projectile 160 at (505.77, -6.75367)
+Enemy 143 hit. Health: 45
+CleanUpSystem: Removed inactive entity 164
+CleanUpSystem: Removed off-screen projectile 159 at (198.27, -10.4429)
+CleanUpSystem: Removed off-screen projectile 161 at (781.05, -16.5989)
+Enemy 143 hit. Health: 35
+CleanUpSystem: Removed inactive entity 165
+Player hit! Health: 100 Shield: 55
 CleanUpSystem: Removed inactive entity 143
-CleanUpSystem: Removed inactive entity 236
-Enemy 207 hit. Health: 25
-CleanUpSystem: Removed inactive entity 237
-Enemy 207 hit. Health: 15
-CleanUpSystem: Removed inactive entity 238
-Enemy 207 hit. Health: 5
-CleanUpSystem: Removed inactive entity 239
-Enemy 207 hit. Health: -5
-Enemy destroyed! Score: 1400
-CleanUpSystem: Removed inactive entity 207
-CleanUpSystem: Removed inactive entity 240
-Enemy spawned at (279.195, 50) - Total: 10/15
-CleanUpSystem: Removed off-screen projectile 241 at (-7.1854, 335.075)
-CleanUpSystem: Removed off-screen projectile 242 at (-6.04685, 335.428)
-CleanUpSystem: Removed off-screen projectile 243 at (-17.8176, 331.782)
-Enemy 232 hit. Health: 65
-CleanUpSystem: Removed inactive entity 245
-CleanUpSystem: Removed off-screen projectile 244 at (-16.8211, 332.091)
-Enemy 232 hit. Health: 55
-CleanUpSystem: Removed inactive entity 246
-Enemy 232 hit. Health: 45
-CleanUpSystem: Removed inactive entity 247
-Enemy 232 hit. Health: 35
-CleanUpSystem: Removed inactive entity 249
-Enemy 232 hit. Health: 25
-CleanUpSystem: Removed inactive entity 250
-CleanUpSystem: Removed off-screen projectile 251 at (-16.7682, 332.107)
-CleanUpSystem: Removed off-screen projectile 252 at (-14.3, 332.872)
-CleanUpSystem: Removed off-screen projectile 253 at (-13.8338, 333.016)
-CleanUpSystem: Removed off-screen projectile 254 at (-12.9122, 333.301)
-CleanUpSystem: Removed off-screen projectile 255 at (-12.8252, 333.329)
-Enemy 222 hit. Health: 65
-CleanUpSystem: Removed inactive entity 259
-CleanUpSystem: Removed off-screen projectile 256 at (-11.446, 333.756)
-Enemy spawned at (716.763, 50) - Total: 11/15
-Enemy 222 hit. Health: 55
-CleanUpSystem: Removed inactive entity 260
-CleanUpSystem: Removed off-screen projectile 257 at (-10.6116, 334.015)
-Enemy 222 hit. Health: 45
-CleanUpSystem: Removed off-screen projectile 258 at (-10.4205, 334.074)
-CleanUpSystem: Removed inactive entity 261
-CleanUpSystem: Removed off-screen projectile 262 at (-14.009, 332.963)
-CleanUpSystem: Removed off-screen projectile 264 at (-15.7506, 332.423)
-Enemy 248 hit. Health: 65
-CleanUpSystem: Removed inactive entity 268
-CleanUpSystem: Removed off-screen projectile 265 at (-15.4945, 332.502)
-Enemy 248 hit. Health: 55
-CleanUpSystem: Removed inactive entity 269
-CleanUpSystem: Removed off-screen projectile 266 at (-5.21165, 335.687)
-Enemy 248 hit. Health: 45
-CleanUpSystem: Removed inactive entity 270
-Enemy 248 hit. Health: 35
-CleanUpSystem: Removed inactive entity 271
-CleanUpSystem: Removed off-screen projectile 267 at (-16.3131, 332.249)
-Enemy 248 hit. Health: 25
-CleanUpSystem: Removed inactive entity 272
-Enemy spawned at (53.9039, 50) - Total: 12/15
-Enemy 232 hit. Health: 15
-CleanUpSystem: Removed inactive entity 274
-CleanUpSystem: Removed off-screen projectile 273 at (-6.9097, 335.161)
-Enemy 232 hit. Health: 5
-CleanUpSystem: Removed inactive entity 275
-Enemy 232 hit. Health: -5
-Enemy destroyed! Score: 1500
-CleanUpSystem: Removed inactive entity 232
-CleanUpSystem: Removed inactive entity 276
-Enemy 191 hit. Health: -5
-Enemy destroyed! Score: 1600
+Enemy spawned at (237.524, 50) - Total: 5/15
+Enemy 155 hit. Health: 65
+CleanUpSystem: Removed inactive entity 166
+Enemy 169 hit. Health: 65
+CleanUpSystem: Removed inactive entity 168
+CleanUpSystem: Removed off-screen projectile 167 at (490.955, -5.62631)
+CleanUpSystem: Removed off-screen projectile 170 at (-8.89752, 48.0924)
+CleanUpSystem: Removed off-screen projectile 171 at (-5.29229, 232.8)
+CleanUpSystem: Removed off-screen projectile 172 at (-12.8976, 323.243)
+CleanUpSystem: Removed off-screen projectile 173 at (-7.31221, 385.074)
+CleanUpSystem: Removed off-screen projectile 174 at (-11.2162, 422.814)
+Enemy spawned at (672.99, 50) - Total: 6/15
+CleanUpSystem: Removed off-screen projectile 175 at (-17.2222, 448.798)
+CleanUpSystem: Removed off-screen projectile 176 at (-14.9798, 381.721)
+CleanUpSystem: Removed off-screen projectile 177 at (-5.70438, 205.824)
+CleanUpSystem: Removed off-screen projectile 178 at (227.288, -8.08617)
+CleanUpSystem: Removed off-screen projectile 179 at (548.279, -9.43197)
+CleanUpSystem: Removed off-screen projectile 181 at (814.242, 220.044)
+CleanUpSystem: Removed off-screen projectile 180 at (808.046, 4.31381)
+CleanUpSystem: Removed off-screen projectile 182 at (811.032, 321.608)
+CleanUpSystem: Removed off-screen projectile 184 at (819.352, 379.774)
+CleanUpSystem: Removed off-screen projectile 185 at (814.368, 420.489)
+Enemy 169 hit. Health: 55
 CleanUpSystem: Removed inactive entity 191
-CleanUpSystem: Removed inactive entity 277
-CleanUpSystem: Removed off-screen projectile 278 at (-9.64261, 334.315)
-CleanUpSystem: Removed off-screen projectile 280 at (-6.31754, 335.345)
-CleanUpSystem: Removed off-screen projectile 281 at (-18.0426, 331.714)
-CleanUpSystem: Removed off-screen projectile 282 at (-15.9073, 332.375)
-CleanUpSystem: Removed off-screen projectile 283 at (-15.4626, 332.513)
-CleanUpSystem: Removed off-screen projectile 284 at (-13.1447, 333.23)
-CleanUpSystem: Removed off-screen projectile 285 at (-11.6247, 333.701)
-Enemy 248 hit. Health: 15
-CleanUpSystem: Removed inactive entity 289
-CleanUpSystem: Removed off-screen projectile 286 at (-11.7233, 333.67)
-Enemy 248 hit. Health: 5
-CleanUpSystem: Removed inactive entity 290
-CleanUpSystem: Removed off-screen projectile 287 at (-13.2104, 333.21)
-Enemy spawned at (72.7314, 50) - Total: 13/15
-Enemy 248 hit. Health: -5
-Enemy destroyed! Score: 1700
+CleanUpSystem: Removed off-screen projectile 186 at (814.239, 446.384)
+Enemy 155 hit. Health: 55
+CleanUpSystem: Removed inactive entity 188
+Enemy 169 hit. Health: 45
+Enemy 155 hit. Health: 45
+CleanUpSystem: Removed inactive entity 189
+CleanUpSystem: Removed inactive entity 192
+CleanUpSystem: Removed off-screen projectile 187 at (805.907, 464.906)
+Enemy 169 hit. Health: 35
+CleanUpSystem: Removed inactive entity 193
+Enemy 155 hit. Health: 35
+CleanUpSystem: Removed inactive entity 190
+Enemy 169 hit. Health: 25
+CleanUpSystem: Removed inactive entity 194
+Enemy 169 hit. Health: 15
+CleanUpSystem: Removed inactive entity 195
+Enemy spawned at (715.686, 50) - Total: 7/15
+Enemy 169 hit. Health: 5
+CleanUpSystem: Removed inactive entity 197
+Enemy 169 hit. Health: -5
+Enemy destroyed! Score: 1100
+CleanUpSystem: Removed inactive entity 169
+CleanUpSystem: Removed inactive entity 198
+CleanUpSystem: Removed off-screen projectile 199 at (809.598, 324.275)
+Enemy 183 hit. Health: 65
+CleanUpSystem: Removed off-screen projectile 200 at (805.959, 62.5198)
+CleanUpSystem: Removed off-screen projectile 201 at (493.825, -14.2685)
+CleanUpSystem: Removed inactive entity 205
+CleanUpSystem: Removed off-screen projectile 202 at (313.132, -5.12473)
+Enemy spawned at (328.299, 50) - Total: 8/15
+CleanUpSystem: Removed off-screen projectile 203 at (195.271, -14.154)
+CleanUpSystem: Removed off-screen projectile 204 at (97.3164, -10.8802)
+CleanUpSystem: Removed off-screen projectile 206 at (815.897, 457.472)
+CleanUpSystem: Removed off-screen projectile 207 at (817.563, 466.74)
+CleanUpSystem: Removed off-screen projectile 209 at (817.544, 466.741)
+CleanUpSystem: Removed off-screen projectile 210 at (815.216, 466.952)
+CleanUpSystem: Removed off-screen projectile 211 at (811.443, 467.294)
+CleanUpSystem: Removed off-screen projectile 212 at (809.699, 467.452)
+Enemy 183 hit. Health: 55
+CleanUpSystem: Removed inactive entity 213
+Enemy 183 hit. Health: 45
+CleanUpSystem: Removed inactive entity 214
+Enemy 183 hit. Health: 35
+CleanUpSystem: Removed inactive entity 215
+Enemy 183 hit. Health: 25
+CleanUpSystem: Removed inactive entity 216
+Enemy 196 hit. Health: 65
+CleanUpSystem: Removed inactive entity 217
+Enemy spawned at (70.0395, 50) - Total: 9/15
+CleanUpSystem: Removed off-screen projectile 218 at (815.649, 466.913)
+CleanUpSystem: Removed off-screen projectile 220 at (815.334, 466.941)
+CleanUpSystem: Removed off-screen projectile 221 at (805.428, 466.697)
+CleanUpSystem: Removed off-screen projectile 222 at (810.414, 433.164)
+CleanUpSystem: Removed off-screen projectile 223 at (814.406, 427.871)
+Enemy 196 hit. Health: 55
+CleanUpSystem: Removed inactive entity 224
+Enemy 196 hit. Health: 45
+CleanUpSystem: Removed inactive entity 225
+Enemy spawned at (214.06, 50) - Total: 10/15
+CleanUpSystem: Removed off-screen projectile 226 at (809.455, 434.122)
+Enemy 155 hit. Health: 25
+CleanUpSystem: Removed inactive entity 228
+Enemy 155 hit. Health: 15
+CleanUpSystem: Removed inactive entity 229
+Enemy 155 hit. Health: 5
+CleanUpSystem: Removed inactive entity 230
+Enemy 155 hit. Health: -5
+Enemy destroyed! Score: 1200
+CleanUpSystem: Removed inactive entity 155
+CleanUpSystem: Removed inactive entity 231
+CleanUpSystem: Removed off-screen projectile 232 at (810.608, 192.129)
+CleanUpSystem: Removed off-screen projectile 233 at (810.565, 192.183)
+Enemy spawned at (100.319, 50) - Total: 11/15
+CleanUpSystem: Removed off-screen projectile 234 at (809.816, 193.136)
+CleanUpSystem: Removed off-screen projectile 235 at (811.557, 190.921)
+CleanUpSystem: Removed off-screen projectile 236 at (813.483, 188.469)
+CleanUpSystem: Removed off-screen projectile 237 at (805.314, 198.866)
+CleanUpSystem: Removed off-screen projectile 239 at (805.093, 199.148)
+CleanUpSystem: Removed off-screen projectile 240 at (811.151, 191.437)
+CleanUpSystem: Removed off-screen projectile 241 at (871.666, 114.414)
+CleanUpSystem: Removed off-screen projectile 242 at (813.491, 188.459)
+Enemy 183 hit. Health: 15
+CleanUpSystem: Removed inactive entity 243
+Enemy spawned at (540.087, 50) - Total: 12/15
+Enemy 183 hit. Health: 5
+CleanUpSystem: Removed inactive entity 244
+Enemy 196 hit. Health: 35
+CleanUpSystem: Removed inactive entity 245
+Enemy 196 hit. Health: 25
+CleanUpSystem: Removed inactive entity 246
+Enemy 196 hit. Health: 15
 CleanUpSystem: Removed inactive entity 248
-CleanUpSystem: Removed inactive entity 291
-CleanUpSystem: Removed off-screen projectile 288 at (-12.1291, 333.545)
-Enemy 279 hit. Health: 65
-CleanUpSystem: Removed inactive entity 292
-Enemy 279 hit. Health: 55
-CleanUpSystem: Removed inactive entity 293
-Enemy 279 hit. Health: 45
-CleanUpSystem: Removed inactive entity 295
-CleanUpSystem: Removed off-screen projectile 296 at (-17.4266, 331.904)
-CleanUpSystem: Removed off-screen projectile 297 at (-5.39974, 335.629)
-CleanUpSystem: Removed off-screen projectile 298 at (-6.974, 335.142)
-CleanUpSystem: Removed off-screen projectile 299 at (-8.06003, 334.805)
-CleanUpSystem: Removed off-screen projectile 300 at (-6.8487, 335.181)
-CleanUpSystem: Removed off-screen projectile 301 at (-6.92211, 335.158)
-CleanUpSystem: Removed off-screen projectile 302 at (-5.29897, 335.661)
-Enemy spawned at (338.592, 50) - Total: 14/15
-CleanUpSystem: Removed off-screen projectile 303 at (-17.1814, 331.981)
-CleanUpSystem: Removed off-screen projectile 304 at (-16.3408, 332.241)
-CleanUpSystem: Removed off-screen projectile 305 at (-13.4445, 333.138)
-Enemy 294 hit. Health: 65
-CleanUpSystem: Removed off-screen projectile 306 at (-13.7961, 333.029)
-CleanUpSystem: Removed inactive entity 307
-Enemy 294 hit. Health: 55
-CleanUpSystem: Removed inactive entity 308
-Enemy 222 hit. Health: 35
-CleanUpSystem: Removed inactive entity 311
-Enemy 294 hit. Health: 45
-CleanUpSystem: Removed inactive entity 309
-Enemy 222 hit. Health: 25
-CleanUpSystem: Removed inactive entity 312
-Enemy 222 hit. Health: 15
-CleanUpSystem: Removed inactive entity 313
-Enemy 222 hit. Health: 5
-CleanUpSystem: Removed inactive entity 314
-CleanUpSystem: Removed off-screen projectile 315 at (-5.22627, 335.683)
-CleanUpSystem: Removed off-screen projectile 316 at (-17.0292, 332.027)
-CleanUpSystem: Removed off-screen projectile 317 at (-17.6321, 331.841)
-Enemy spawned at (459.927, 50) - Total: 15/15
-CleanUpSystem: Removed off-screen projectile 318 at (-16.2222, 332.277)
-CleanUpSystem: Removed off-screen projectile 319 at (-14.2743, 332.88)
-CleanUpSystem: Removed off-screen projectile 320 at (-14.9712, 332.665)
-Enemy 279 hit. Health: 35
-CleanUpSystem: Removed inactive entity 322
-CleanUpSystem: Removed off-screen projectile 321 at (-13.1585, 333.226)
-Enemy 279 hit. Health: 25
-CleanUpSystem: Removed inactive entity 323
-Enemy 310 hit. Health: 65
-CleanUpSystem: Removed inactive entity 326
-CleanUpSystem: Removed off-screen projectile 325 at (-11.2679, 333.812)
-Enemy 310 hit. Health: 55
-CleanUpSystem: Removed inactive entity 327
-Enemy 310 hit. Health: 45
-CleanUpSystem: Removed inactive entity 328
-Enemy 310 hit. Health: 35
-CleanUpSystem: Removed inactive entity 329
-Enemy 310 hit. Health: 25
-CleanUpSystem: Removed inactive entity 330
-Enemy 310 hit. Health: 15
-CleanUpSystem: Removed inactive entity 331
-Enemy 310 hit. Health: 5
-CleanUpSystem: Removed inactive entity 333
-Enemy 310 hit. Health: -5
-Enemy destroyed! Score: 1800
-CleanUpSystem: Removed inactive entity 310
-CleanUpSystem: Removed inactive entity 334
-CleanUpSystem: Removed off-screen projectile 332 at (-11.9353, 503.67)
-Enemy 324 hit. Health: 65
-CleanUpSystem: Removed inactive entity 337
-CleanUpSystem: Removed off-screen projectile 335 at (35.1776, 605.496)
-Enemy 324 hit. Health: 55
-CleanUpSystem: Removed inactive entity 338
-CleanUpSystem: Removed off-screen projectile 336 at (33.3908, 605.874)
-Enemy 324 hit. Health: 45
-CleanUpSystem: Removed inactive entity 339
-Enemy 324 hit. Health: 35
-CleanUpSystem: Removed inactive entity 340
-Enemy 324 hit. Health: 25
-CleanUpSystem: Removed inactive entity 341
-Enemy 324 hit. Health: 15
-CleanUpSystem: Removed inactive entity 342
-Enemy 324 hit. Health: 5
-CleanUpSystem: Removed inactive entity 343
-Enemy 324 hit. Health: -5
-Enemy destroyed! Score: 1900
-CleanUpSystem: Removed inactive entity 324
-CleanUpSystem: Removed inactive entity 344
-CleanUpSystem: Removed off-screen projectile 345 at (815.823, 265.86)
-CleanUpSystem: Removed off-screen projectile 346 at (814.677, 266.812)
-CleanUpSystem: Removed off-screen projectile 347 at (815.007, 266.537)
-CleanUpSystem: Removed off-screen projectile 348 at (814.137, 267.26)
-CleanUpSystem: Removed off-screen projectile 349 at (815.261, 266.327)
-CleanUpSystem: Removed off-screen projectile 350 at (814.821, 266.692)
-CleanUpSystem: Removed off-screen projectile 351 at (806.53, 273.58)
-Enemy 263 hit. Health: 65
-CleanUpSystem: Removed inactive entity 352
-CleanUpSystem: Removed off-screen projectile 353 at (813.328, 560.888)
-CleanUpSystem: Removed off-screen projectile 354 at (812.786, 560.738)
-CleanUpSystem: Removed off-screen projectile 355 at (813.326, 560.888)
-CleanUpSystem: Removed off-screen projectile 356 at (813.94, 561.057)
-CleanUpSystem: Removed off-screen projectile 357 at (813.069, 560.817)
-CleanUpSystem: Removed off-screen projectile 358 at (814.787, 561.291)
-Enemy 263 hit. Health: 55
-CleanUpSystem: Removed inactive entity 359
-Enemy 263 hit. Health: 45
-CleanUpSystem: Removed inactive entity 360
-Enemy 263 hit. Health: 35
-CleanUpSystem: Removed inactive entity 361
-Enemy 263 hit. Health: 25
-CleanUpSystem: Removed inactive entity 362
-Enemy 263 hit. Health: 15
-CleanUpSystem: Removed inactive entity 363
-Enemy 263 hit. Health: 5
-CleanUpSystem: Removed inactive entity 364
-Enemy 263 hit. Health: -5
-Enemy destroyed! Score: 2000
+Enemy 196 hit. Health: 5
+CleanUpSystem: Removed inactive entity 249
+Enemy 183 hit. Health: -5
+Enemy destroyed! Score: 1300
+CleanUpSystem: Removed inactive entity 183
+CleanUpSystem: Removed inactive entity 251
+Enemy 196 hit. Health: -5
+Enemy destroyed! Score: 1400
+CleanUpSystem: Removed inactive entity 196
+CleanUpSystem: Removed inactive entity 250
+CleanUpSystem: Removed off-screen projectile 252 at (808.923, 247.527)
+CleanUpSystem: Removed off-screen projectile 253 at (808.529, 247.941)
+CleanUpSystem: Removed off-screen projectile 254 at (808.999, 247.446)
+CleanUpSystem: Removed off-screen projectile 255 at (809.74, 246.667)
+Enemy spawned at (91.2698, 50) - Total: 13/15
+CleanUpSystem: Removed off-screen projectile 256 at (810.373, 246.003)
+CleanUpSystem: Removed off-screen projectile 257 at (810.439, 245.934)
+CleanUpSystem: Removed off-screen projectile 258 at (810.011, 246.383)
+Enemy 247 hit. Health: 65
+CleanUpSystem: Removed inactive entity 261
+CleanUpSystem: Removed off-screen projectile 260 at (810.48, 245.889)
+Enemy 247 hit. Health: 55
+CleanUpSystem: Removed inactive entity 262
+Enemy 247 hit. Health: 45
 CleanUpSystem: Removed inactive entity 263
-CleanUpSystem: Removed inactive entity 365
-CleanUpSystem: Removed off-screen projectile 366 at (691.994, -12.0531)
-CleanUpSystem: Removed off-screen projectile 367 at (692.087, -10.9972)
-CleanUpSystem: Removed off-screen projectile 368 at (692.074, -11.1462)
-CleanUpSystem: Removed off-screen projectile 369 at (692.056, -11.3495)
-CleanUpSystem: Removed off-screen projectile 370 at (692.194, -9.77144)
-CleanUpSystem: Removed off-screen projectile 371 at (692.106, -10.7747)
-CleanUpSystem: Removed off-screen projectile 372 at (692.155, -10.2107)
-CleanUpSystem: Removed off-screen projectile 373 at (692.335, -8.16091)
-CleanUpSystem: Removed off-screen projectile 374 at (692.268, -8.93392)
-Enemy 222 hit. Health: -5
-Enemy destroyed! Score: 2100
-CleanUpSystem: Removed inactive entity 222
-CleanUpSystem: Removed inactive entity 375
-CleanUpSystem: Removed off-screen projectile 376 at (230.697, -14.4154)
-CleanUpSystem: Removed off-screen projectile 377 at (230.666, -12.4957)
-CleanUpSystem: Removed off-screen projectile 378 at (230.676, -13.1221)
-CleanUpSystem: Removed off-screen projectile 379 at (230.676, -13.126)
-CleanUpSystem: Removed off-screen projectile 380 at (230.672, -12.8788)
-CleanUpSystem: Removed off-screen projectile 381 at (230.637, -10.712)
-CleanUpSystem: Removed off-screen projectile 382 at (230.666, -12.5118)
-CleanUpSystem: Removed off-screen projectile 383 at (230.68, -13.3276)
-Enemy 279 hit. Health: 15
-CleanUpSystem: Removed inactive entity 384
-Enemy 279 hit. Health: 5
-CleanUpSystem: Removed inactive entity 385
-Enemy 279 hit. Health: -5
-Enemy destroyed! Score: 2200
+Enemy 247 hit. Health: 35
+CleanUpSystem: Removed inactive entity 264
+Player hit! Health: 100 Shield: 40
+CleanUpSystem: Removed inactive entity 247
+Enemy spawned at (270.02, 50) - Total: 14/15
+CleanUpSystem: Removed off-screen projectile 265 at (248.73, -5.45462)
+CleanUpSystem: Removed off-screen projectile 266 at (241.953, -16.1594)
+CleanUpSystem: Removed off-screen projectile 267 at (179.173, -115.324)
+CleanUpSystem: Removed off-screen projectile 269 at (223.725, -44.9504)
+CleanUpSystem: Removed off-screen projectile 270 at (244.358, -12.3597)
+CleanUpSystem: Removed off-screen projectile 271 at (231.461, -32.7302)
+Enemy 208 hit. Health: 65
+CleanUpSystem: Removed inactive entity 274
+Enemy 268 hit. Health: 65
+CleanUpSystem: Removed inactive entity 273
+Enemy 219 hit. Health: 65
+CleanUpSystem: Removed inactive entity 272
+Enemy 208 hit. Health: 55
+CleanUpSystem: Removed inactive entity 275
+Enemy spawned at (505.668, 50) - Total: 15/15
+Enemy 208 hit. Health: 45
+CleanUpSystem: Removed inactive entity 277
+Enemy 208 hit. Health: 35
+CleanUpSystem: Removed inactive entity 278
+Enemy 208 hit. Health: 25
 CleanUpSystem: Removed inactive entity 279
-CleanUpSystem: Removed inactive entity 386
-Enemy 294 hit. Health: 35
-CleanUpSystem: Removed inactive entity 387
-Enemy 294 hit. Health: 25
-CleanUpSystem: Removed inactive entity 388
-Enemy 294 hit. Health: 15
-CleanUpSystem: Removed inactive entity 389
-Enemy 294 hit. Health: 5
-CleanUpSystem: Removed inactive entity 390
-Enemy 294 hit. Health: -5
-Enemy destroyed! Score: 2300
+Enemy 208 hit. Health: 15
+CleanUpSystem: Removed inactive entity 280
+Enemy 208 hit. Health: 5
+CleanUpSystem: Removed inactive entity 281
+Enemy 208 hit. Health: -5
+Enemy destroyed! Score: 1500
+CleanUpSystem: Removed inactive entity 208
+CleanUpSystem: Removed inactive entity 282
+Enemy 268 hit. Health: 55
+CleanUpSystem: Removed inactive entity 283
+Enemy 268 hit. Health: 45
+CleanUpSystem: Removed inactive entity 284
+Enemy 268 hit. Health: 35
+CleanUpSystem: Removed inactive entity 285
+Enemy 268 hit. Health: 25
+CleanUpSystem: Removed inactive entity 286
+Enemy 268 hit. Health: 15
+CleanUpSystem: Removed inactive entity 287
+Enemy 268 hit. Health: 5
+CleanUpSystem: Removed inactive entity 288
+Enemy 268 hit. Health: -5
+Enemy destroyed! Score: 1600
+CleanUpSystem: Removed inactive entity 268
+CleanUpSystem: Removed inactive entity 289
+CleanUpSystem: Removed off-screen projectile 290 at (151.688, 607.834)
+CleanUpSystem: Removed off-screen projectile 291 at (152.381, 607.51)
+CleanUpSystem: Removed off-screen projectile 292 at (151.649, 607.852)
+CleanUpSystem: Removed off-screen projectile 293 at (150.752, 608.27)
+Enemy 276 hit. Health: 65
 CleanUpSystem: Removed inactive entity 294
-CleanUpSystem: Removed inactive entity 391
+Enemy 276 hit. Health: 55
+CleanUpSystem: Removed inactive entity 295
+Enemy 276 hit. Health: 45
+CleanUpSystem: Removed inactive entity 296
+Enemy 276 hit. Health: 35
+CleanUpSystem: Removed inactive entity 300
+CleanUpSystem: Removed off-screen projectile 297 at (810.037, 573.383)
+Enemy 276 hit. Health: 25
+CleanUpSystem: Removed inactive entity 301
+CleanUpSystem: Removed off-screen projectile 298 at (810.755, 573.506)
+CleanUpSystem: Removed off-screen projectile 299 at (927.807, 593.617)
+Enemy 276 hit. Health: 15
+CleanUpSystem: Removed inactive entity 303
+Enemy 276 hit. Health: 5
+CleanUpSystem: Removed off-screen projectile 302 at (813.239, 521.522)
+CleanUpSystem: Removed inactive entity 304
+CleanUpSystem: Removed off-screen projectile 305 at (806.61, 321.882)
+CleanUpSystem: Removed off-screen projectile 306 at (815.133, 318.299)
+CleanUpSystem: Removed off-screen projectile 307 at (816.183, 317.858)
+CleanUpSystem: Removed off-screen projectile 308 at (815.385, 318.193)
+Enemy 276 hit. Health: -5
+Enemy destroyed! Score: 1700
+CleanUpSystem: Removed inactive entity 276
+CleanUpSystem: Removed inactive entity 309
+CleanUpSystem: Removed off-screen projectile 310 at (641.181, -13.0474)
+CleanUpSystem: Removed off-screen projectile 311 at (-5.47677, 396.128)
+CleanUpSystem: Removed off-screen projectile 312 at (-16.3801, 393.213)
+CleanUpSystem: Removed off-screen projectile 313 at (-10.4934, 394.787)
+CleanUpSystem: Removed off-screen projectile 314 at (-9.24449, 395.121)
+Enemy 219 hit. Health: 55
+CleanUpSystem: Removed inactive entity 315
+Enemy 219 hit. Health: 45
+CleanUpSystem: Removed inactive entity 316
+CleanUpSystem: Removed off-screen projectile 317 at (-5.02485, 396.25)
+Enemy 259 hit. Health: 65
+CleanUpSystem: Removed inactive entity 319
+CleanUpSystem: Removed off-screen projectile 318 at (-6.94836, 395.736)
+Enemy 259 hit. Health: 55
+CleanUpSystem: Removed inactive entity 320
+CleanUpSystem: Removed off-screen projectile 321 at (-10.2647, 394.848)
+CleanUpSystem: Removed off-screen projectile 322 at (-10.0134, 394.916)
+Enemy 227 hit. Health: 65
+CleanUpSystem: Removed inactive entity 323
+Enemy 227 hit. Health: 55
+CleanUpSystem: Removed inactive entity 325
+CleanUpSystem: Removed off-screen projectile 324 at (-16.0689, 297.767)
+CleanUpSystem: Removed off-screen projectile 326 at (-7.67199, 170.751)
+CleanUpSystem: Removed off-screen projectile 327 at (-7.31025, 171.056)
+Enemy 259 hit. Health: 45
+CleanUpSystem: Removed inactive entity 328
+Enemy 259 hit. Health: 35
+CleanUpSystem: Removed inactive entity 329
+Enemy 259 hit. Health: 25
+CleanUpSystem: Removed inactive entity 330
+CleanUpSystem: Removed off-screen projectile 331 at (-7.37752, 419.885)
+CleanUpSystem: Removed off-screen projectile 332 at (-7.31642, 419.898)
+CleanUpSystem: Removed off-screen projectile 333 at (-11.6799, 419.003)
+CleanUpSystem: Removed off-screen projectile 334 at (-11.5882, 419.021)
+CleanUpSystem: Removed off-screen projectile 335 at (-12.4645, 354.337)
+CleanUpSystem: Removed off-screen projectile 336 at (-13.3361, 354.016)
+CleanUpSystem: Removed off-screen projectile 337 at (-9.44238, 355.45)
+CleanUpSystem: Removed off-screen projectile 338 at (-10.1352, 355.195)
+Enemy 219 hit. Health: 35
+CleanUpSystem: Removed inactive entity 339
+Enemy 219 hit. Health: 25
+CleanUpSystem: Removed inactive entity 340
+Enemy 219 hit. Health: 15
+CleanUpSystem: Removed inactive entity 341
+CleanUpSystem: Removed off-screen projectile 342 at (-6.60702, 356.495)
+CleanUpSystem: Removed off-screen projectile 343 at (-7.64973, 356.111)
+CleanUpSystem: Removed off-screen projectile 344 at (-8.54144, 355.782)
+CleanUpSystem: Removed off-screen projectile 345 at (-9.79054, 355.322)
+CleanUpSystem: Removed off-screen projectile 346 at (-7.50632, 356.164)
+Enemy 259 hit. Health: 15
+CleanUpSystem: Removed inactive entity 347
+Enemy 259 hit. Health: 5
+CleanUpSystem: Removed inactive entity 348
+CleanUpSystem: Removed off-screen projectile 349 at (-9.8252, 355.309)
+Enemy 227 hit. Health: 45
+CleanUpSystem: Removed inactive entity 351
+CleanUpSystem: Removed off-screen projectile 350 at (-9.904, 355.28)
+Enemy 227 hit. Health: 35
+CleanUpSystem: Removed inactive entity 352
+Enemy 227 hit. Health: 25
+CleanUpSystem: Removed inactive entity 353
+CleanUpSystem: Removed off-screen projectile 354 at (-7.54914, 528.858)
+CleanUpSystem: Removed off-screen projectile 355 at (-7.71347, 528.87)
+Enemy 238 hit. Health: 65
+CleanUpSystem: Removed inactive entity 356
+Enemy 219 hit. Health: 5
+CleanUpSystem: Removed inactive entity 357
+CleanUpSystem: Removed off-screen projectile 358 at (-12.3895, 323.206)
+CleanUpSystem: Removed off-screen projectile 359 at (-11.7767, 323.48)
+CleanUpSystem: Removed off-screen projectile 360 at (-10.3388, 324.123)
+Enemy 219 hit. Health: -5
+Enemy destroyed! Score: 1800
+CleanUpSystem: Removed inactive entity 219
+CleanUpSystem: Removed inactive entity 361
+CleanUpSystem: Removed off-screen projectile 362 at (-12.567, 323.127)
+CleanUpSystem: Removed off-screen projectile 363 at (-11.8929, 323.428)
+CleanUpSystem: Removed off-screen projectile 364 at (-11.8199, 323.461)
+CleanUpSystem: Removed off-screen projectile 365 at (-6.61584, 325.788)
+CleanUpSystem: Removed off-screen projectile 366 at (-7.96326, 325.186)
+CleanUpSystem: Removed off-screen projectile 367 at (-6.91975, 325.653)
+CleanUpSystem: Removed off-screen projectile 368 at (-8.80974, 324.807)
+Enemy 259 hit. Health: -5
+Enemy destroyed! Score: 1900
+CleanUpSystem: Removed inactive entity 259
+CleanUpSystem: Removed inactive entity 369
+CleanUpSystem: Removed off-screen projectile 370 at (-10.5924, 324.01)
+Enemy 227 hit. Health: 15
+CleanUpSystem: Removed inactive entity 372
+CleanUpSystem: Removed off-screen projectile 371 at (-9.38516, 324.55)
+Enemy 227 hit. Health: 5
+CleanUpSystem: Removed inactive entity 373
+CleanUpSystem: Removed off-screen projectile 374 at (-14.3774, 266.35)
+Enemy 238 hit. Health: 55
+CleanUpSystem: Removed inactive entity 375
+Enemy 238 hit. Health: 45
+CleanUpSystem: Removed inactive entity 376
+CleanUpSystem: Removed off-screen projectile 377 at (-17.8043, 552.988)
+Enemy 227 hit. Health: -5
+Enemy destroyed! Score: 2000
+CleanUpSystem: Removed inactive entity 227
+CleanUpSystem: Removed inactive entity 379
+CleanUpSystem: Removed off-screen projectile 378 at (-18.055, 553.021)
+CleanUpSystem: Removed off-screen projectile 380 at (-11.1048, 344.414)
+CleanUpSystem: Removed off-screen projectile 381 at (-10.2118, 344.767)
+CleanUpSystem: Removed off-screen projectile 382 at (-9.0741, 345.216)
+CleanUpSystem: Removed off-screen projectile 383 at (-7.72362, 345.749)
+CleanUpSystem: Removed off-screen projectile 384 at (-7.09981, 487.894)
+CleanUpSystem: Removed off-screen projectile 385 at (-11.2914, 487.764)
+CleanUpSystem: Removed off-screen projectile 386 at (-10.6005, 487.785)
+CleanUpSystem: Removed off-screen projectile 387 at (-11.1763, 487.767)
+CleanUpSystem: Removed off-screen projectile 388 at (-8.2464, 487.858)
+CleanUpSystem: Removed off-screen projectile 389 at (-10.4087, 123.776)
+CleanUpSystem: Removed off-screen projectile 390 at (-9.12357, 125.005)
+CleanUpSystem: Removed off-screen projectile 391 at (-9.4346, 124.708)
+CleanUpSystem: Removed off-screen projectile 392 at (-8.11194, 125.973)
+CleanUpSystem: Removed off-screen projectile 393 at (-11.1818, 123.037)
+CleanUpSystem: Removed off-screen projectile 394 at (-9.46996, 124.674)
+CleanUpSystem: Removed off-screen projectile 395 at (-8.35585, 125.74)
+CleanUpSystem: Removed off-screen projectile 396 at (-7.6211, 126.442)
+Enemy 238 hit. Health: 35
+Enemy 238 hit. Health: 25
+CleanUpSystem: Removed inactive entity 397
+CleanUpSystem: Removed inactive entity 398
+Enemy 238 hit. Health: 15
+CleanUpSystem: Removed inactive entity 399
+Enemy 238 hit. Health: 5
+CleanUpSystem: Removed inactive entity 400
+Enemy 238 hit. Health: -5
+Enemy destroyed! Score: 2100
+CleanUpSystem: Removed inactive entity 238
+CleanUpSystem: Removed inactive entity 401
 All enemies destroyed - Level completion signaled!
 Main loop detected level complete. Advancing level...
 CleanUpSystem: Starting Level Transition Cleanup (Force removing enemies/projectiles)...
@@ -632,418 +635,368 @@ DEBUG 4: Calling EnemySpawnSystem::getInstance()...
 Enemy Spawner reset for new level. Max Enemies: 20, Type: Square, Color: Yellow
 DEBUG 5: Singleton call complete. Level 3 ready.
 Game state changed to: 1
-CleanUpSystem: Removed off-screen projectile 396 at (60, -13.2384)
-CleanUpSystem: Removed off-screen projectile 397 at (60, -12.7079)
-CleanUpSystem: Removed off-screen projectile 398 at (60, -12.0768)
-CleanUpSystem: Removed off-screen projectile 399 at (60, -12.3528)
-CleanUpSystem: Removed off-screen projectile 400 at (60, -16.5408)
-Enemy spawned at (419.036, 50) - Total: 1/20
-Enemy 401 hit. Health: 65
-CleanUpSystem: Removed inactive entity 402
-Enemy 401 hit. Health: 55
+Enemy spawned at (190.185, 50) - Total: 1/20
+Enemy spawned at (695.692, 50) - Total: 2/20
+Enemy 402 hit. Health: 65
 CleanUpSystem: Removed inactive entity 403
-Enemy spawned at (632.947, 50) - Total: 2/20
-CleanUpSystem: Removed off-screen projectile 404 at (409.393, -10.2548)
-CleanUpSystem: Removed off-screen projectile 405 at (137.933, -9.84496)
-CleanUpSystem: Removed off-screen projectile 406 at (-51.656, -51.6307)
-CleanUpSystem: Removed off-screen projectile 407 at (-6.65749, 1.39086)
-Enemy 401 hit. Health: 45
-CleanUpSystem: Removed inactive entity 409
-Enemy 401 hit. Health: 35
-CleanUpSystem: Removed inactive entity 410
-Enemy 401 hit. Health: 25
-CleanUpSystem: Removed inactive entity 411
-Enemy 401 hit. Health: 15
-CleanUpSystem: Removed inactive entity 412
-Enemy spawned at (454.165, 50) - Total: 3/20
-Enemy 401 hit. Health: 5
-CleanUpSystem: Removed inactive entity 417
-Enemy 401 hit. Health: -5
-Enemy destroyed! Score: 2400
-CleanUpSystem: Removed inactive entity 401
-CleanUpSystem: Removed inactive entity 418
-CleanUpSystem: Removed off-screen projectile 413 at (327.122, -6.30648)
-CleanUpSystem: Removed off-screen projectile 414 at (327.005, -6.73288)
-CleanUpSystem: Removed off-screen projectile 415 at (327.298, -5.6727)
-CleanUpSystem: Removed off-screen projectile 419 at (352.506, -17.0144)
-CleanUpSystem: Removed off-screen projectile 420 at (627.822, -13.5717)
-Enemy 416 hit. Health: 65
-CleanUpSystem: Removed inactive entity 424
-CleanUpSystem: Removed off-screen projectile 421 at (809.067, 91.9057)
-Enemy spawned at (103.367, 50) - Total: 4/20
-Enemy 408 hit. Health: 65
-CleanUpSystem: Removed inactive entity 428
-CleanUpSystem: Removed off-screen projectile 422 at (814.543, 131.182)
-Enemy 408 hit. Health: 55
-CleanUpSystem: Removed inactive entity 430
-Enemy 408 hit. Health: 45
-CleanUpSystem: Removed off-screen projectile 423 at (809.932, 94.587)
-CleanUpSystem: Removed inactive entity 431
-Player hit! Health: 100 Shield: 55
+Enemy 402 hit. Health: 55
+CleanUpSystem: Removed inactive entity 404
+Enemy 402 hit. Health: 45
+CleanUpSystem: Removed inactive entity 406
+Enemy 402 hit. Health: 35
+CleanUpSystem: Removed inactive entity 407
+Enemy 402 hit. Health: 25
 CleanUpSystem: Removed inactive entity 408
-CleanUpSystem: Removed off-screen projectile 425 at (227.562, -8.42653)
-CleanUpSystem: Removed off-screen projectile 426 at (-10.7294, 42.251)
-CleanUpSystem: Removed off-screen projectile 427 at (-16.3548, 223.556)
-CleanUpSystem: Removed off-screen projectile 432 at (228.148, -6.15391)
-Enemy 416 hit. Health: 55
-CleanUpSystem: Removed off-screen projectile 433 at (227.934, -6.42531)
-CleanUpSystem: Removed inactive entity 440
-Enemy spawned at (315.497, 50) - Total: 5/20
-Enemy 416 hit. Health: 45
-CleanUpSystem: Removed off-screen projectile 434 at (227.492, -6.9847)
-CleanUpSystem: Removed inactive entity 441
-Enemy 416 hit. Health: 35
-CleanUpSystem: Removed inactive entity 443
-CleanUpSystem: Removed off-screen projectile 435 at (227.77, -6.63392)
-Enemy 416 hit. Health: 25
-CleanUpSystem: Removed inactive entity 444
-CleanUpSystem: Removed off-screen projectile 436 at (227.674, -6.75515)
-CleanUpSystem: Removed off-screen projectile 437 at (340.592, -10.2131)
-Enemy 416 hit. Health: 15
-CleanUpSystem: Removed off-screen projectile 438 at (651.966, -15.5843)
-CleanUpSystem: Removed inactive entity 445
-CleanUpSystem: Removed off-screen projectile 439 at (806.239, 135.53)
-Player hit! Health: 100 Shield: 40
-CleanUpSystem: Removed inactive entity 416
-CleanUpSystem: Removed off-screen projectile 446 at (811.958, 291.887)
-CleanUpSystem: Removed off-screen projectile 447 at (811.972, 291.88)
-CleanUpSystem: Removed off-screen projectile 448 at (811.261, 292.256)
-CleanUpSystem: Removed off-screen projectile 449 at (811.253, 292.26)
-Enemy spawned at (115.989, 50) - Total: 6/20
-Enemy 429 hit. Health: 65
-CleanUpSystem: Removed inactive entity 454
-CleanUpSystem: Removed off-screen projectile 450 at (808.854, 355.421)
-CleanUpSystem: Removed off-screen projectile 451 at (811.321, 402.144)
-Enemy 429 hit. Health: 55
-CleanUpSystem: Removed inactive entity 456
-CleanUpSystem: Removed off-screen projectile 452 at (807.074, 434.631)
-Enemy 429 hit. Health: 45
-CleanUpSystem: Removed inactive entity 457
-CleanUpSystem: Removed off-screen projectile 453 at (811.635, 455.698)
-Enemy 429 hit. Health: 35
-CleanUpSystem: Removed inactive entity 458
-Enemy 429 hit. Health: 25
-CleanUpSystem: Removed inactive entity 459
-Enemy 429 hit. Health: 15
-CleanUpSystem: Removed inactive entity 460
-Enemy 429 hit. Health: 5
-CleanUpSystem: Removed inactive entity 461
-Enemy 429 hit. Health: -5
-Enemy destroyed! Score: 2500
+Enemy 402 hit. Health: 15
+CleanUpSystem: Removed inactive entity 409
+Enemy spawned at (495.028, 50) - Total: 3/20
+Enemy 402 hit. Health: 5
+CleanUpSystem: Removed inactive entity 411
+Enemy 402 hit. Health: -5
+Enemy destroyed! Score: 2200
+CleanUpSystem: Removed inactive entity 402
+CleanUpSystem: Removed inactive entity 412
+Enemy spawned at (247.883, 50) - Total: 4/20
+CleanUpSystem: Removed off-screen projectile 413 at (613.648, -7.62247)
+Enemy 410 hit. Health: 65
+CleanUpSystem: Removed inactive entity 415
+Enemy spawned at (298.18, 50) - Total: 5/20
+Enemy 410 hit. Health: 55
+CleanUpSystem: Removed inactive entity 421
+CleanUpSystem: Removed off-screen projectile 416 at (680.794, -16.0485)
+CleanUpSystem: Removed off-screen projectile 417 at (680.72, -15.9144)
+CleanUpSystem: Removed off-screen projectile 418 at (679.735, -14.148)
+CleanUpSystem: Removed off-screen projectile 419 at (680.329, -15.2138)
+Enemy spawned at (480.703, 50) - Total: 6/20
+Enemy spawned at (680.181, 50) - Total: 7/20
+Enemy 420 hit. Health: 65
+CleanUpSystem: Removed inactive entity 425
+Enemy 420 hit. Health: 55
+CleanUpSystem: Removed inactive entity 426
+CleanUpSystem: Removed off-screen projectile 423 at (-7.79423, 153.358)
+Enemy 420 hit. Health: 45
+CleanUpSystem: Removed inactive entity 427
+Enemy 420 hit. Health: 35
+CleanUpSystem: Removed inactive entity 428
+Enemy 420 hit. Health: 25
 CleanUpSystem: Removed inactive entity 429
-CleanUpSystem: Removed inactive entity 462
-CleanUpSystem: Removed off-screen projectile 463 at (65.5129, 609.549)
-Enemy spawned at (283.586, 50) - Total: 7/20
-CleanUpSystem: Removed off-screen projectile 464 at (66.0705, 608.943)
-CleanUpSystem: Removed off-screen projectile 465 at (67.0461, 607.881)
-CleanUpSystem: Removed off-screen projectile 467 at (66.5595, 608.411)
-CleanUpSystem: Removed off-screen projectile 468 at (67.3997, 607.497)
-CleanUpSystem: Removed off-screen projectile 469 at (66.4425, 608.538)
-CleanUpSystem: Removed off-screen projectile 470 at (66.1507, 608.856)
-CleanUpSystem: Removed off-screen projectile 471 at (65.8908, 609.138)
-CleanUpSystem: Removed off-screen projectile 472 at (67.9595, 606.888)
-CleanUpSystem: Removed off-screen projectile 473 at (67.5724, 607.309)
-CleanUpSystem: Removed off-screen projectile 474 at (65.6505, 609.4)
-CleanUpSystem: Removed off-screen projectile 475 at (64.7123, 610.421)
-Enemy spawned at (95.0716, 50) - Total: 8/20
-Player hit! Health: 100 Shield: 25
-CleanUpSystem: Removed inactive entity 455
-Enemy 442 hit. Health: 65
-CleanUpSystem: Removed inactive entity 478
-Enemy 466 hit. Health: 65
-CleanUpSystem: Removed inactive entity 479
-Enemy 466 hit. Health: 55
-CleanUpSystem: Removed inactive entity 480
-Enemy spawned at (202.699, 50) - Total: 9/20
-Enemy 466 hit. Health: 45
-CleanUpSystem: Removed inactive entity 481
-Enemy 466 hit. Health: 35
-CleanUpSystem: Removed inactive entity 483
-Enemy 466 hit. Health: 25
-CleanUpSystem: Removed inactive entity 484
-Enemy 466 hit. Health: 15
-CleanUpSystem: Removed inactive entity 485
-CleanUpSystem: Removed off-screen projectile 477 at (813.872, 190.318)
-Enemy 466 hit. Health: 5
-CleanUpSystem: Removed inactive entity 486
-Enemy 466 hit. Health: -5
-Enemy destroyed! Score: 2600
-CleanUpSystem: Removed inactive entity 466
-CleanUpSystem: Removed inactive entity 487
-Enemy 442 hit. Health: 55
-CleanUpSystem: Removed inactive entity 488
-Enemy 442 hit. Health: 45
-CleanUpSystem: Removed inactive entity 489
-Enemy 442 hit. Health: 35
-CleanUpSystem: Removed inactive entity 490
-Enemy 442 hit. Health: 25
-CleanUpSystem: Removed inactive entity 491
-Enemy spawned at (260.074, 50) - Total: 10/20
-Enemy 442 hit. Health: 15
-CleanUpSystem: Removed inactive entity 492
-Enemy 442 hit. Health: 5
-CleanUpSystem: Removed inactive entity 493
-Enemy 442 hit. Health: -5
-Enemy destroyed! Score: 2700
+Enemy 420 hit. Health: 15
+CleanUpSystem: Removed inactive entity 430
+Enemy spawned at (523.275, 50) - Total: 8/20
+Enemy 420 hit. Health: 5
+CleanUpSystem: Removed inactive entity 431
+Enemy 422 hit. Health: 65
+CleanUpSystem: Removed inactive entity 433
+Enemy 422 hit. Health: 55
+CleanUpSystem: Removed inactive entity 434
+Enemy 422 hit. Health: 45
+CleanUpSystem: Removed inactive entity 435
+Enemy 422 hit. Health: 35
+CleanUpSystem: Removed inactive entity 436
+Enemy 422 hit. Health: 25
+CleanUpSystem: Removed inactive entity 437
+Enemy 422 hit. Health: 15
+CleanUpSystem: Removed inactive entity 438
+Enemy spawned at (631.239, 50) - Total: 9/20
+Enemy 422 hit. Health: 5
+CleanUpSystem: Removed inactive entity 441
+CleanUpSystem: Removed off-screen projectile 439 at (548.219, 609.981)
+Enemy 422 hit. Health: -5
+Enemy destroyed! Score: 2300
+CleanUpSystem: Removed inactive entity 422
 CleanUpSystem: Removed inactive entity 442
-CleanUpSystem: Removed inactive entity 494
-CleanUpSystem: Removed off-screen projectile 496 at (300.326, -8.51102)
-CleanUpSystem: Removed off-screen projectile 497 at (300.377, -7.53082)
-CleanUpSystem: Removed off-screen projectile 498 at (300.397, -7.14568)
-CleanUpSystem: Removed off-screen projectile 499 at (300.477, -5.60372)
-Enemy 482 hit. Health: 65
-CleanUpSystem: Removed inactive entity 503
-CleanUpSystem: Removed off-screen projectile 500 at (300.401, -7.06662)
-Enemy 482 hit. Health: 55
-CleanUpSystem: Removed inactive entity 504
-Enemy 482 hit. Health: 45
-CleanUpSystem: Removed inactive entity 505
-Enemy spawned at (474.153, 50) - Total: 11/20
-CleanUpSystem: Removed off-screen projectile 501 at (520.229, -8.12334)
-Enemy 482 hit. Health: 35
-CleanUpSystem: Removed inactive entity 506
-Enemy 482 hit. Health: 25
-CleanUpSystem: Removed inactive entity 508
-Enemy 482 hit. Health: 15
-CleanUpSystem: Removed inactive entity 509
-CleanUpSystem: Removed off-screen projectile 502 at (670.527, -7.48239)
-Enemy 482 hit. Health: 5
-CleanUpSystem: Removed inactive entity 510
-Enemy 482 hit. Health: -5
-Enemy destroyed! Score: 2800
-CleanUpSystem: Removed inactive entity 482
-CleanUpSystem: Removed inactive entity 511
-CleanUpSystem: Removed off-screen projectile 512 at (-5.22576, 476.864)
-CleanUpSystem: Removed off-screen projectile 513 at (-17.1765, 475.787)
-CleanUpSystem: Removed off-screen projectile 514 at (-16.8053, 475.821)
-CleanUpSystem: Removed off-screen projectile 515 at (-16.6141, 475.838)
-Enemy 495 hit. Health: 65
-CleanUpSystem: Removed inactive entity 518
-CleanUpSystem: Removed off-screen projectile 516 at (-18.1016, 475.704)
-Enemy spawned at (170.152, 50) - Total: 12/20
-Enemy 495 hit. Health: 55
-CleanUpSystem: Removed inactive entity 519
-CleanUpSystem: Removed off-screen projectile 517 at (-15.2774, 478.871)
-Enemy 495 hit. Health: 45
-CleanUpSystem: Removed inactive entity 521
-Enemy 495 hit. Health: 35
-CleanUpSystem: Removed inactive entity 522
-Enemy 495 hit. Health: 25
-CleanUpSystem: Removed inactive entity 523
-Enemy 495 hit. Health: 15
-CleanUpSystem: Removed inactive entity 524
-Enemy 495 hit. Health: 5
-CleanUpSystem: Removed inactive entity 525
-Enemy 495 hit. Health: -5
-Enemy destroyed! Score: 2900
-CleanUpSystem: Removed inactive entity 495
-CleanUpSystem: Removed inactive entity 526
-Enemy spawned at (61.5584, 50) - Total: 13/20
-CleanUpSystem: Removed off-screen projectile 527 at (806.656, 13.3064)
-CleanUpSystem: Removed off-screen projectile 528 at (806.319, 13.6323)
-CleanUpSystem: Removed off-screen projectile 529 at (806.655, 13.3079)
-CleanUpSystem: Removed off-screen projectile 530 at (805.446, 14.4749)
-CleanUpSystem: Removed off-screen projectile 531 at (814.449, 5.78844)
-CleanUpSystem: Removed off-screen projectile 532 at (814.579, 5.66235)
-Enemy 520 hit. Health: 65
-CleanUpSystem: Removed inactive entity 535
-CleanUpSystem: Removed off-screen projectile 533 at (805.118, 14.7915)
-Enemy 520 hit. Health: 55
-CleanUpSystem: Removed inactive entity 536
-Enemy spawned at (191.129, 50) - Total: 14/20
-CleanUpSystem: Removed off-screen projectile 537 at (331.379, -15.0089)
-CleanUpSystem: Removed off-screen projectile 538 at (330.735, -13.6205)
-Enemy 520 hit. Health: 45
-CleanUpSystem: Removed off-screen projectile 539 at (329.51, -10.9762)
-CleanUpSystem: Removed inactive entity 546
-CleanUpSystem: Removed off-screen projectile 540 at (328.581, -8.97295)
-Enemy 520 hit. Health: 35
-CleanUpSystem: Removed inactive entity 547
-CleanUpSystem: Removed off-screen projectile 541 at (328.727, -9.28791)
-Enemy 520 hit. Health: 25
-CleanUpSystem: Removed inactive entity 548
-CleanUpSystem: Removed off-screen projectile 543 at (329.041, -9.96514)
-Enemy 520 hit. Health: 15
-CleanUpSystem: Removed inactive entity 549
-CleanUpSystem: Removed off-screen projectile 544 at (328.179, -8.10481)
-Enemy 520 hit. Health: 5
-CleanUpSystem: Removed inactive entity 550
-CleanUpSystem: Removed off-screen projectile 545 at (327.995, -7.70777)
-Enemy spawned at (270.841, 50) - Total: 15/20
-Enemy 534 hit. Health: 65
-CleanUpSystem: Removed inactive entity 551
-Enemy 534 hit. Health: 55
-CleanUpSystem: Removed inactive entity 553
-Enemy 534 hit. Health: 45
-CleanUpSystem: Removed inactive entity 554
-Enemy 534 hit. Health: 35
-CleanUpSystem: Removed inactive entity 555
+CleanUpSystem: Removed off-screen projectile 443 at (169.91, -9.01605)
+Enemy 432 hit. Health: 65
+CleanUpSystem: Removed inactive entity 447
+Enemy spawned at (209.651, 50) - Total: 10/20
+CleanUpSystem: Removed off-screen projectile 444 at (170.246, -8.24954)
+Enemy 448 hit. Health: 65
+CleanUpSystem: Removed inactive entity 445
+Enemy 432 hit. Health: 55
+CleanUpSystem: Removed inactive entity 449
+Player hit! Health: 100 Shield: 25
+CleanUpSystem: Removed inactive entity 432
+CleanUpSystem: Removed off-screen projectile 446 at (807.413, 133.884)
+CleanUpSystem: Removed off-screen projectile 450 at (806.436, 474.501)
+CleanUpSystem: Removed off-screen projectile 451 at (817.975, 473.409)
+Enemy 410 hit. Health: 45
+CleanUpSystem: Removed off-screen projectile 452 at (817.532, 473.451)
+CleanUpSystem: Removed inactive entity 453
+Enemy 410 hit. Health: 35
+CleanUpSystem: Removed inactive entity 454
+Enemy 410 hit. Health: 25
+CleanUpSystem: Removed inactive entity 455
+Enemy spawned at (573.572, 50) - Total: 11/20
+Enemy 410 hit. Health: 15
+CleanUpSystem: Removed inactive entity 456
+Enemy 410 hit. Health: 5
+CleanUpSystem: Removed inactive entity 458
 Player hit! Health: 100 Shield: 10
-CleanUpSystem: Removed inactive entity 534
-Enemy 520 hit. Health: -5
-Enemy destroyed! Score: 3000
-CleanUpSystem: Removed inactive entity 520
-CleanUpSystem: Removed inactive entity 556
-Enemy 476 hit. Health: 65
-CleanUpSystem: Removed inactive entity 557
-Enemy 476 hit. Health: 55
-CleanUpSystem: Removed inactive entity 558
-Enemy 476 hit. Health: 45
-CleanUpSystem: Removed inactive entity 559
-Enemy 476 hit. Health: 35
-CleanUpSystem: Removed inactive entity 560
-Enemy 476 hit. Health: 25
-CleanUpSystem: Removed inactive entity 561
-Enemy 476 hit. Health: 15
-CleanUpSystem: Removed inactive entity 562
-Enemy 476 hit. Health: 5
-CleanUpSystem: Removed inactive entity 563
-Enemy 476 hit. Health: -5
-Enemy destroyed! Score: 3100
+CleanUpSystem: Removed inactive entity 410
+CleanUpSystem: Removed off-screen projectile 459 at (-16.3226, 280.521)
+CleanUpSystem: Removed off-screen projectile 460 at (-6.44027, 47.7971)
+Enemy spawned at (696.969, 50) - Total: 12/20
+CleanUpSystem: Removed off-screen projectile 461 at (-10.1393, 8.87746)
+CleanUpSystem: Removed off-screen projectile 462 at (-10.9244, 8.10033)
+CleanUpSystem: Removed off-screen projectile 464 at (262.021, -17.3926)
+CleanUpSystem: Removed off-screen projectile 463 at (-11.7274, 7.30565)
+CleanUpSystem: Removed off-screen projectile 465 at (265.258, -6.10203)
+CleanUpSystem: Removed off-screen projectile 466 at (264.85, -7.52537)
+CleanUpSystem: Removed off-screen projectile 468 at (264.369, -9.20266)
+CleanUpSystem: Removed off-screen projectile 469 at (264.182, -9.85404)
+CleanUpSystem: Removed off-screen projectile 470 at (264.611, -8.35743)
+Enemy 448 hit. Health: 55
+CleanUpSystem: Removed inactive entity 473
+CleanUpSystem: Removed off-screen projectile 471 at (264.833, -7.58319)
+Enemy 414 hit. Health: 65
+CleanUpSystem: Removed inactive entity 474
+Enemy 414 hit. Health: 55
+CleanUpSystem: Removed inactive entity 475
+CleanUpSystem: Removed off-screen projectile 472 at (261.866, -17.9317)
+Enemy 420 hit. Health: -5
+Enemy destroyed! Score: 2400
+CleanUpSystem: Removed inactive entity 420
 CleanUpSystem: Removed inactive entity 476
-CleanUpSystem: Removed inactive entity 564
-Enemy spawned at (179.993, 50) - Total: 16/20
-Enemy 542 hit. Health: 65
-CleanUpSystem: Removed inactive entity 566
-Enemy 552 hit. Health: 65
-CleanUpSystem: Removed inactive entity 571
-Enemy 552 hit. Health: 55
-CleanUpSystem: Removed inactive entity 572
-Enemy 552 hit. Health: 45
-CleanUpSystem: Removed inactive entity 573
-CleanUpSystem: Removed off-screen projectile 567 at (813.979, -5.242)
-Enemy spawned at (384.852, 50) - Total: 17/20
-CleanUpSystem: Removed off-screen projectile 568 at (814.172, -5.37683)
-CleanUpSystem: Removed off-screen projectile 569 at (812.303, -4.06787)
-Player hit! Health: 95 Shield: 0
-CleanUpSystem: Removed inactive entity 542
-CleanUpSystem: Removed off-screen projectile 570 at (812.482, -4.19276)
-Player hit! Health: 80 Shield: 0
-CleanUpSystem: Removed inactive entity 552
-CleanUpSystem: Removed off-screen projectile 574 at (810.37, -2.7133)
-CleanUpSystem: Removed off-screen projectile 575 at (810.287, -2.65575)
-CleanUpSystem: Removed off-screen projectile 576 at (809.33, -1.98569)
-CleanUpSystem: Removed off-screen projectile 577 at (808.661, -1.51643)
-Enemy 565 hit. Health: 65
-CleanUpSystem: Removed inactive entity 579
-Enemy spawned at (388.982, 50) - Total: 18/20
-CleanUpSystem: Removed off-screen projectile 580 at (-7.57592, 113.741)
-CleanUpSystem: Removed off-screen projectile 581 at (-6.62149, 115.068)
-CleanUpSystem: Removed off-screen projectile 582 at (-5.81088, 116.195)
-CleanUpSystem: Removed off-screen projectile 584 at (-6.53636, 115.186)
-CleanUpSystem: Removed off-screen projectile 585 at (-5.20066, 117.043)
-CleanUpSystem: Removed off-screen projectile 586 at (-11.5697, 108.189)
-CleanUpSystem: Removed off-screen projectile 587 at (-10.8342, 109.211)
-CleanUpSystem: Removed off-screen projectile 588 at (-10.9113, 109.104)
-CleanUpSystem: Removed off-screen projectile 589 at (-9.97786, 110.402)
-Enemy spawned at (416.417, 50) - Total: 19/20
-CleanUpSystem: Removed off-screen projectile 590 at (-10.3704, 109.856)
-CleanUpSystem: Removed off-screen projectile 591 at (-10.4639, 109.726)
-CleanUpSystem: Removed off-screen projectile 592 at (-11.1748, 108.738)
-Player hit! Health: 65 Shield: 0
-CleanUpSystem: Removed inactive entity 578
-Enemy 583 hit. Health: 65
-CleanUpSystem: Removed inactive entity 594
-Enemy 583 hit. Health: 55
-CleanUpSystem: Removed inactive entity 595
-Enemy spawned at (443.849, 50) - Total: 20/20
-Enemy 583 hit. Health: 45
-CleanUpSystem: Removed inactive entity 596
-Enemy 583 hit. Health: 35
-CleanUpSystem: Removed inactive entity 598
-Enemy 583 hit. Health: 25
-CleanUpSystem: Removed inactive entity 599
-Enemy 583 hit. Health: 15
-CleanUpSystem: Removed inactive entity 600
-Enemy 583 hit. Health: 5
-CleanUpSystem: Removed inactive entity 601
-Enemy 583 hit. Health: -5
-Enemy destroyed! Score: 3200
-CleanUpSystem: Removed inactive entity 583
-CleanUpSystem: Removed inactive entity 602
-CleanUpSystem: Removed off-screen projectile 603 at (811.665, 426.498)
-CleanUpSystem: Removed off-screen projectile 604 at (812.234, 426.411)
-CleanUpSystem: Removed off-screen projectile 605 at (812.575, 426.358)
-CleanUpSystem: Removed off-screen projectile 606 at (812.831, 426.318)
-CleanUpSystem: Removed off-screen projectile 607 at (812.135, 426.426)
-CleanUpSystem: Removed off-screen projectile 608 at (813.125, 426.273)
-Player hit! Health: 50 Shield: 0
-CleanUpSystem: Removed off-screen projectile 609 at (813.71, 426.183)
-CleanUpSystem: Removed inactive entity 593
-CleanUpSystem: Removed off-screen projectile 610 at (806.166, 427.349)
-CleanUpSystem: Removed off-screen projectile 611 at (806.557, 427.289)
-Player hit! Health: 35 Shield: 0
-CleanUpSystem: Removed inactive entity 597
-Enemy 507 hit. Health: 65
-CleanUpSystem: Removed inactive entity 612
-Enemy 507 hit. Health: 55
-CleanUpSystem: Removed inactive entity 613
-Enemy 507 hit. Health: 45
-CleanUpSystem: Removed inactive entity 614
-Enemy 507 hit. Health: 35
-CleanUpSystem: Removed inactive entity 615
-Enemy 507 hit. Health: 25
-CleanUpSystem: Removed inactive entity 616
-Enemy 507 hit. Health: 15
-CleanUpSystem: Removed inactive entity 617
-Enemy 507 hit. Health: 5
-CleanUpSystem: Removed inactive entity 618
-Enemy 507 hit. Health: -5
-Enemy destroyed! Score: 3300
+Enemy spawned at (493.409, 50) - Total: 13/20
+Enemy 414 hit. Health: 45
+CleanUpSystem: Removed inactive entity 478
+Enemy 414 hit. Health: 35
+CleanUpSystem: Removed inactive entity 479
+Enemy 414 hit. Health: 25
+CleanUpSystem: Removed inactive entity 480
+Enemy 414 hit. Health: 15
+CleanUpSystem: Removed inactive entity 481
+Enemy 414 hit. Health: 5
+CleanUpSystem: Removed inactive entity 482
+Enemy spawned at (694.227, 50) - Total: 14/20
+Enemy 414 hit. Health: -5
+Enemy destroyed! Score: 2500
+CleanUpSystem: Removed inactive entity 414
+CleanUpSystem: Removed inactive entity 483
+CleanUpSystem: Removed off-screen projectile 485 at (804.894, 605.132)
+CleanUpSystem: Removed off-screen projectile 486 at (806.573, 605.589)
+CleanUpSystem: Removed off-screen projectile 487 at (815.35, 447.346)
+Enemy 477 hit. Health: 65
+CleanUpSystem: Removed inactive entity 490
+CleanUpSystem: Removed off-screen projectile 488 at (817.689, 447.036)
+CleanUpSystem: Removed off-screen projectile 489 at (818.179, 446.971)
+Enemy 477 hit. Health: 55
+CleanUpSystem: Removed inactive entity 491
+Enemy spawned at (509.617, 50) - Total: 15/20
+Enemy 457 hit. Health: 65
+CleanUpSystem: Removed inactive entity 492
+Enemy 477 hit. Health: 45
+Enemy 457 hit. Health: 55
+CleanUpSystem: Removed inactive entity 494
+CleanUpSystem: Removed inactive entity 496
+Enemy 477 hit. Health: 35
+CleanUpSystem: Removed inactive entity 497
+Enemy 457 hit. Health: 45
+CleanUpSystem: Removed inactive entity 495
+Enemy 477 hit. Health: 25
+CleanUpSystem: Removed inactive entity 498
+Enemy 477 hit. Health: 15
+CleanUpSystem: Removed inactive entity 499
+Enemy 477 hit. Health: 5
+CleanUpSystem: Removed inactive entity 500
+Enemy 477 hit. Health: -5
+Enemy destroyed! Score: 2600
+CleanUpSystem: Removed inactive entity 477
+CleanUpSystem: Removed inactive entity 501
+Enemy spawned at (592.666, 50) - Total: 16/20
+Enemy 493 hit. Health: 65
+CleanUpSystem: Removed inactive entity 503
+CleanUpSystem: Removed off-screen projectile 504 at (619.369, -14.5225)
+Enemy spawned at (623.892, 50) - Total: 17/20
+Enemy 493 hit. Health: 55
+CleanUpSystem: Removed inactive entity 510
+CleanUpSystem: Removed off-screen projectile 505 at (619.725, -15.4355)
+Enemy 493 hit. Health: 45
+CleanUpSystem: Removed inactive entity 512
+CleanUpSystem: Removed off-screen projectile 506 at (619.181, -14.0419)
+Enemy 457 hit. Health: 35
 CleanUpSystem: Removed inactive entity 507
-CleanUpSystem: Removed inactive entity 619
-CleanUpSystem: Removed off-screen projectile 620 at (480.528, -13.5806)
-CleanUpSystem: Removed off-screen projectile 621 at (480.356, -10.6817)
-CleanUpSystem: Removed off-screen projectile 622 at (480.43, -11.9323)
-CleanUpSystem: Removed off-screen projectile 623 at (480.404, -11.4844)
-CleanUpSystem: Removed off-screen projectile 624 at (480.474, -12.6758)
-CleanUpSystem: Removed off-screen projectile 625 at (480.454, -12.3204)
-CleanUpSystem: Removed off-screen projectile 626 at (480.475, -12.6775)
-CleanUpSystem: Removed off-screen projectile 627 at (480.603, -14.8336)
-CleanUpSystem: Removed off-screen projectile 628 at (480.615, -15.0259)
-CleanUpSystem: Removed off-screen projectile 629 at (571.71, -10.852)
-CleanUpSystem: Removed off-screen projectile 631 at (-10.7362, 357.392)
-CleanUpSystem: Removed off-screen projectile 632 at (-10.4915, 357.505)
-CleanUpSystem: Removed off-screen projectile 630 at (813.27, 31.2224)
-CleanUpSystem: Removed off-screen projectile 633 at (-7.74476, 358.774)
-CleanUpSystem: Removed off-screen projectile 634 at (-7.25017, 359.002)
-CleanUpSystem: Removed off-screen projectile 635 at (-5.37052, 359.87)
-CleanUpSystem: Removed off-screen projectile 636 at (-5.57102, 359.778)
-CleanUpSystem: Removed off-screen projectile 637 at (-17.1038, 354.452)
-CleanUpSystem: Removed off-screen projectile 638 at (-16.0428, 354.942)
-CleanUpSystem: Removed off-screen projectile 639 at (-17.751, 354.153)
-CleanUpSystem: Removed off-screen projectile 640 at (-17.1402, 354.435)
-CleanUpSystem: Removed off-screen projectile 641 at (-5.94225, 359.607)
-CleanUpSystem: Removed off-screen projectile 642 at (-7.77031, 358.762)
-CleanUpSystem: Removed off-screen projectile 643 at (-6.59228, 359.306)
-Enemy 565 hit. Health: 55
-CleanUpSystem: Removed inactive entity 646
-CleanUpSystem: Removed off-screen projectile 644 at (-7.90106, 358.702)
-Enemy 565 hit. Health: 45
-CleanUpSystem: Removed inactive entity 647
-CleanUpSystem: Removed off-screen projectile 645 at (-7.40933, 358.929)
-Enemy 565 hit. Health: 35
-CleanUpSystem: Removed inactive entity 648
-CleanUpSystem: Removed off-screen projectile 649 at (-9.92813, 357.766)
-CleanUpSystem: Removed off-screen projectile 650 at (-11.1934, 357.182)
-CleanUpSystem: Removed off-screen projectile 651 at (-10.8332, 357.348)
-CleanUpSystem: Removed off-screen projectile 652 at (-9.86138, 357.797)
-CleanUpSystem: Removed off-screen projectile 653 at (-9.77502, 357.837)
-CleanUpSystem: Removed off-screen projectile 654 at (-11.3591, 357.105)
-Enemy 565 hit. Health: 25
-CleanUpSystem: Removed inactive entity 655
-Enemy 565 hit. Health: 15
-CleanUpSystem: Removed inactive entity 656
-Enemy 565 hit. Health: 5
-CleanUpSystem: Removed inactive entity 657
-Enemy 565 hit. Health: -5
-Enemy destroyed! Score: 3400
+Enemy 493 hit. Health: 35
+CleanUpSystem: Removed inactive entity 513
+Player hit! Health: 95 Shield: 0
+CleanUpSystem: Removed inactive entity 493
+Enemy 457 hit. Health: 25
+CleanUpSystem: Removed inactive entity 508
+CleanUpSystem: Removed off-screen projectile 509 at (378.847, -5.03247)
+Enemy 484 hit. Health: 65
+CleanUpSystem: Removed inactive entity 514
+CleanUpSystem: Removed off-screen projectile 515 at (816.118, 516.757)
+Enemy 502 hit. Health: 65
+CleanUpSystem: Removed inactive entity 517
+CleanUpSystem: Removed off-screen projectile 516 at (807.494, 579.934)
+Enemy spawned at (517.303, 50) - Total: 18/20
+Enemy 502 hit. Health: 55
+CleanUpSystem: Removed inactive entity 521
+Enemy 502 hit. Health: 45
+CleanUpSystem: Removed off-screen projectile 518 at (811.673, 130.163)
+CleanUpSystem: Removed inactive entity 522
+CleanUpSystem: Removed off-screen projectile 519 at (811.356, 130.532)
+Enemy 502 hit. Health: 35
+CleanUpSystem: Removed inactive entity 523
+CleanUpSystem: Removed off-screen projectile 524 at (816.88, 514.324)
+Enemy 502 hit. Health: 25
+CleanUpSystem: Removed inactive entity 526
+CleanUpSystem: Removed off-screen projectile 525 at (815.746, 514.274)
+Enemy spawned at (54.0539, 50) - Total: 19/20
+Enemy 502 hit. Health: 15
+CleanUpSystem: Removed inactive entity 527
+Enemy 457 hit. Health: 15
+CleanUpSystem: Removed inactive entity 529
+Enemy 457 hit. Health: 5
+CleanUpSystem: Removed inactive entity 530
+Enemy 457 hit. Health: -5
+Enemy destroyed! Score: 2700
+CleanUpSystem: Removed inactive entity 457
+CleanUpSystem: Removed inactive entity 531
+Enemy 467 hit. Health: 65
+CleanUpSystem: Removed inactive entity 532
+Enemy 520 hit. Health: 65
+CleanUpSystem: Removed inactive entity 533
+Enemy spawned at (244.122, 50) - Total: 20/20
+Enemy 520 hit. Health: 55
+CleanUpSystem: Removed inactive entity 534
+Enemy 511 hit. Health: 65
+CleanUpSystem: Removed inactive entity 537
+CleanUpSystem: Removed off-screen projectile 536 at (816.043, 274.084)
+Enemy 448 hit. Health: 45
+CleanUpSystem: Removed inactive entity 538
+Enemy 448 hit. Health: 35
+CleanUpSystem: Removed inactive entity 539
+CleanUpSystem: Removed off-screen projectile 540 at (123.468, -5.05898)
+CleanUpSystem: Removed off-screen projectile 541 at (123.073, -6.47964)
+CleanUpSystem: Removed off-screen projectile 542 at (122.898, -7.11166)
+CleanUpSystem: Removed off-screen projectile 543 at (123.347, -5.49369)
+Enemy 535 hit. Health: 65
+CleanUpSystem: Removed inactive entity 546
+CleanUpSystem: Removed off-screen projectile 544 at (119.548, -19.1679)
+Enemy 535 hit. Health: 55
+CleanUpSystem: Removed inactive entity 547
+CleanUpSystem: Removed off-screen projectile 545 at (120.127, -17.0828)
+Enemy 535 hit. Health: 45
+CleanUpSystem: Removed inactive entity 549
+CleanUpSystem: Removed off-screen projectile 548 at (78.9503, -33.2773)
+CleanUpSystem: Removed off-screen projectile 550 at (-14.8185, 264.84)
+Enemy 535 hit. Health: 35
+CleanUpSystem: Removed inactive entity 551
+Enemy 535 hit. Health: 25
+CleanUpSystem: Removed inactive entity 552
+Enemy 535 hit. Health: 15
+CleanUpSystem: Removed inactive entity 553
+Enemy 535 hit. Health: 5
+CleanUpSystem: Removed inactive entity 554
+Enemy 535 hit. Health: -5
+Enemy destroyed! Score: 2800
+CleanUpSystem: Removed inactive entity 535
+CleanUpSystem: Removed inactive entity 555
+Enemy 528 hit. Health: 65
+CleanUpSystem: Removed inactive entity 556
+Enemy 528 hit. Health: 55
+CleanUpSystem: Removed inactive entity 557
+Enemy 528 hit. Health: 45
+CleanUpSystem: Removed inactive entity 558
+CleanUpSystem: Removed off-screen projectile 559 at (10.2406, -6.60138)
+CleanUpSystem: Removed off-screen projectile 560 at (10.7246, -5.79567)
+Enemy 528 hit. Health: 35
+CleanUpSystem: Removed inactive entity 561
+Enemy 448 hit. Health: 25
+CleanUpSystem: Removed inactive entity 562
+Enemy 448 hit. Health: 15
+CleanUpSystem: Removed inactive entity 563
+Enemy 448 hit. Health: 5
+CleanUpSystem: Removed inactive entity 564
+Enemy 448 hit. Health: -5
+Enemy destroyed! Score: 2900
+CleanUpSystem: Removed inactive entity 448
 CleanUpSystem: Removed inactive entity 565
-CleanUpSystem: Removed inactive entity 658
+CleanUpSystem: Removed off-screen projectile 566 at (94.5943, -6.99073)
+CleanUpSystem: Removed off-screen projectile 567 at (95.0592, -5.34554)
+CleanUpSystem: Removed off-screen projectile 568 at (94.8393, -6.12383)
+CleanUpSystem: Removed off-screen projectile 569 at (95.0094, -5.5219)
+CleanUpSystem: Removed off-screen projectile 570 at (-15.2251, 320.101)
+CleanUpSystem: Removed off-screen projectile 571 at (-15.7384, 319.736)
+CleanUpSystem: Removed off-screen projectile 572 at (-14.5426, 320.586)
+CleanUpSystem: Removed off-screen projectile 573 at (-15.1066, 320.185)
+CleanUpSystem: Removed off-screen projectile 574 at (-13.8169, 321.102)
+CleanUpSystem: Removed off-screen projectile 575 at (-15.3204, 320.033)
+CleanUpSystem: Removed off-screen projectile 576 at (-13.8032, 321.112)
+CleanUpSystem: Removed off-screen projectile 577 at (-14.2733, 320.778)
+CleanUpSystem: Removed off-screen projectile 578 at (-70.464, 280.832)
+CleanUpSystem: Removed off-screen projectile 579 at (-16.9087, 511.415)
+CleanUpSystem: Removed off-screen projectile 580 at (-16.0584, 511.376)
+CleanUpSystem: Removed off-screen projectile 581 at (-7.21599, 510.98)
+CleanUpSystem: Removed off-screen projectile 582 at (-7.25435, 510.982)
+CleanUpSystem: Removed off-screen projectile 583 at (-7.44137, 510.99)
+CleanUpSystem: Removed off-screen projectile 584 at (-5.59607, 510.908)
+CleanUpSystem: Removed off-screen projectile 585 at (-58.0762, 513.259)
+Player hit! Health: 80 Shield: 0
+CleanUpSystem: Removed inactive entity 440
+Player hit! Health: 65 Shield: 0
+CleanUpSystem: Removed inactive entity 502
+Player hit! Health: 50 Shield: 0
+CleanUpSystem: Removed inactive entity 511
+Player hit! Health: 35 Shield: 0
+CleanUpSystem: Removed inactive entity 467
+Player hit! Health: 20 Shield: 0
+CleanUpSystem: Removed inactive entity 424
+Player hit! Health: 5 Shield: 0
+CleanUpSystem: Removed inactive entity 405
+Player hit! Health: -10 Shield: 0
+Player died! Lives remaining: 2
+CleanUpSystem: Removed inactive entity 484
+CleanUpSystem: Removed off-screen projectile 586 at (601.574, -13.3783)
+CleanUpSystem: Removed off-screen projectile 587 at (602.158, -14.2859)
+CleanUpSystem: Removed off-screen projectile 588 at (602.434, -14.7152)
+CleanUpSystem: Removed off-screen projectile 589 at (603.812, -16.8581)
+CleanUpSystem: Removed off-screen projectile 590 at (613.621, -32.1071)
+CleanUpSystem: Removed off-screen projectile 591 at (598.067, -7.92634)
+Enemy 520 hit. Health: 45
+CleanUpSystem: Removed inactive entity 592
+CleanUpSystem: Removed off-screen projectile 593 at (582.328, -16.1458)
+CleanUpSystem: Removed off-screen projectile 594 at (582.24, -15.9927)
+CleanUpSystem: Removed off-screen projectile 595 at (581.996, -15.5692)
+CleanUpSystem: Removed off-screen projectile 596 at (580.84, -13.5656)
+CleanUpSystem: Removed off-screen projectile 597 at (593.835, -36.0967)
+Player hit! Health: 100 Shield: 85
+CleanUpSystem: Removed off-screen projectile 598 at (604.069, -53.8425)
+CleanUpSystem: Removed inactive entity 520
+CleanUpSystem: Removed off-screen projectile 599 at (637.965, -5.69573)
+CleanUpSystem: Removed off-screen projectile 600 at (480.587, -12.6039)
+CleanUpSystem: Removed off-screen projectile 601 at (481.505, -6.16017)
+CleanUpSystem: Removed off-screen projectile 602 at (480.001, -16.7216)
+CleanUpSystem: Removed off-screen projectile 603 at (479.826, -17.9491)
+CleanUpSystem: Removed off-screen projectile 604 at (-14.5053, 240.557)
+CleanUpSystem: Removed off-screen projectile 605 at (-11.5805, 239.699)
+CleanUpSystem: Removed off-screen projectile 606 at (-12.2453, 239.528)
+CleanUpSystem: Removed off-screen projectile 607 at (-14.5754, 238.93)
+CleanUpSystem: Removed off-screen projectile 608 at (-4.84941, 608.032)
+CleanUpSystem: Removed off-screen projectile 609 at (-7.70606, 580.735)
+CleanUpSystem: Removed off-screen projectile 610 at (-7.37036, 580.328)
+CleanUpSystem: Removed off-screen projectile 611 at (-9.7876, 583.264)
+CleanUpSystem: Removed off-screen projectile 612 at (-10.1192, 583.667)
+CleanUpSystem: Removed off-screen projectile 613 at (-11.8114, 585.722)
+Enemy 528 hit. Health: 25
+CleanUpSystem: Removed inactive entity 614
+Enemy 528 hit. Health: 15
+CleanUpSystem: Removed inactive entity 615
+Enemy 528 hit. Health: 5
+CleanUpSystem: Removed inactive entity 616
+Enemy 528 hit. Health: -5
+Enemy destroyed! Score: 3000
+CleanUpSystem: Removed inactive entity 528
+CleanUpSystem: Removed inactive entity 617
 All enemies destroyed - Level completion signaled!
 Main loop detected level complete. Advancing level...
 CleanUpSystem: Starting Level Transition Cleanup (Force removing enemies/projectiles)...
 CleanUpSystem: Level cleanup finished. Entities remaining: 1
 Congratulations! You've completed the game.
-Entering score entry for score: 3400
+Entering score entry for score: 3000
 Game state changed to: 5
+Game state changed to: 3
+
+ONeil@ThinkPadP14 UCRT64 /c/Users/ONeil/ONeDrive/Desktop/Kansas13
+$

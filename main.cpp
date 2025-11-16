@@ -137,7 +137,8 @@ int main() {
             // CombatSystem signature is updated, no score parameter
             combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damages, activeStates, playerHealths, healths, shields, sounds, velocities, enemies, playerLives);
             
-            soundSystem.update(sounds);
+           // 🛑 FIX: Pass the delta time (dt) argument
+            soundSystem.update(sounds, dt);
             
             // Normal cleanup runs every frame
             cleanUpSystem.update(entities, activeStates, projectiles, bouncingShapes, damages, playerHealths, shields, playerLives, playerInputs, positions, velocities, shapes, sounds);
