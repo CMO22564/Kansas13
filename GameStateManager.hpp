@@ -25,6 +25,7 @@ public:
     void setState(GameState newState);
     int getScore() const;
     void setScore(int newScore);
+    void setCurrentLevelIndex(int index) { m_currentLevelIndex = index; } // <-- REQUIRED public method
     void advanceToNextLevel();
     int getCurrentLevel() const;
     HighScoreManager& getHighScoreManager() { return m_highScoreManager; } // Added for high score

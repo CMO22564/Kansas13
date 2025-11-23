@@ -173,7 +173,7 @@ void ScreenSystem::render(sf::RenderWindow& window, GameStateManager& manager) {
     
     switch (state) {
         case GameState::TitleScreen:
-            renderTitleScreen(window);
+            renderTitleScreen(window, manager);
             break;
             
         // FIX 3: Use GameState::Running instead of GameState::Playing
@@ -202,28 +202,142 @@ void ScreenSystem::render(sf::RenderWindow& window, GameStateManager& manager) {
 
 // --- Helper Render Functions (Definitions) ---
 
-void ScreenSystem::renderTitleScreen(sf::RenderWindow& window) {
+void ScreenSystem::renderTitleScreen(sf::RenderWindow& window, GameStateManager& manager) {
     sf::Vector2u windowSize = window.getSize();
     
-    // Semi-transparent overlay
+    // --- VAPOR WAVE COLORS ---
+    const sf::Color VAPOR_PINK(255, 0, 255);      // Hot Pink / Magenta
+    const sf::Color VAPOR_BLUE(0, 255, 255);      // Cyan / Electric Blue
+    const sf::Color VAPOR_ORANGE(255, 128, 0);    // Retro Orange
+    
+    // Semi-transparent overlay 
     sf::RectangleShape overlay({static_cast<float>(windowSize.x), static_cast<float>(windowSize.y)});
-    overlay.setFillColor(sf::Color(0, 0, 0, 180));
+    overlay.setFillColor(sf::Color(0, 0, 0, 200)); 
     window.draw(overlay);
     
-    // Draw Title
-    window.draw(m_titleText);
-    
-    // Draw Play Prompt
-    m_playText.setPosition(sf::Vector2f(windowSize.x / 2.f, windowSize.y / 2.f)); // FIX: sf::Vector2f
-    sf::FloatRect playBounds = m_playText.getLocalBounds();
-    m_playText.setOrigin(sf::Vector2f(playBounds.size.x / 2.f, playBounds.size.y / 2.f)); // FIX: use .size.x/.size.y and sf::Vector2f
-    window.draw(m_playText);
+    // ----------------------------------------------------------------
+    // Title: "KANSAS 13" (Neon Glow Effect)
+    // ----------------------------------------------------------------
+    const std::string titleString = "KANSAS 13";
+    float titleY = windowSize.y / 3.f;
 
-    // Draw Controls
-    m_controlsText.setPosition(sf::Vector2f(windowSize.x / 2.f, windowSize.y - 50.f)); // FIX: sf::Vector2f
-    sf::FloatRect controlsBounds = m_controlsText.getLocalBounds();
-    m_controlsText.setOrigin(sf::Vector2f(controlsBounds.size.x / 2.f, controlsBounds.size.y / 2.f)); // FIX: use .size.x/.size.y and sf::Vector2f
-    window.draw(m_controlsText);
+    // 1. Draw the Shadow/Glow layer (Vapor Blue, slightly offset)
+    // FIX 1: Corrected constructor order: (font, string, size)
+    sf::Text glowText(m_font, titleString, 96);
+    glowText.setFillColor(VAPOR_BLUE);
+    glowText.setStyle(sf::Text::Bold);
+    sf::FloatRect glowBounds = glowText.getLocalBounds();
+    // FIX 2: Corrected setOrigin/setPosition to use sf::Vector2f initializer list {x, y}
+    glowText.setOrigin({glowBounds.size.x / 2.f, glowBounds.size.y / 2.f});
+    glowText.setPosition({windowSize.x / 2.f + 4.f, titleY + 4.f}); // Offset by 4 pixels
+    window.draw(glowText);
+
+    // 2. Draw the primary text (Vapor Pink)
+    // FIX 1: Corrected constructor order: (font, string, size)
+    sf::Text title(m_font, titleString, 96);
+    title.setFillColor(VAPOR_PINK); 
+    title.setStyle(sf::Text::Bold);
+    sf::FloatRect bounds = title.getLocalBounds();
+    // FIX 2: Corrected setOrigin/setPosition to use sf::Vector2f initializer list {x, y}
+    title.setOrigin({bounds.size.x / 2.f, bounds.size.y / 2.f});
+    title.setPosition({windowSize.x / 2.f, titleY});
+    window.draw(title);
+    
+    // ----------------------------------------------------------------
+    // Instructions: "Press 'P' to Start" 
+    // ----------------------------------------------------------------
+    // FIX 1: Corrected constructor order: (font, string, size)
+    sf::Text instructions(m_font, "Press 'P' to Start", 36);
+    instructions.setFillColor(VAPOR_ORANGE); 
+    instructions.setStyle(sf::Text::Bold); 
+    sf::FloatRect instBounds = instructions.getLocalBounds();
+    // FIX 2: Corrected setOrigin/setPosition to use sf::Vector2f initializer list {x, y}
+    instructions.setOrigin({instBounds.size.x / 2.f, instBounds.size.y / 2.f});
+    instructions.setPosition({windowSize.x / 2.f, windowSize.y / 2.f});
+    window.draw(instructions);
+    
+    // ----------------------------------------------------------------
+    // Developer Info: "Developer: ONeil"
+    // ----------------------------------------------------------------
+    // FIX 1: Corrected constructor order: (font, string, size)
+    sf::Text devInfo(m_font, "Developer: ONeil", 24);
+    devInfo.setFillColor(VAPOR_BLUE); 
+    sf::FloatRect devBounds = devInfo.getLocalBounds();
+    // FIX 2: Corrected setOrigin/setPosition to use sf::Vector2f initializer list {x, y}
+    devInfo.setOrigin({devBounds.size.x / 2.f, devBounds.size.y / 2.f});
+    devInfo.setPosition({windowSize.x / 2.f, windowSize.y * 0.9f});
+    window.draw(devInfo);
+
+
+    // --- High Score Display ---
+    const HighScoreManager& hsm = manager.getHighScoreManager();
+    const auto& scores = hsm.getTopScores(); 
+
+    sf::Text highScoreTitle(m_font, "TOP TEN", 36);
+    highScoreTitle.setFillColor(VAPOR_ORANGE);
+    highScoreTitle.setStyle(sf::Text::Bold);
+
+    sf::FloatRect titleBounds = highScoreTitle.getLocalBounds();
+    highScoreTitle.setOrigin(sf::Vector2f(titleBounds.size.x / 2.f, titleBounds.size.y / 2.f));
+
+    // 1. Position the title below the instructions (assuming instructions are around 0.60f)
+    highScoreTitle.setPosition(sf::Vector2f(windowSize.x / 2.f, windowSize.y * 0.65f)); 
+    window.draw(highScoreTitle);
+
+    // 2. Define layout variables
+    float startY = windowSize.y * 0.70f;     // Starting Y position for the first score entry
+    float lineHeight = 22.f;                 // Line spacing (slightly increased from 20.f for clarity)
+    int scoreFontSize = 18;                  // Slightly larger font (was 16)
+
+    // Define X positions for the two columns
+    // Left Column (1/4 of the way across)
+    float leftColumnX = windowSize.x * 0.35f; 
+    // Right Column (3/4 of the way across)
+    float rightColumnX = windowSize.x * 0.65f; 
+
+    // --- Column 1: Scores 1 through 5 ---
+    for (size_t i = 0; i < scores.size() && i < 5; ++i) {
+        const auto& scoreEntry = scores[i];
+        
+        std::stringstream ss;
+        ss << std::setw(2) << std::left << (i + 1) << ". " 
+        << std::setw(3) << std::left << scoreEntry.initials << " - " 
+        << std::setw(6) << std::right << scoreEntry.score;
+        
+        sf::Text scoreText(m_font, ss.str(), scoreFontSize); 
+        scoreText.setFillColor(VAPOR_BLUE);
+        
+        sf::FloatRect scoreBounds = scoreText.getLocalBounds();
+        // Center the text origin
+        scoreText.setOrigin(sf::Vector2f(scoreBounds.size.x / 2.f, scoreBounds.size.y / 2.f));
+        
+        // Position using the LEFT column X and current Y
+        scoreText.setPosition(sf::Vector2f(leftColumnX, startY + (float)i * lineHeight)); 
+        
+        window.draw(scoreText);
+    }
+
+    // --- Column 2: Scores 6 through 10 ---
+    for (size_t i = 5; i < scores.size() && i < 10; ++i) {
+        const auto& scoreEntry = scores[i];
+        
+        std::stringstream ss;
+        ss << std::setw(2) << std::left << (i + 1) << ". " 
+        << std::setw(3) << std::left << scoreEntry.initials << " - " 
+        << std::setw(6) << std::right << scoreEntry.score;
+        
+        sf::Text scoreText(m_font, ss.str(), scoreFontSize); 
+        scoreText.setFillColor(VAPOR_BLUE);
+        
+        sf::FloatRect scoreBounds = scoreText.getLocalBounds();
+        // Center the text origin
+        scoreText.setOrigin(sf::Vector2f(scoreBounds.size.x / 2.f, scoreBounds.size.y / 2.f));
+        
+        // Position using the RIGHT column X. We subtract 5 from i to reset the Y-offset.
+        scoreText.setPosition(sf::Vector2f(rightColumnX, startY + (float)(i - 5) * lineHeight)); 
+        
+        window.draw(scoreText);
+    }
 }
 
 void ScreenSystem::renderPauseScreen(sf::RenderWindow& window) {

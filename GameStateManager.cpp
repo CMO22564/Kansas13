@@ -17,7 +17,8 @@ void GameStateManager::handleInput(const sf::Event& event) {
             setState(GameState::Paused);
         } else if (m_currentState == GameState::Paused && keyEvent->code == sf::Keyboard::Key::Escape) {
             setState(GameState::Running);
-        } else if (m_currentState == GameState::GameOver && keyEvent->code == sf::Keyboard::Key::P) {
+        } else if ((m_currentState == GameState::GameOver || m_currentState == GameState::ScoreEntry) 
+                 && keyEvent->code == sf::Keyboard::Key::P) {
             m_score = 0; // Reset score
             m_currentLevelIndex = 0; // Reset level
             setState(GameState::TitleScreen); // Return to title screen

@@ -21,7 +21,7 @@ public:
         ComponentMap<SoundComponent>& sounds,
         ComponentMap<DamageComponent>& damages
     );
-    void handleScoreEntry(sf::Event& event, GameStateManager& manager);
+    void handleScoreEntry(const sf::Event& event, GameStateManager& manager);
     void resetInitials();
     std::string getCurrentInitials() const { return m_currentInitials; }
     bool isEnteringScore() const { return m_enteringScore; }

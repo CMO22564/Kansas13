@@ -194,7 +194,7 @@ if (shields.count(playerId)) {
                 } else {
                     // Respawn Player: Reset Health and Position
                     healthIt->second.currentHealth = healthIt->second.maxHealth;
-                    posIt->second.position = sf::Vector2f(400.0f, 300.0f);
+                    posIt->second.position = sf::Vector2f(400.0f, 500.0f);
                     
                     // Reset Shield
                     auto shieldIt = shields.find(playerId);

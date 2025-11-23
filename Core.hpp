@@ -14,6 +14,7 @@ using EntityId = unsigned int;
 template<typename T>
 using ComponentMap = std::unordered_map<EntityId, T>;
 
+
 // -- Base System Class --
 class System {
 public:
@@ -106,4 +107,30 @@ struct EnemyComponent {};
 inline unsigned int getNextEntityId() {
     static unsigned int nextId = 1;
     return nextId++;
+}
+
+// Core.hpp (Add this function definition outside of any class/struct)
+
+/**
+ * @brief Resets player-specific components (Health, Shield, Lives) 
+ * to their initial starting values.
+ */
+
+inline void resetPlayerComponents(
+    EntityId playerId,
+    ComponentMap<PlayerHealthComponent>& playerHealths,
+    ComponentMap<ShieldComponent>& shields,
+    ComponentMap<PlayerLivesComponent>& playerLives) 
+{
+    if (playerHealths.count(playerId)) {
+        playerHealths.at(playerId).currentHealth = playerHealths.at(playerId).maxHealth;
+    }
+    if (shields.count(playerId)) {
+        shields.at(playerId).currentShield = shields.at(playerId).maxShield;
+        shields.at(playerId).isWarningActive = false;
+    }
+    if (playerLives.count(playerId)) {
+        // Resetting to the starting number of lives
+        playerLives.at(playerId).lives = 3; 
+    }
 }

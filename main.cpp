@@ -94,6 +94,28 @@ int main() {
                 window.close();
             }
 
+            // --- CRITICAL FIX: Player Component Reset on New Game Start ---
+    static GameState lastState = GameState::TitleScreen;
+    GameState currentState = GameStateManager::getInstance().getState();
+
+    // Check for transition from TitleScreen to Running (i.e., new game start)
+    if (lastState == GameState::TitleScreen && currentState == GameState::Running) {
+        // Find player entity (assuming player is always entityId 1 or you find it similarly)
+        EntityId playerId = 0;
+        for (auto& [id, health] : playerHealths) {
+            playerId = id;
+            break;
+        }
+
+        if (playerId != 0) {
+            // Call the helper function defined in Core.hpp
+            resetPlayerComponents(playerId, playerHealths, shields, playerLives);
+            std::cout << "Player components reset for new game." << std::endl;
+        }
+    }
+    lastState = currentState; // Update last state for the next frame
+
+
             // Tab key to toggle on and off the Debug Window.
             if (event->is<sf::Event::KeyPressed>()) {
                 const auto* keyEvent = event->getIf<sf::Event::KeyPressed>();

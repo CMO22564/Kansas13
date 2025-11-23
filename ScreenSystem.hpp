@@ -31,7 +31,7 @@ private:
     sf::RectangleShape m_shieldBar;
 
 // ADD THESE MISSING PRIVATE DECLARATIONS:
-    void renderTitleScreen(sf::RenderWindow& window);
+    void renderTitleScreen(sf::RenderWindow& window, GameStateManager& manager);
     void renderPauseScreen(sf::RenderWindow& window);
     void renderGameOverScreen(sf::RenderWindow& window, GameStateManager& manager);
     void renderScoreEntryScreen(sf::RenderWindow& window, GameStateManager& manager);

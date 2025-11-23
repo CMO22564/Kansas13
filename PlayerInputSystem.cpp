@@ -109,9 +109,24 @@ void PlayerInputSystem::update(
     }
 }
 
-void PlayerInputSystem::handleScoreEntry(sf::Event& event, GameStateManager& manager) {
+void PlayerInputSystem::handleScoreEntry(const sf::Event& event, GameStateManager& manager) {
+    
+    // 1. Handle KeyPressed for control commands (like 'P' to exit)
+    if (event.is<sf::Event::KeyPressed>()) {
+        const auto* keyEvent = event.getIf<sf::Event::KeyPressed>();
+        
+        if (keyEvent->code == sf::Keyboard::Key::P) {
+            // FIX: Reset the game state and go to TitleScreen when 'P' is pressed
+            manager.setScore(0);
+            manager.setCurrentLevelIndex(0); 
+            manager.setState(GameState::TitleScreen);
+            return; // Stop processing this event
+        }
+    }
+    
+    // 2. Handle TextEntered for initials (A-Z, Backspace, Enter)
     if (!event.is<sf::Event::TextEntered>()) {
-        return; // Only handle TextEntered events
+        return; 
     }
 
     const auto* textEvent = event.getIf<sf::Event::TextEntered>();
@@ -119,12 +134,12 @@ void PlayerInputSystem::handleScoreEntry(sf::Event& event, GameStateManager& man
     
     uint32_t unicode = textEvent->unicode;
     
-    if (unicode < 128) { // Restrict to ASCII for initials
+    // Initial Entry Logic (A-Z)
+    if (unicode < 128) { 
         char c = static_cast<char>(unicode);
         if (m_currentInitialIndex < 3 && std::isalpha(c)) {
             m_currentInitials[m_currentInitialIndex] = std::toupper(c);
             m_currentInitialIndex++;
-            // UPDATE: Sync with manager so screen can display it
             manager.setCurrentInitials(m_currentInitials);
         }
     }
@@ -133,7 +148,6 @@ void PlayerInputSystem::handleScoreEntry(sf::Event& event, GameStateManager& man
     if (unicode == 8 && m_currentInitialIndex > 0) {
         m_currentInitialIndex--;
         m_currentInitials[m_currentInitialIndex] = '-';
-        // UPDATE: Sync with manager so screen can display it
         manager.setCurrentInitials(m_currentInitials);
     }
 
@@ -142,10 +156,13 @@ void PlayerInputSystem::handleScoreEntry(sf::Event& event, GameStateManager& man
         manager.getHighScoreManager().addScore(m_currentInitials.substr(0, 3), manager.getScore());
         m_currentInitials = "---";
         m_currentInitialIndex = 0;
-        m_enteringScore = false;
-        // UPDATE: Sync with manager
+        // m_enteringScore = false; // Assuming this flag is local state management
         manager.setCurrentInitials(m_currentInitials);
-        manager.setState(GameState::GameOver);
+        
+        // CRITICAL FIX: After score entry is complete, reset the game state and go to TitleScreen
+        manager.setScore(0);
+        manager.setCurrentLevelIndex(0);
+        manager.setState(GameState::TitleScreen);
     }
 }
 

@@ -15,8 +15,8 @@
           "color": "Magenta",
           "size": 20,
           "baseDamage": 10,
-          "baseSpeed": 100,
-          "baseHealth": 50.0
+          "baseSpeed": 150,
+          "baseHealth": 20.0
         }
       ]
     }
@@ -37,8 +37,8 @@
           "color": "Cyan",
           "size": 25,
           "baseDamage": 15,
-          "baseSpeed": 150,
-          "baseHealth": 75.0
+          "baseSpeed": 200,
+          "baseHealth": 30.0
         }
       ]
     }
@@ -59,8 +59,8 @@
           "color": "Yellow",
           "size": 15,
           "baseDamage": 15,
-          "baseSpeed": 150,
-          "baseHealth": 75.0
+          "baseSpeed": 250,
+          "baseHealth":40.0
         }
       ]
     }
