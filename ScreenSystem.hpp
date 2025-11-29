@@ -8,7 +8,7 @@ class ScreenSystem {
 public:
     ScreenSystem(sf::RenderWindow& window, const std::string& fontPath);
     void render(sf::RenderWindow& window, GameStateManager& manager);
-    void update(const GameState& gameState, const int& score,
+    void update(const GameState& gameState, const int& score, const int& levelIndex,
                 const ComponentMap<PlayerHealthComponent>& playerHealths,
                 const ComponentMap<ShieldComponent>& shields,
                 const ComponentMap<PlayerLivesComponent>& playerLives);

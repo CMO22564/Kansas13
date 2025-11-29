@@ -43,7 +43,7 @@ void DebugSystem::update(int score,
             }
 
             // ⭐ New: Display Shape Type and Size
-            //if (shapes.count(entity)) {
+            //  if (shapes.count(entity)) {
               //  const auto& shapeComponent = shapes.at(entity);
               //  ImGui::Text("Shape Type: %s", shapeComponent.type == ShapeComponent::Type::Rectangle ? "Rectangle" : "Circle");
               //  ImGui::Text("Size: (%.1f, %.1f)", shapeComponent.size.x, shapeComponent.size.y);

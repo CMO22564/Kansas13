@@ -1,6 +1,30 @@
 [
     {
         "initials": "CMO",
+        "score": 8800
+    },
+    {
+        "initials": "DAD",
+        "score": 8100
+    },
+    {
+        "initials": "CMO",
+        "score": 7100
+    },
+    {
+        "initials": "DAD",
+        "score": 6400
+    },
+    {
+        "initials": "DAD",
+        "score": 5200
+    },
+    {
+        "initials": "CMO",
+        "score": 4900
+    },
+    {
+        "initials": "CMO",
         "score": 4500
     },
     {
@@ -8,35 +32,11 @@
         "score": 3800
     },
     {
+        "initials": "DAD",
+        "score": 3500
+    },
+    {
         "initials": "AAA",
         "score": 3300
-    },
-    {
-        "initials": "DAD",
-        "score": 3100
-    },
-    {
-        "initials": "ABA",
-        "score": 3100
-    },
-    {
-        "initials": "BAD",
-        "score": 3100
-    },
-    {
-        "initials": "BBB",
-        "score": 3000
-    },
-    {
-        "initials": "AAA",
-        "score": 2900
-    },
-    {
-        "initials": "CMO",
-        "score": 2700
-    },
-    {
-        "initials": "CMO",
-        "score": 2600
     }
 ]

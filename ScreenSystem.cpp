@@ -17,27 +17,31 @@
 ScreenSystem::ScreenSystem(sf::RenderWindow& window, const std::string& fontPath)
     // 1. Initialize reference member (must be first)
     : m_window(window),
-    // 2. Initialize all sf::Text members using m_font (even though it's empty for now)
-      m_titleText(m_font, "", 30),
-      m_playText(m_font, "", 30),
-      m_pauseText(m_font, "", 30),
-      m_controlsText(m_font, "", 30),
-      m_scoreText(m_font, "", 30),
-      m_levelText(m_font, "", 30),
-      m_livesText(m_font, "", 30),
-      m_gameOverText(m_font, "", 30)
-      // NOTE: Other members (m_font, m_healthBarBackground, etc.) are default-constructed implicitly
-      // unless you have a non-default constructor for them, in which case add them here.
+
+    // 2. Initialize sf::Font
+      m_font(),
+
+    // 3. Initialize all sf::Text members *after* m_font is ready.
+    // We initialize them with a dummy string/size to satisfy the sf::Text constructor.
+      m_titleText(m_font, "Title", 30),
+      m_playText(m_font, "Play", 30),
+      m_pauseText(m_font, "Paused", 30),
+      m_controlsText(m_font, "Controls", 30),
+      m_scoreText(m_font, "Score", 30),
+      m_levelText(m_font, "Level", 30), // <-- New member added here
+      m_livesText(m_font, "Lives", 30),
+      m_gameOverText(m_font, "Game Over", 30)
+    // NOTE: Other shape/rectangle members are default-constructed implicitly.
 {
     // Now the constructor body runs, and all members exist.
     
-    // 3. Load the font file
+    // 4. Load the font file
     if (!m_font.openFromFile(fontPath)) {
         std::cerr << "Error: Could not load font from path: " << fontPath << std::endl;
         // Fatal error, but proceed to avoid crashing later, assuming the code handles an empty font.
     }
 
-    // 4. Set the font for ALL sf::Text members again (since they were initialized with an empty font)
+    // 5. Set the font for ALL sf::Text members again (since they were initialized with an empty font)
     //    and set their initial properties.
 
     // Title Text setup (Lines 22-27 in your original body)
@@ -72,12 +76,19 @@ ScreenSystem::ScreenSystem(sf::RenderWindow& window, const std::string& fontPath
     m_scoreText.setFillColor(sf::Color::White);
     m_scoreText.setPosition(sf::Vector2f(10.f, 10.f));
 
-    // Lives Text setup (Lines 52-56)
+    // Level Text setup (Lines 52-56)
+    m_levelText.setFont(m_font);
+    m_levelText.setString("Level: 1"); // Initial level
+    m_levelText.setCharacterSize(24);
+    m_levelText.setFillColor(sf::Color::Green);
+    m_levelText.setPosition(sf::Vector2f(10.f, 40.f));
+
+    // Lives Text setup (Lines 57-62)
     m_livesText.setFont(m_font);
     m_livesText.setString("Lives: 3"); // Initial lives
     m_livesText.setCharacterSize(24);
     m_livesText.setFillColor(sf::Color::Green);
-    m_livesText.setPosition(sf::Vector2f(10.f, 40.f));
+    m_livesText.setPosition(sf::Vector2f(10.f, 70.f));
     
     // Game Over Text setup (Lines 57-62)
     m_gameOverText.setFont(m_font);
@@ -89,28 +100,29 @@ ScreenSystem::ScreenSystem(sf::RenderWindow& window, const std::string& fontPath
     // Initialize Rectangles (if needed, otherwise default is fine)
     m_healthBarBackground.setSize({150.f, 10.f});
     m_healthBarBackground.setFillColor(sf::Color::Red);
-    m_healthBarBackground.setPosition(sf::Vector2f(10.f, 70.f)); 
+    m_healthBarBackground.setPosition(sf::Vector2f(10.f, 100.f)); 
     
     m_healthBar.setSize({150.f, 10.f});
     m_healthBar.setFillColor(sf::Color::Green);
-    m_healthBar.setPosition(sf::Vector2f(10.f, 70.f));
+    m_healthBar.setPosition(sf::Vector2f(10.f, 100.f));
 
     m_shieldBarBackground.setSize({150.f, 10.f});
-    m_shieldBarBackground.setFillColor(sf::Color(100, 100, 100)); // Dark Gray
-    m_shieldBarBackground.setPosition(sf::Vector2f(10.f, 85.f));
+    m_shieldBarBackground.setFillColor(sf::Color(100, 100, 130)); // Dark Gray
+    m_shieldBarBackground.setPosition(sf::Vector2f(10.f, 115.f));
 
     m_shieldBar.setSize({150.f, 10.f});
     m_shieldBar.setFillColor(sf::Color::Blue);
-    m_shieldBar.setPosition(sf::Vector2f(10.f, 85.f));
+    m_shieldBar.setPosition(sf::Vector2f(10.f, 115.f));
 
 }
 // ... rest of ScreenSystem.cpp functions (update, render, etc.) will now find the members.
 
 // --- Update Method (Handles HUD Data Logic) ---
-void ScreenSystem::update(const GameState& gameState, const int& score,
-                          const ComponentMap<PlayerHealthComponent>& playerHealths,
-                          const ComponentMap<ShieldComponent>& shields,
-                          const ComponentMap<PlayerLivesComponent>& playerLives) {
+void ScreenSystem::update(const GameState& gameState, const int& score, const int& levelIndex,
+                         const ComponentMap<PlayerHealthComponent>& playerHealths,
+                         const ComponentMap<ShieldComponent>& shields,
+                         const ComponentMap<PlayerLivesComponent>& playerLives) {
+    
     // Only update HUD elements when the game is running or paused
     if (gameState != GameState::Running && gameState != GameState::Paused) return;
 
@@ -119,8 +131,16 @@ void ScreenSystem::update(const GameState& gameState, const int& score,
     scoreStream << "Score: " << score;
     m_scoreText.setString(scoreStream.str());
 
+    // 🌟 CORRECTED: Update Level Text
+    std::ostringstream levelStream;
+    // We assume levelIndex is 0-based, so add 1 for display (Level 0 -> Level 1)
+    levelStream << "Level: " << (levelIndex + 1);
+    m_levelText.setString(levelStream.str());
+    
+    // ... (rest of the update function: player lives, health bar, shield bar) 
+     
     // Assuming a single player entity exists (playerId = 1)
-    EntityId playerId = 1; 
+    EntityId playerId = 1;
 
     // Update Lives Text
     if (playerLives.count(playerId)) {
@@ -158,17 +178,19 @@ void ScreenSystem::update(const GameState& gameState, const int& score,
 
 // --- Render Method (Handles Screen State Drawing) ---
 void ScreenSystem::render(sf::RenderWindow& window, GameStateManager& manager) {
-    // FIX 2: Use getState() instead of getCurrentState()
+    
     GameState state = manager.getState(); 
     
     // Always draw HUD elements during Running and Paused states
     if (state == GameState::Running || state == GameState::Paused) {
         window.draw(m_scoreText);
+        // 🌟 ADDED: Draw the Level Text
+        window.draw(m_levelText); 
+        window.draw(m_livesText);
         window.draw(m_healthBarBackground);
         window.draw(m_healthBar);
         window.draw(m_shieldBarBackground);
         window.draw(m_shieldBar);
-        window.draw(m_livesText);
     }
     
     switch (state) {

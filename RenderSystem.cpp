@@ -2,6 +2,7 @@
 #include "Core.hpp" // Contains RenderComponent, PositionComponent, etc.
 #include <iostream>
 #include <SFML/Graphics.hpp> // Required for sf::RenderWindow, sf::CircleShape, etc.
+#include <SFML/System/Angle.hpp> // 🌟 OPTIONAL: Add this line to explicitly include Angle utilities
 #include <memory>          // FIX: Required for std::make_unique
 
 
@@ -21,27 +22,46 @@ void RenderSystem::update(sf::RenderWindow& window,
            
             if (!renderComponent.shape) {
                 
-                if (renderComponent.type == RenderComponent::Type::Circle) {
-                    // Circle radius is the size
-                    renderComponent.shape = std::make_unique<sf::CircleShape>(renderComponent.size);
-                } else if (renderComponent.type == RenderComponent::Type::Square) {
-                    // Create a square using the single size float (size * 2 is the full width/height)
-                    renderComponent.shape = std::make_unique<sf::RectangleShape>(sf::Vector2f(renderComponent.size * 2.f, renderComponent.size * 2.f));
-                } else if (renderComponent.type == RenderComponent::Type::Triangle) {
-                    // Create a 3-point shape (triangle) using the size as the radius
-                    renderComponent.shape = std::make_unique<sf::CircleShape>(renderComponent.size, 3);
+                // 1. SHAPE CREATION (ONLY) inside the switch
+                switch (renderComponent.type) {
+                    case RenderComponent::Circle:
+                        renderComponent.shape = std::make_unique<sf::CircleShape>(renderComponent.size);
+                        break;
+                    case RenderComponent::Square:
+                        renderComponent.shape = std::make_unique<sf::RectangleShape>(sf::Vector2f(renderComponent.size * 2, renderComponent.size * 2));
+                        break;
+                    case RenderComponent::Triangle:
+                        renderComponent.shape = std::make_unique<sf::CircleShape>(renderComponent.size, 3);
+                        break;
+                    case RenderComponent::Hexagon:
+                        renderComponent.shape = std::make_unique<sf::CircleShape>(renderComponent.size, 6); 
+                        break;
+                    case RenderComponent::Diamond: 
+                        // 🌟 FIX: Use sf::RectangleShape for a reliable, rotatable square base.
+                        // Size is (2 * radius, 2 * radius) to make a centered square.
+                        renderComponent.shape = std::make_unique<sf::RectangleShape>(
+                            sf::Vector2f(renderComponent.size * 2.f, renderComponent.size * 2.f));
+                        break;
+                    default:
+                        renderComponent.shape = std::make_unique<sf::CircleShape>(renderComponent.size);
+                        break;
+                } // End of switch
+                
+                // 2. COMMON SETUP (ORIGIN and FILL COLOR) for ALL shapes
+                // This MUST happen BEFORE the rotation for Diamond to be centered.
+                if (renderComponent.shape) {
+                    renderComponent.shape->setOrigin(sf::Vector2f(renderComponent.size, renderComponent.size));
+                    renderComponent.shape->setFillColor(renderComponent.color);
                 }
 
-                // Set properties that only need to be set once
-                if (renderComponent.shape) {
-                    renderComponent.shape->setFillColor(renderComponent.color);
-                    
-                    // RenderSystem.cpp (New Line 40)
-                    renderComponent.shape->setOrigin(sf::Vector2f(renderComponent.size, renderComponent.size));
+                // 3. DIAMOND SPECIFIC SETUP (ROTATION)
+                if (renderComponent.type == RenderComponent::Type::Diamond) {
+                    renderComponent.shape->setRotation(sf::degrees(45.f)); 
                 }
-            }
-            
-            // Draw the shape
+
+            } // End of if (!renderComponent.shape)
+
+            // ... (rest of the drawing logic)
             if (renderComponent.shape) {
                 renderComponent.shape->setPosition(position.position);
                 window.draw(*renderComponent.shape);

@@ -60,6 +60,8 @@ void EnemySpawnSystem::update(std::vector<EntityId>& entities,
         if (spawnClock.getElapsedTime().asSeconds() >= m_spawnInterval) {
             std::random_device rd;
             std::mt19937 gen(rd());
+            
+            // Distribution for X position (already correct)
             std::uniform_real_distribution<float> distX(m_minX, m_maxX);
             float spawnX = distX(gen);
 
@@ -70,7 +72,38 @@ void EnemySpawnSystem::update(std::vector<EntityId>& entities,
             positions.emplace(enemyId, PositionComponent{ sf::Vector2f(spawnX, 50.f) });
             
             // Use baseSpeed from EnemyTypeData
-            velocities.emplace(enemyId, VelocityComponent{ sf::Vector2f(0.0f, m_currentEnemyType.baseSpeed) });
+            // velocities.emplace(enemyId, VelocityComponent{ sf::Vector2f(0.0f, m_currentEnemyType.baseSpeed) });
+
+            // ... inside the function that spawns a new enemy ...
+
+            
+            // Change this:
+            // float enemySpeed = 150.0f; 
+            // To this:
+            float enemySpeed = m_currentEnemyType.baseSpeed; 
+            const float PI = 3.14159265359f;
+
+            // Angle range: 45 to 135 degrees (0 = right, 90 = down, 180 = left)
+            int minAngle = 45;
+            int maxAngle = 135;
+            // int angleRange = maxAngle - minAngle + 1;
+
+            // FIX 3: Use modern C++ random for the angle
+            std::uniform_int_distribution<int> distAngle(minAngle, maxAngle);
+            float randomAngleDegrees = static_cast<float>(distAngle(gen));
+            
+            // 2. Convert to radians
+            float randomAngleRadians = randomAngleDegrees * (PI / 180.0f);
+
+            // 3. Calculate X and Y velocity components
+            float velX = enemySpeed * std::cos(randomAngleRadians);
+            float velY = enemySpeed * std::sin(randomAngleRadians);
+
+            sf::Vector2f initialVelocity(velX, velY);
+
+            // velocities.emplace(enemyId, VelocityComponent{ sf::Vector2f(m_currentEnemyType.baseSpeed, m_currentEnemyType.baseSpeed) });
+            velocities.emplace(enemyId, VelocityComponent{ initialVelocity });
+            
             
             // Use the new EnemyTypeData for the RenderComponent
             RenderComponent renderData;

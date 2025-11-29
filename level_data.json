@@ -64,6 +64,52 @@
         }
       ]
     }
-  }
+  },
+  {
+    "levelNumber": 4,
+    "difficulty": "Medium",
+    "enemies": {
+      "count": 20,
+      "spawnInterval": 1.25,
+      "spawnArea": {
+        "minX": 50,
+        "maxX": 750
+      },
+      "types": [
+        {
+          "type": "Hexagon",
+          "color": "Magenta",
+          "size": 30,
+          "baseDamage": 15,
+          "baseSpeed": 275,
+          "baseHealth":30.0
+        }
+      ]
+    }
+  },
+  {
+      "levelNumber": 5,
+      "difficulty": "Medium",
+      "enemies": {
+        "count": 40,
+        "spawnInterval": 1.25,
+        "spawnArea": {
+          "minX": 50,
+          "maxX": 750
+        },
+        "types": [
+          {
+            "type": "Diamond",
+            "color": "Cyan",
+            "size": 30,
+            "baseDamage": 15,
+            "baseSpeed": 300,
+            "baseHealth":20.0
+          }
+        ]
+      }
+    }
+
+  
 ]
 

@@ -52,7 +52,7 @@ struct BouncingComponent {
 };
 
 struct RenderComponent {
-    enum Type { Circle, Square, Triangle };
+    enum Type { Circle, Square, Triangle, Diamond, Hexagon };
     Type type;
     sf::Color color;
     float size; 

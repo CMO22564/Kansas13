@@ -189,6 +189,7 @@ int main() {
                 screenSystem.update(
                 GameStateManager::getInstance().getState(),
                 GameStateManager::getInstance().getScore(),
+                GameStateManager::getInstance().getCurrentLevelIndex(),
                 playerHealths,
                 shields,
                 playerLives

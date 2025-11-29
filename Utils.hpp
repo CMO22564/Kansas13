@@ -6,16 +6,25 @@
 
 // Helper function to convert a string to a shape type
 inline RenderComponent::Type shapeTypeFromString(const std::string& typeString) {
-    if (typeString == "Square") {
+    if (typeString == "Square" || typeString == "square") {
         return RenderComponent::Type::Square;
     }
-    if (typeString == "Circle") {
+    if (typeString == "Circle" || typeString == "circle") {
         return RenderComponent::Type::Circle;
     }
-    if (typeString == "Triangle") {
+    if (typeString == "Triangle" || typeString == "triangle") {
         return RenderComponent::Type::Triangle;
     }
-    return RenderComponent::Type::Circle; // Default to Circle
+    // 🌟 NEW: Add Hexagon case
+    if (typeString == "Hexagon" || typeString == "hexagon") { 
+        return RenderComponent::Type::Hexagon;
+    }
+    // 🌟 NEW: Add Diamond case
+    if (typeString == "Diamond" || typeString == "diamond") { 
+        return RenderComponent::Type::Diamond;
+    }
+    
+    return RenderComponent::Type::Circle; // Default to Circle if string doesn't match
 }
 
 // **NOTE: This requires a utility to handle case conversion for full robustness.**
