@@ -18,3 +18,6 @@ progress/*
 
 # User-specific files
 .vscode/settings.json
+*.exe
+*.o
+*.d
