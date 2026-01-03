@@ -5,15 +5,7 @@
 #include <iomanip>
 #include <iostream>
 
-#include "ScreenSystem.hpp"
-#include "GameStateManager.hpp"
-#include "HighScore.hpp"
-#include <sstream>
-#include <iomanip>
-#include <iostream> // Include for error messages
 
-// CORRECTED: Constructor signature must match the header (ScreenSystem(sf::RenderWindow&, const std::string&))
-// All non-default-constructible members (sf::Text) MUST be initialized here.
 ScreenSystem::ScreenSystem(sf::RenderWindow& window, const std::string& fontPath)
     // 1. Initialize reference member (must be first)
     : m_window(window),
@@ -28,8 +20,9 @@ ScreenSystem::ScreenSystem(sf::RenderWindow& window, const std::string& fontPath
       m_pauseText(m_font, "Paused", 30),
       m_controlsText(m_font, "Controls", 30),
       m_scoreText(m_font, "Score", 30),
-      m_levelText(m_font, "Level", 30), // <-- New member added here
+      m_levelText(m_font, "Level", 30), 
       m_livesText(m_font, "Lives", 30),
+      m_creditsText(m_font, "Credits", 30), // Initialize here
       m_gameOverText(m_font, "Game Over", 30)
     // NOTE: Other shape/rectangle members are default-constructed implicitly.
 {
@@ -46,7 +39,7 @@ ScreenSystem::ScreenSystem(sf::RenderWindow& window, const std::string& fontPath
 
     // Title Text setup (Lines 22-27 in your original body)
     m_titleText.setFont(m_font);
-    m_titleText.setString("KANSAS 13");
+    m_titleText.setString("CHAOS 13");
     m_titleText.setCharacterSize(60);
     m_titleText.setFillColor(sf::Color::White);
     m_titleText.setStyle(sf::Text::Bold);
@@ -65,7 +58,7 @@ ScreenSystem::ScreenSystem(sf::RenderWindow& window, const std::string& fontPath
 
     // Controls Text setup (Lines 40-45)
     m_controlsText.setFont(m_font);
-    m_controlsText.setString("Controls: Arrows/WASD to Move, Space to Shoot, ESC to Pause");
+    m_controlsText.setString("Controls: Arrows <- -> / A D to Move, Space to Shoot, ESC to Pause");
     m_controlsText.setCharacterSize(20);
     m_controlsText.setFillColor(sf::Color::White);
     
@@ -114,65 +107,56 @@ ScreenSystem::ScreenSystem(sf::RenderWindow& window, const std::string& fontPath
     m_shieldBar.setFillColor(sf::Color::Blue);
     m_shieldBar.setPosition(sf::Vector2f(10.f, 115.f));
 
+    // Credits Text Setup
+    m_creditsText.setFont(m_font);
+    m_creditsText.setString("Credits: 0");
+    m_creditsText.setCharacterSize(24);
+    m_creditsText.setFillColor(sf::Color(255, 215, 0)); // Gold Color
+    m_creditsText.setPosition(sf::Vector2f(10.f, 135.f)); // Positioned below bars
+
 }
 // ... rest of ScreenSystem.cpp functions (update, render, etc.) will now find the members.
 
 // --- Update Method (Handles HUD Data Logic) ---
+// ScreenSystem.cpp
+
 void ScreenSystem::update(const GameState& gameState, const int& score, const int& levelIndex,
                          const ComponentMap<PlayerHealthComponent>& playerHealths,
                          const ComponentMap<ShieldComponent>& shields,
-                         const ComponentMap<PlayerLivesComponent>& playerLives) {
+                         const ComponentMap<PlayerLivesComponent>& playerLives,
+                         const ComponentMap<PlayerInputComponent>& playerInputs) { // Added playerInputs
     
-    // Only update HUD elements when the game is running or paused
-    if (gameState != GameState::Running && gameState != GameState::Paused) return;
+    // 1. Update general HUD text
+    m_scoreText.setString("Score: " + std::to_string(score));
+    m_levelText.setString("Level: " + std::to_string(levelIndex + 1));
 
-    // Update Score Text
-    std::ostringstream scoreStream;
-    scoreStream << "Score: " << score;
-    m_scoreText.setString(scoreStream.str());
-
-    // 🌟 CORRECTED: Update Level Text
-    std::ostringstream levelStream;
-    // We assume levelIndex is 0-based, so add 1 for display (Level 0 -> Level 1)
-    levelStream << "Level: " << (levelIndex + 1);
-    m_levelText.setString(levelStream.str());
-    
-    // ... (rest of the update function: player lives, health bar, shield bar) 
-     
-    // Assuming a single player entity exists (playerId = 1)
-    EntityId playerId = 1;
-
-    // Update Lives Text
-    if (playerLives.count(playerId)) {
-        std::ostringstream livesStream;
-        livesStream << "Lives: " << playerLives.at(playerId).lives;
-        m_livesText.setString(livesStream.str());
-    }
-
-    // Update Health Bar
-    if (playerHealths.count(playerId)) {
-        const auto& health = playerHealths.at(playerId);
-        float healthRatio = health.currentHealth / health.maxHealth;
-        float barWidth = healthRatio * m_healthBarBackground.getSize().x;
-        m_healthBar.setSize(sf::Vector2f(barWidth, m_healthBar.getSize().y));
-    }
-
-    // Update Shield Bar
-    if (shields.count(playerId)) {
-        const auto& shield = shields.at(playerId);
-        float shieldRatio = shield.currentShield / shield.maxShield;
+    // 2. Iterate through player entities to update specific HUD elements
+    // This loop defines 'id' for use in all subsequent checks
+    for (auto const& [id, health] : playerHealths) {
         
-        // Change color to Yellow/Red if under 25% (visual warning)
-        if (shieldRatio <= 0.25f && shieldRatio > 0.0f) {
-            m_shieldBar.setFillColor(sf::Color::Yellow);
-        } else if (shieldRatio <= 0.0f) {
-            m_shieldBar.setFillColor(sf::Color::Red);
-        } else {
-            m_shieldBar.setFillColor(sf::Color::Cyan); // Back to normal color
+        // Update Health Bar logic
+        float healthRatio = (health.maxHealth > 0) ? health.currentHealth / health.maxHealth : 0.0f;
+        m_healthBar.setSize({150.f * healthRatio, 10.f});
+
+        // Update Shield Bar (if the player has a shield component)
+        if (shields.count(id)) {
+            const auto& shield = shields.at(id);
+            float shieldRatio = (shield.maxShield > 0) ? shield.currentShield / shield.maxShield : 0.0f;
+            m_shieldBar.setSize({150.f * shieldRatio, 10.f});
+        }
+
+        // Update Player Lives text
+        if (playerLives.count(id)) {
+            m_livesText.setString("Lives: " + std::to_string(playerLives.at(id).lives));
+        }
+
+        // 🌟 FIX: Update Credits UI (id is now correctly in scope)
+        if (playerInputs.count(id)) {
+            m_creditsText.setString("Credits: " + std::to_string(playerInputs.at(id).credits));
         }
         
-        float barWidth = shieldRatio * m_shieldBarBackground.getSize().x;
-        m_shieldBar.setSize(sf::Vector2f(barWidth, m_shieldBar.getSize().y));
+        // Assuming single-player, we break after the first valid player entity
+        break; 
     }
 }
 
@@ -240,7 +224,7 @@ void ScreenSystem::renderTitleScreen(sf::RenderWindow& window, GameStateManager&
     // ----------------------------------------------------------------
     // Title: "KANSAS 13" (Neon Glow Effect)
     // ----------------------------------------------------------------
-    const std::string titleString = "KANSAS 13";
+    const std::string titleString = "CHAOS 13";
     float titleY = windowSize.y / 3.f;
 
     // 1. Draw the Shadow/Glow layer (Vapor Blue, slightly offset)

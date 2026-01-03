@@ -1,9 +1,9 @@
+// CombatSystem.hpp
 #pragma once
 #include <vector>
 #include "Core.hpp"
-#include <unordered_map>
 
-class CombatSystem {
+class CombatSystem : public System {
 public:
     void update(
         std::vector<EntityId>& entities,
@@ -18,7 +18,8 @@ public:
         ComponentMap<ShieldComponent>& shields,
         ComponentMap<SoundComponent>& sounds,
         ComponentMap<VelocityComponent>& velocities,
-        ComponentMap<EnemyComponent>& enemies, // <-- CRITICAL FIX: Add the new EnemyComponent map
-        ComponentMap<PlayerLivesComponent>& playerLives
+        ComponentMap<EnemyComponent>& enemies,
+        ComponentMap<PlayerLivesComponent>& playerLives,
+        ComponentMap<PlayerInputComponent>& playerInputs
     );
 };

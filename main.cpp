@@ -19,7 +19,7 @@
 #include <algorithm> // For std::max/std::min
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode({800, 600}), "Kansas 13");
+    sf::RenderWindow window(sf::VideoMode({800, 600}), "CHAOS 13");
     window.setFramerateLimit(60);
 
 // Define the font path (adjust to your actual font file location)
@@ -47,8 +47,8 @@ int main() {
     ComponentMap<SoundComponent> sounds;
     ComponentMap<VelocityComponent> velocities;
     ComponentMap<EnemyComponent> enemies;
-    ComponentMap<PlayerInputComponent> playerInputs;
     ComponentMap<PlayerLivesComponent> playerLives;
+    ComponentMap<PlayerInputComponent> playerInputs;
 
     std::vector<EntityId> entities;
 
@@ -139,7 +139,8 @@ int main() {
 
         if (GameStateManager::getInstance().getState() == GameState::Running) {
             
-            playerInputSystem.update(entities, 
+            playerInputSystem.update(entities,
+                        enemies, 
                          dt,
                          positions, 
                          velocities, 
@@ -157,7 +158,7 @@ int main() {
             movementSystem.update(entities, positions, velocities, bouncingShapes, shapes, deltaTime);
                  
             // CombatSystem signature is updated, no score parameter
-            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damages, activeStates, playerHealths, healths, shields, sounds, velocities, enemies, playerLives);
+            combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damages, activeStates, playerHealths, healths, shields, sounds, velocities, enemies, playerLives, playerInputs);
             
            // 🛑 FIX: Pass the delta time (dt) argument
             soundSystem.update(sounds, dt);
@@ -192,7 +193,8 @@ int main() {
                 GameStateManager::getInstance().getCurrentLevelIndex(),
                 playerHealths,
                 shields,
-                playerLives
+                playerLives,
+                playerInputs
             );
 
 

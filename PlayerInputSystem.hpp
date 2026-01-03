@@ -3,13 +3,14 @@
 #include <string>
 #include <SFML/Window/Event.hpp>
 #include "Core.hpp"
-#include "GameStateManager.hpp"
 
 class PlayerInputSystem : public System {
 public:
     PlayerInputSystem() = default;
+
     void update(
         const std::vector<EntityId>& entities,
+        const ComponentMap<EnemyComponent>& enemyComponents, // 🌟 Fixed Order
         float dt,
         ComponentMap<PositionComponent>& positions,
         ComponentMap<VelocityComponent>& velocities,
@@ -21,13 +22,20 @@ public:
         ComponentMap<SoundComponent>& sounds,
         ComponentMap<DamageComponent>& damages
     );
+
     void handleScoreEntry(const sf::Event& event, GameStateManager& manager);
     void resetInitials();
-    std::string getCurrentInitials() const { return m_currentInitials; }
-    bool isEnteringScore() const { return m_enteringScore; }
 
 private:
-    std::string m_currentInitials = "---"; // Current initials being entered
-    size_t m_currentInitialIndex = 0; // Current character being edited
-    bool m_enteringScore = false; // Flag to indicate score entry mode
+    EntityId findNearestEnemy(
+        sf::Vector2f playerPos, 
+        const std::vector<EntityId>& entitiesList,
+        const ComponentMap<PositionComponent>& positions,
+        const ComponentMap<ActiveComponent>& activeStates,
+        const ComponentMap<EnemyComponent>& enemyComponents
+    );
+
+    std::string m_currentInitials = "---";
+    size_t m_currentInitialIndex = 0;
+    bool m_enteringScore = false;
 };

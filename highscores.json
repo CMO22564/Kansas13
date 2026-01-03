@@ -4,8 +4,16 @@
         "score": 8800
     },
     {
+        "initials": "CMO",
+        "score": 8400
+    },
+    {
         "initials": "DAD",
         "score": 8100
+    },
+    {
+        "initials": "DAD",
+        "score": 7700
     },
     {
         "initials": "CMO",
@@ -30,13 +38,5 @@
     {
         "initials": "CMO",
         "score": 3800
-    },
-    {
-        "initials": "DAD",
-        "score": 3500
-    },
-    {
-        "initials": "AAA",
-        "score": 3300
     }
 ]

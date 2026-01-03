@@ -10,10 +10,8 @@
 
 using EntityId = unsigned int;
 
-// Templated ComponentMap to hold components for entities
 template<typename T>
 using ComponentMap = std::unordered_map<EntityId, T>;
-
 
 // -- Base System Class --
 class System {
@@ -22,6 +20,15 @@ public:
 };
 
 // -- Component Structs --
+struct PositionComponent { sf::Vector2f position; };
+struct VelocityComponent { sf::Vector2f velocity; };
+
+struct PlayerInputComponent {
+    float shootCooldown = 0.0f;
+    float shootInterval = 0.25f;
+    int turretLevel = 0;   
+    int credits = 0;       
+};
 
 struct PlayerHealthComponent {
     float currentHealth = 100.0f;
@@ -31,32 +38,7 @@ struct PlayerHealthComponent {
 struct ShieldComponent {
     float currentShield = 100.0f;
     float maxShield = 100.0f;
-    // 🛑 CRITICAL FIX: Add this flag
     bool isWarningActive = false;
-};
-
-struct PlayerLivesComponent {
-    int lives = 3;
-};
-
-struct ActiveComponent {
-    bool active = true;
-};
-
-struct DamageComponent {
-    float damage = 10.0f;
-};
-
-struct BouncingComponent {
-    int generation = 0;
-};
-
-struct RenderComponent {
-    enum Type { Circle, Square, Triangle, Diamond, Hexagon };
-    Type type;
-    sf::Color color;
-    float size; 
-    std::unique_ptr<sf::Shape> shape; 
 };
 
 struct HealthComponent {
@@ -64,58 +46,42 @@ struct HealthComponent {
     float maxHealth = 100.0f;
 };
 
-struct RespawnComponent {
-    float respawnTimer = 2.0f; // Default 2 seconds of invulnerability
-    bool isInvulnerable = true;
+struct EnemyComponent {
+    float baseDamage;
+    float baseSpeed;
+    float baseHealth;
+    int generation = 1; 
 };
 
-struct PositionComponent {
-    sf::Vector2f position;
+struct RenderComponent {
+    enum Type { Circle, Square, Triangle, Diamond, Hexagon };
+    Type type;
+    sf::Color color;
+    float size;
+    std::unique_ptr<sf::Shape> shape;
 };
 
-struct VelocityComponent {
-    sf::Vector2f velocity;
-};
-
-struct PlayerInputComponent {
-    float shootCooldown = 0.0f;
-};
-
+struct ActiveComponent { bool active = true; };
 struct ProjectileComponent {};
-
-struct CombatComponent {
-    float damage = 10.0f;
-};
+struct DamageComponent { float damage = 10.0f; };
+struct BouncingComponent {};
+struct PlayerLivesComponent { int lives = 3; };
 
 struct SoundComponent {
-    enum class Type {
-        Laser,
-        Explosion,
-        ShieldHit,
-        ShieldWarning, // <-- NEW: for <25% Shield
-        PlayerHit,
-        Respawn, // <-- Existing/Required for Respawn
-        GameOver // <-- Play when Player Lives are all gone
-        };
-      Type type = Type::Explosion;
+    enum class Type { Laser, Explosion, ShieldHit, ShieldWarning, PlayerHit, Respawn, GameOver };
+    Type type = Type::Explosion;
 };
 
-// NEW FEATURE: Enemy Tag Component
-struct EnemyComponent {};
-
-// Global counter for entities
 inline unsigned int getNextEntityId() {
     static unsigned int nextId = 1;
     return nextId++;
 }
 
-// Core.hpp (Add this function definition outside of any class/struct)
-
+// --- ADD THIS AT THE BOTTOM ---
 /**
  * @brief Resets player-specific components (Health, Shield, Lives) 
  * to their initial starting values.
  */
-
 inline void resetPlayerComponents(
     EntityId playerId,
     ComponentMap<PlayerHealthComponent>& playerHealths,
@@ -130,7 +96,6 @@ inline void resetPlayerComponents(
         shields.at(playerId).isWarningActive = false;
     }
     if (playerLives.count(playerId)) {
-        // Resetting to the starting number of lives
-        playerLives.at(playerId).lives = 3; 
+        playerLives.at(playerId).lives = 3;
     }
 }

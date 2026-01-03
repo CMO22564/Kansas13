@@ -11,7 +11,8 @@ public:
     void update(const GameState& gameState, const int& score, const int& levelIndex,
                 const ComponentMap<PlayerHealthComponent>& playerHealths,
                 const ComponentMap<ShieldComponent>& shields,
-                const ComponentMap<PlayerLivesComponent>& playerLives);
+                const ComponentMap<PlayerLivesComponent>& playerLives,
+                const ComponentMap<PlayerInputComponent>& playerInputs);
 private:
     sf::RenderWindow& m_window;
     sf::Font m_font; // KEEP: Only the font needs to be a persistent member
@@ -23,7 +24,8 @@ private:
     sf::Text m_scoreText;
     sf::Text m_levelText;
     sf::Text m_livesText;
-    sf::Text m_gameOverText; // <-- ADD THIS
+    sf::Text m_creditsText; // ADDED: For displaying currency
+    sf::Text m_gameOverText; 
 
     sf::RectangleShape m_healthBarBackground;
     sf::RectangleShape m_healthBar;

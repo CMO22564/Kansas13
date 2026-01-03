@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <json/json.hpp>
+#include "Core.hpp"
 
 // for convenience
 using json = nlohmann::json;
@@ -42,6 +43,13 @@ std::vector<LevelData> loadLevelsFromFile(const std::string& filename) {
             typeData.baseDamage = typeJson["baseDamage"].get<int>();
             typeData.baseSpeed = typeJson["baseSpeed"].get<float>();
             level.enemyTypes.push_back(typeData);
+            
+            EnemyComponent enemyComp;
+            enemyComp.baseDamage = typeData.baseDamage;
+            enemyComp.baseSpeed = typeData.baseSpeed;
+            enemyComp.baseHealth = typeData.baseHealth;
+            enemyComp.generation = 3; // 🌟 ADDED: New level enemies start as Generation 3
+
         }
         levels.push_back(level);
     } // End of main level iteration loop

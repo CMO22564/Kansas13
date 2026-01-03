@@ -1,13 +1,11 @@
 #include "PlayerInputSystem.hpp"
-#include <SFML/Window/Event.hpp>
-#include "Core.hpp"
-#include "GameStateManager.hpp"
-#include <iostream>
 #include <cmath>
 #include <limits>
+#include <iostream>
 
 void PlayerInputSystem::update(
     const std::vector<EntityId>& entities,
+    const ComponentMap<EnemyComponent>& enemyComponents, // Move to 2nd position
     float dt,
     ComponentMap<PositionComponent>& positions,
     ComponentMap<VelocityComponent>& velocities,
@@ -18,118 +16,72 @@ void PlayerInputSystem::update(
     ComponentMap<ActiveComponent>& activeStates,
     ComponentMap<SoundComponent>& sounds,
     ComponentMap<DamageComponent>& damages) {
-    
-    GameStateManager& gsm = GameStateManager::getInstance();
-    GameState state = gsm.getState();
 
-    if (state != GameState::Running) {
-        return; // Only handle player movement and shooting in Running state
-    }
+    GameStateManager& gsm = GameStateManager::getInstance();
+    if (gsm.getState() != GameState::Running) return;
 
     for (EntityId entityId : entities) {
-        if (!positions.count(entityId) || !velocities.count(entityId) || !playerInputs.count(entityId)) {
-            continue; // Skip entities without required components
-        }
+        if (!positions.count(entityId) || !playerInputs.count(entityId)) continue;
 
-        auto& velocity = velocities.at(entityId).velocity;
+        auto& posComp = positions.at(entityId);
         auto& input = playerInputs.at(entityId);
+        sf::Vector2f playerPos = posComp.position;
 
-        // Player movement logic
-        sf::Vector2f moveDirection(0.f, 0.f);
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)) {
-            moveDirection.x -= 1.0f;
+        // 1. Movement
+        sf::Vector2f moveDir(0.f, 0.f);
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A)) moveDir.x -= 1.f;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) moveDir.x += 1.f;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)) moveDir.y -= 1.f;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)) moveDir.y += 1.f;
+
+        if (velocities.count(entityId)) {
+            velocities.at(entityId).velocity = moveDir * 400.0f; // 🌟 Fix
         }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right)) {
-            moveDirection.x += 1.0f;
-        }
 
-        float speed = 500.0f;
-        velocity = moveDirection * speed;
-
-        // Projectile shooting logic
-        const float SHOOT_COOLDOWN = 0.1f; // Balanced cooldown for controlled firing
+        // 2. Shooting
         input.shootCooldown += dt;
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) && input.shootCooldown >= input.shootInterval) {
+            sf::Vector2f aimDir(0.f, -1.f); 
+            float bulletSpeed = 600.0f;
 
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space) && input.shootCooldown >= SHOOT_COOLDOWN) {
-            sf::Vector2f playerPos = positions.at(entityId).position;
-
-            // Find the closest enemy to target
-            EntityId closestEnemy = 0;
-            float minDistance = std::numeric_limits<float>::max();
-
-            for (EntityId currentEntity : entitiesList) {
-                if (currentEntity == entityId || !activeStates.count(currentEntity) || !activeStates.at(currentEntity).active) {
-                    continue;
-                }
-                if (positions.count(currentEntity) && shapes.count(currentEntity)) {
-                    sf::Vector2f enemyPos = positions.at(currentEntity).position;
-                    float dist = std::sqrt(std::pow(playerPos.x - enemyPos.x, 2) + std::pow(playerPos.y - enemyPos.y, 2));
-                    if (dist < minDistance) {
-                        minDistance = dist;
-                        closestEnemy = currentEntity;
+            if (input.turretLevel > 0) {
+                EntityId targetId = findNearestEnemy(playerPos, entitiesList, positions, activeStates, enemyComponents);
+                if (targetId != -1) {
+                    sf::Vector2f enemyPos = positions.at(targetId).position;
+                    if (input.turretLevel == 1) {
+                        aimDir = enemyPos - playerPos;
+                    } else if (input.turretLevel == 2) {
+                        sf::Vector2f enemyVel = velocities.count(targetId) ? velocities.at(targetId).velocity : sf::Vector2f(0,0);
+                        float dist = std::sqrt(std::pow(enemyPos.x - playerPos.x, 2) + std::pow(enemyPos.y - playerPos.y, 2));
+                        aimDir = (enemyPos + (enemyVel * (dist / bulletSpeed))) - playerPos;
                     }
                 }
             }
 
-            // Create projectile
-            EntityId projectileId = getNextEntityId();
-            entitiesList.push_back(projectileId);
-            positions.emplace(projectileId, PositionComponent{playerPos});
+            // Spawn Bullet
+            float mag = std::sqrt(aimDir.x * aimDir.x + aimDir.y * aimDir.y);
+            sf::Vector2f bulletVel = (mag > 0) ? (aimDir / mag) * bulletSpeed : sf::Vector2f(0, -bulletSpeed);
 
-            RenderComponent projectileRender;
-            projectileRender.type = RenderComponent::Type::Circle;
-            projectileRender.color = sf::Color::Yellow;
-            projectileRender.size = 5.0f;
-
-            if (closestEnemy != 0) {
-                // Shoot toward closest enemy
-                sf::Vector2f enemyPos = positions.at(closestEnemy).position;
-                sf::Vector2f direction = enemyPos - playerPos;
-                float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
-                if (length > 0) {
-                    sf::Vector2f normalizedDirection = direction / length;
-                    float projectileSpeed = 800.0f;
-                    velocities.emplace(projectileId, VelocityComponent{normalizedDirection * projectileSpeed});
-                } else {
-                    velocities.emplace(projectileId, VelocityComponent{sf::Vector2f(0.f, -800.0f)});
-                }
-                input.shootCooldown = 0.0f; // Faster reset for homing shots
-            } else {
-                // Fallback: shoot upward
-                velocities.emplace(projectileId, VelocityComponent{sf::Vector2f(0.f, -800.0f)});
-                input.shootCooldown = 0.05f; // Slightly slower for fallback
-            }
-
-            shapes.emplace(projectileId, std::move(projectileRender));
-            projectiles.emplace(projectileId, ProjectileComponent{});
-            activeStates.emplace(projectileId, ActiveComponent{true});
-            sounds.emplace(projectileId, SoundComponent{SoundComponent::Type::Laser});
-            damages.emplace(projectileId, DamageComponent{10.0f});
+            EntityId bId = getNextEntityId();
+            entitiesList.push_back(bId);
+            positions[bId] = { playerPos };
+            velocities[bId] = { bulletVel };
+            activeStates[bId] = { true };
+            projectiles[bId] = {};
+            damages[bId] = { 15.0f };
+            
+            RenderComponent r; r.type = RenderComponent::Circle; r.size = 4.0f; r.color = sf::Color::Yellow;
+            shapes[bId] = std::move(r);
+            sounds[bId] = { SoundComponent::Type::Laser };
+            
+            input.shootCooldown = 0.0f;
         }
     }
 }
 
 void PlayerInputSystem::handleScoreEntry(const sf::Event& event, GameStateManager& manager) {
-    
-    // 1. Handle KeyPressed for control commands (like 'P' to exit)
-    if (event.is<sf::Event::KeyPressed>()) {
-        const auto* keyEvent = event.getIf<sf::Event::KeyPressed>();
-        
-        if (keyEvent->code == sf::Keyboard::Key::P) {
-            // FIX: Reset the game state and go to TitleScreen when 'P' is pressed
-            manager.setScore(0);
-            manager.setCurrentLevelIndex(0); 
-            manager.setState(GameState::TitleScreen);
-            return; // Stop processing this event
-        }
-    }
-    
-    // 2. Handle TextEntered for initials (A-Z, Backspace, Enter)
-    if (!event.is<sf::Event::TextEntered>()) {
-        return; 
-    }
-
-    const auto* textEvent = event.getIf<sf::Event::TextEntered>();
+    // 🌟 This line below is for SFML 3 compatibility
+    auto const* textEvent = event.getIf<sf::Event::TextEntered>();
     if (!textEvent) return;
     
     uint32_t unicode = textEvent->unicode;
@@ -156,18 +108,26 @@ void PlayerInputSystem::handleScoreEntry(const sf::Event& event, GameStateManage
         manager.getHighScoreManager().addScore(m_currentInitials.substr(0, 3), manager.getScore());
         m_currentInitials = "---";
         m_currentInitialIndex = 0;
-        // m_enteringScore = false; // Assuming this flag is local state management
         manager.setCurrentInitials(m_currentInitials);
         
-        // CRITICAL FIX: After score entry is complete, reset the game state and go to TitleScreen
+        // Reset game state and return to Title
         manager.setScore(0);
         manager.setCurrentLevelIndex(0);
         manager.setState(GameState::TitleScreen);
     }
 }
 
-void PlayerInputSystem::resetInitials() {
-    m_currentInitials = "---";
-    m_currentInitialIndex = 0;
-    m_enteringScore = true;
+EntityId PlayerInputSystem::findNearestEnemy(sf::Vector2f playerPos, const std::vector<EntityId>& entitiesList, 
+    const ComponentMap<PositionComponent>& positions, const ComponentMap<ActiveComponent>& activeStates, 
+    const ComponentMap<EnemyComponent>& enemyComponents) {
+    
+    EntityId closest = -1;
+    float minDist = std::numeric_limits<float>::max();
+    for (auto const& [id, enemy] : enemyComponents) {
+        if (activeStates.count(id) && activeStates.at(id).active) {
+            float d = std::sqrt(std::pow(positions.at(id).position.x - playerPos.x, 2) + std::pow(positions.at(id).position.y - playerPos.y, 2));
+            if (d < minDist) { minDist = d; closest = id; }
+        }
+    }
+    return closest;
 }

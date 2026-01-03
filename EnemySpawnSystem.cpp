@@ -120,8 +120,14 @@ void EnemySpawnSystem::update(std::vector<EntityId>& entities,
             activeStates.emplace(enemyId, ActiveComponent{ true });
             bouncingShapes.emplace(enemyId, BouncingComponent{});
             
-            // CRITICAL ADDITION: Add the EnemyComponent tag
-            enemies.emplace(enemyId, EnemyComponent{});
+            // 🌟 UPDATED: Initialize the enemy with stats and Generation 3
+            EnemyComponent enemyComp;
+            enemyComp.baseDamage = static_cast<float>(m_currentEnemyType.baseDamage);
+            enemyComp.baseSpeed = m_currentEnemyType.baseSpeed;
+            enemyComp.baseHealth = m_currentEnemyType.baseHealth;
+            enemyComp.generation = 3; // This ensures they start big and can split twice
+
+            enemies.emplace(enemyId, enemyComp);
             
             // ✅ REQUIRED FIX: Use the confirmed 'baseHealth' member
             healths.emplace(enemyId, HealthComponent{m_currentEnemyType.baseHealth, m_currentEnemyType.baseHealth}); 
