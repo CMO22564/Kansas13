@@ -155,7 +155,7 @@ int main() {
             // Accessing EnemySpawnSystem as a singleton
             EnemySpawnSystem::getInstance().update(entities, positions, velocities, shapes, bouncingShapes, activeStates, damages, healths, enemies);
             
-            movementSystem.update(entities, positions, velocities, bouncingShapes, shapes, deltaTime);
+            movementSystem.update(entities, positions, velocities, bouncingShapes, shapes, activeStates,deltaTime);
                  
             // CombatSystem signature is updated, no score parameter
             combatSystem.update(entities, positions, shapes, projectiles, bouncingShapes, damages, activeStates, playerHealths, healths, shields, sounds, velocities, enemies, playerLives, playerInputs);
@@ -164,7 +164,7 @@ int main() {
             soundSystem.update(sounds, dt);
             
             // Normal cleanup runs every frame
-            cleanUpSystem.update(entities, activeStates, projectiles, bouncingShapes, damages, playerHealths, shields, playerLives, playerInputs, positions, velocities, shapes, sounds);
+            cleanUpSystem.update(entities, activeStates, projectiles, bouncingShapes, damages, playerHealths, shields, playerLives, playerInputs, positions, velocities, shapes, sounds, enemies, healths);
             
             // CRITICAL NEW LOGIC: Level completion check and advancement
             if (EnemySpawnSystem::getInstance().isLevelComplete()) {
@@ -180,7 +180,9 @@ int main() {
                     positions, 
                     velocities, 
                     shapes, 
-                    sounds
+                    sounds,
+                    enemies,    
+                    healths
                 );
                 
                 GameStateManager::getInstance().advanceToNextLevel();

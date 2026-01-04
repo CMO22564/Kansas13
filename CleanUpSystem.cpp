@@ -16,8 +16,12 @@ void CleanUpSystem::update(std::vector<EntityId>& entities,
                           ComponentMap<PositionComponent>& positions, 
                           ComponentMap<VelocityComponent>& velocities, 
                           ComponentMap<RenderComponent>& shapes, 
-                          ComponentMap<SoundComponent>& sounds) {
-                          
+                          ComponentMap<SoundComponent>& sounds,
+                         ComponentMap<EnemyComponent>& enemies,
+                         ComponentMap<HealthComponent>& healths)
+                         {
+
+               
     const float windowWidth = 800.0f;
     const float windowHeight = 600.0f;
     const float projectileRadius = 5.0f; // Matches your projectile radius in PlayerInputSystem
@@ -84,6 +88,13 @@ void CleanUpSystem::update(std::vector<EntityId>& entities,
             if (sounds.count(id)) {
                 sounds.erase(id);
             }
+            // ✅ ADD THESE: Clear enemy-specific data
+            if (enemies.count(id)) {
+                enemies.erase(id);
+            }
+            if (healths.count(id)) {
+                healths.erase(id);
+            }
             activeStates.erase(id);
             std::cout << "CleanUpSystem: Removed inactive entity " << id << std::endl;
             return true; // Mark for removal from the entities vector
@@ -103,7 +114,9 @@ void CleanUpSystem::clearNonPlayerEntities(
     ComponentMap<PositionComponent>& positions, 
     ComponentMap<VelocityComponent>& velocities, 
     ComponentMap<RenderComponent>& shapes, 
-    ComponentMap<SoundComponent>& sounds) 
+    ComponentMap<SoundComponent>& sounds,
+    ComponentMap<EnemyComponent>& enemies,    // NEW: Enemy component map
+    ComponentMap<HealthComponent>& healths)  // NEW: Health component map 
 {
     std::cout << "CleanUpSystem: Starting Level Transition Cleanup (Force removing enemies/projectiles)..." << std::endl;
     
@@ -121,6 +134,9 @@ void CleanUpSystem::clearNonPlayerEntities(
             if (velocities.count(id)) velocities.erase(id);
             if (shapes.count(id)) shapes.erase(id);
             if (sounds.count(id)) sounds.erase(id);
+            // ✅ ADD THESE:
+            if (enemies.count(id)) enemies.erase(id);
+            if (healths.count(id)) healths.erase(id);
             
             return true; // Mark for removal from the entities vector
         }

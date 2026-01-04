@@ -80,6 +80,10 @@ void CombatSystem::update(
                             enemies[childId] = childEnemy;
                             healths[childId] = { childEnemy.baseHealth * 0.5f, childEnemy.baseHealth * 0.5f };
 
+                            // ✅ FIX 1: Enable bouncing for the child so it stays on screen
+                            bouncingShapes.emplace(childId, BouncingComponent{}); 
+
+                            // ✅ FIX 2: Correct spreadX declaration (removed the duplicate)
                             float spreadX = (i == 0) ? -100.0f : 100.0f;
                             velocities[childId] = { sf::Vector2f(spreadX, 100.0f) };
                         }

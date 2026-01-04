@@ -17,9 +17,10 @@ public:
                ComponentMap<PositionComponent>& positions, 
                ComponentMap<VelocityComponent>& velocities, 
                ComponentMap<RenderComponent>& shapes, 
-               ComponentMap<SoundComponent>& sounds);
-
-
+               ComponentMap<SoundComponent>& sounds,
+               ComponentMap<EnemyComponent>& enemies,    
+               ComponentMap<HealthComponent>& healths);
+      
  // NEW: Function to clear the game world for a level transition
     void clearNonPlayerEntities(std::vector<EntityId>& entities, 
                                 ComponentMap<ProjectileComponent>& projectiles, 
@@ -29,5 +30,7 @@ public:
                                 ComponentMap<PositionComponent>& positions, 
                                 ComponentMap<VelocityComponent>& velocities, 
                                 ComponentMap<RenderComponent>& shapes, 
-                                ComponentMap<SoundComponent>& sounds);
+                                ComponentMap<SoundComponent>& sounds,
+                                ComponentMap<EnemyComponent>& enemies,    
+                                ComponentMap<HealthComponent>& healths);
 };
